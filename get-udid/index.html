@@ -2,427 +2,505 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lấy UDID - Công cụ lấy UDID iPhone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Công cụ lấy UDID - Không cần máy tính</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #0c0c0e;
-            color: #fff;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
             line-height: 1.5;
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
         }
-        
+
         .container {
-            max-width: 600px;
-            width: 90%;
-            margin: 20px auto;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            flex: 1;
         }
-        
-        .card {
-            background: #1c1c1e;
-            border-radius: 24px;
-            padding: 32px 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
         }
-        
+
         h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            text-align: center;
-            color: #fff;
-        }
-        
-        .subtitle {
-            text-align: center;
-            color: #8e8e93;
-            font-size: 16px;
-            margin-bottom: 32px;
-        }
-        
-        .btn {
-            background: #0a84ff;
-            border: none;
-            padding: 18px 32px;
-            border-radius: 12px;
-            width: 100%;
-            color: white;
-            font-size: 18px;
+            font-size: 2.5rem;
             font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 32px;
-            transition: all 0.2s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1d1d1f 0%, #3a3a3c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .btn:hover {
-            background: #0071e3;
-            transform: scale(1.02);
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6e6e73;
+            font-weight: 400;
         }
-        
-        .btn i {
-            font-size: 20px;
+
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.02);
         }
-        
-        .result-box {
-            background: #2c2c2e;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 32px;
-            border: 1px solid #3a3a3c;
-        }
-        
-        .success {
-            color: #30d158;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-            font-weight: 500;
-        }
-        
-        .info-item {
-            margin-bottom: 16px;
-        }
-        
-        .info-label {
-            font-size: 14px;
-            color: #8e8e93;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .info-value {
-            background: #1c1c1e;
-            padding: 12px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 14px;
-            word-break: break-all;
-            border: 1px solid #3a3a3c;
-            color: #fff;
-        }
-        
-        .copy-btn {
-            background: #3a3a3c;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            margin-top: 10px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .copy-btn:hover {
-            background: #48484a;
-        }
-        
-        .step {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 20px;
-            padding: 16px;
-            background: #2c2c2e;
-            border-radius: 16px;
-            border: 1px solid #3a3a3c;
-        }
-        
-        .step-number {
-            width: 32px;
-            height: 32px;
-            background: #0a84ff;
+
+        .hero-icon {
+            width: 80px;
+            height: 80px;
+            background: #f5f5f7;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .hero-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: none;
+            stroke: #0071e3;
+            stroke-width: 2;
+        }
+
+        .cta-button {
+            background: #0071e3;
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 1rem 2.5rem;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: #0077ed;
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(0, 113, 227, 0.3);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        .steps {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .steps h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .step-list {
+            list-style: none;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f2;
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: #f5f5f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #0071e3;
             flex-shrink: 0;
         }
-        
+
         .step-content {
             flex: 1;
         }
-        
-        .step-content h3 {
-            font-size: 16px;
-            margin-bottom: 4px;
-            color: #fff;
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
         }
-        
-        .step-content p {
-            font-size: 14px;
-            color: #8e8e93;
+
+        .step-desc {
+            color: #6e6e73;
+            font-size: 0.95rem;
         }
-        
-        .step-content strong {
-            color: #0a84ff;
+
+        .result-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            margin-top: 2rem;
+            display: none;
         }
-        
-        .note {
-            background: rgba(255, 149, 0, 0.1);
-            border-left: 4px solid #ff9f0a;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            color: #ff9f0a;
-            margin: 16px 0;
+
+        .result-card.visible {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
-        
+
+        .result-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .device-icon {
+            width: 48px;
+            height: 48px;
+            background: #f5f5f7;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: 1rem;
+            background: #f5f5f7;
+            border-radius: 14px;
+            margin-bottom: 1rem;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #6e6e73;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .info-value.udid {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.95rem;
+            background: #ffffff;
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid #e6e6e8;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 20px;
-            color: #8e8e93;
-            font-size: 13px;
+            color: #6e6e73;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e6e6e8;
         }
-        
-        .hidden {
-            display: none !important;
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
         }
-        
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #2c2c2e;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            border: 1px solid #3a3a3c;
-            z-index: 1000;
+
+        .loading.visible {
+            display: block;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f0f0f2;
+            border-top-color: #0071e3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: #fff2f0;
+            color: #c41e3a;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            .hero { padding: 1.5rem; }
+            .steps { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <h1>📱 Lấy UDID iPhone</h1>
-            <div class="subtitle">Không cần máy tính • Miễn phí • An toàn</div>
-            
-            <!-- Nút chính -->
-            <button class="btn" onclick="downloadProfile()">
-                LẤY UDID NGAY
-            </button>
-            
-            <!-- Kết quả (ẩn ban đầu) -->
-            <div id="resultSection" class="hidden">
-                <div class="result-box">
-                    <div class="success">
-                        ✅ Lấy UDID thành công!
+        <header>
+            <h1>CÔNG CỤ LẤY UDID</h1>
+            <p class="subtitle">Tiện lợi – Không cần máy tính</p>
+        </header>
+
+        <div class="hero">
+            <div class="hero-icon">
+                <svg viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 4v16M4 12h16" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <a href="getudid.mobileconfig" class="cta-button" id="downloadBtn">LẤY UDID NGAY</a>
+        </div>
+
+        <div class="steps">
+            <h2>Hướng dẫn 4 bước đơn giản</h2>
+            <ul class="step-list">
+                <li class="step-item">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <div class="step-title">Tải Profile</div>
+                        <div class="step-desc">Nhấn nút bên trên để tải cấu hình iOS</div>
                     </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">📌 UDID</div>
-                        <div class="info-value" id="udidValue">--------------------</div>
-                        <button class="copy-btn" onclick="copyUDID()">
-                            📋 Sao chép UDID
-                        </button>
+                </li>
+                <li class="step-item">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <div class="step-title">Cài đặt Profile</div>
+                        <div class="step-desc">Vào Cài đặt → Cài đặt chung → VPN & Quản lý thiết bị và tiến hành cài</div>
                     </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">📱 Thiết bị</div>
-                        <div class="info-value" id="deviceModel">--------------------</div>
+                </li>
+                <li class="step-item">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <div class="step-title">Nhập mật khẩu</div>
+                        <div class="step-desc">Nhập mật khẩu thiết bị để hoàn tất</div>
                     </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">⚙️ iOS Version</div>
-                        <div class="info-value" id="iosVersion">--------------------</div>
+                </li>
+                <li class="step-item">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <div class="step-title">Tự động chuyển hướng</div>
+                        <div class="step-desc">Thiết bị sẽ tự quay lại trang web và hiển thị UDID</div>
                     </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Đang xử lý dữ liệu từ thiết bị...</p>
+        </div>
+
+        <div class="result-card" id="resultCard">
+            <div class="result-header">
+                <div class="device-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0071e3">
+                        <rect x="4" y="2" width="16" height="20" rx="3" stroke-width="1.5"/>
+                        <line x1="12" y1="18" x2="12" y2="18" stroke-width="2"/>
+                    </svg>
                 </div>
-                
-                <button class="btn" onclick="resetPage()" style="background: #3a3a3c; margin-top: 0;">
-                    Lấy UDID khác
-                </button>
+                <h2>Thông tin thiết bị</h2>
             </div>
             
-            <!-- Hướng dẫn (hiện ban đầu) -->
-            <div id="instructionSection">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Tải hồ sơ</h3>
-                        <p>Nhấn nút <strong>"LẤY UDID NGAY"</strong> phía trên</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Cài đặt</h3>
-                        <p>Vào <strong>Cài đặt → Cài đặt chung → VPN & Quản lý thiết bị</strong> → Chọn hồ sơ vừa tải → Nhấn <strong>"Cài đặt"</strong></p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Nhập mật mã</h3>
-                        <p>Nhập mật mã iPhone khi được yêu cầu</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Hoàn tất</h3>
-                        <p>Quay lại trang web để xem UDID của bạn</p>
-                    </div>
-                </div>
+            <div class="info-row">
+                <span class="info-label">UDID</span>
+                <span class="info-value udid" id="udidValue">-</span>
             </div>
             
-            <div class="note">
-                ⚠️ Quan trọng: Mở trang này bằng Safari trên iPhone để tải profile
+            <div class="info-row">
+                <span class="info-label">Tên thiết bị</span>
+                <span class="info-value" id="deviceNameValue">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Phiên bản iOS</span>
+                <span class="info-value" id="iosVersionValue">-</span>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Model</span>
+                <span class="info-value" id="productValue">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">IMEI (nếu có)</span>
+                <span class="info-value" id="imeiValue">-</span>
             </div>
         </div>
-        
-        <div class="footer">
-            © 2024 • Công cụ lấy UDID miễn phí
+
+        <div class="error-message" id="errorMessage">
+            <p>❌ Không thể đọc dữ liệu từ thiết bị. Vui lòng thử lại hoặc quay lại trang chủ.</p>
+            <button onclick="location.href='/get-udid/'" style="background:#0071e3; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; margin-top:1rem; cursor:pointer;">Quay lại trang chủ</button>
         </div>
+
+        <footer class="footer">
+            <p>© 2024 Công cụ lấy UDID | Hoạt động trên iOS 9 trở lên</p>
+        </footer>
     </div>
-    
-    <div id="toast" class="toast hidden"></div>
 
     <script>
-        // Hàm tạo UUID
-        function generateUUID() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
+        (function() {
+            // Hàm parse XML data
+            function parseDeviceData(xmlString) {
+                try {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+                    
+                    // Kiểm tra lỗi parse
+                    const parseError = xmlDoc.querySelector('parsererror');
+                    if (parseError) {
+                        throw new Error('Invalid XML');
+                    }
 
-        // Lấy URL hiện tại
-        function getCurrentURL() {
-            return window.location.href.split('?')[0];
-        }
+                    // Lấy dữ liệu từ các tag
+                    const getNodeValue = (tagName) => {
+                        const element = xmlDoc.getElementsByTagName(tagName)[0];
+                        return element ? element.textContent : null;
+                    };
 
-        // Tải profile - PHIÊN BẢN ĐƠN GIẢN NHẤT
-        function downloadProfile() {
-            var redirectURL = getCurrentURL() + '?udid={UDID}';
-            var uuid = generateUUID();
-            
-            // Cấu hình ĐƠN GIẢN NHẤT - đã test trên iOS 15-17
-            var mobileconfig = '<?xml version="1.0" encoding="UTF-8"?>\n' +
-                '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n' +
-                '<plist version="1.0">\n' +
-                '<dict>\n' +
-                '    <key>PayloadContent</key>\n' +
-                '    <array>\n' +
-                '        <dict>\n' +
-                '            <key>URL</key>\n' +
-                '            <string>' + redirectURL + '</string>\n' +
-                '            <key>DeviceAttributes</key>\n' +
-                '            <array>\n' +
-                '                <string>UDID</string>\n' +
-                '            </array>\n' +
-                '        </dict>\n' +
-                '    </array>\n' +
-                '    <key>PayloadDisplayName</key>\n' +
-                '    <string>Lay UDID iPhone</string>\n' +
-                '    <key>PayloadIdentifier</key>\n' +
-                '    <string>com.udid.' + uuid + '</string>\n' +
-                '    <key>PayloadType</key>\n' +
-                '    <string>Configuration</string>\n' +
-                '    <key>PayloadUUID</key>\n' +
-                '    <string>' + uuid + '</string>\n' +
-                '    <key>PayloadVersion</key>\n' +
-                '    <integer>1</integer>\n' +
-                '</dict>\n' +
-                '</plist>';
-            
-            // Tạo và tải file
-            var blob = new Blob([mobileconfig], { type: 'application/x-apple-aspen-config' });
-            var url = window.URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = 'lay-udid.mobileconfig';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-            
-            showToast('Đã tải profile! Vào Cài đặt để cài đặt');
-        }
+                    // Thử với namespace
+                    const getNodeValueNS = (namespace, tagName) => {
+                        const element = xmlDoc.getElementsByTagNameNS(namespace, tagName)[0];
+                        return element ? element.textContent : null;
+                    };
 
-        // Lấy tham số từ URL
-        function getParam(name) {
-            var urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name) || '';
-        }
-
-        // Kiểm tra khi load trang
-        window.onload = function() {
-            var udid = getParam('udid');
-            
-            if (udid && udid.length > 10) {
-                var instruction = document.getElementById('instructionSection');
-                var result = document.getElementById('resultSection');
-                var udidEl = document.getElementById('udidValue');
-                
-                instruction.classList.add('hidden');
-                result.classList.remove('hidden');
-                udidEl.textContent = udid;
-                
-                // Xóa tham số trên URL
-                var newUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
-                window.history.replaceState({}, document.title, newUrl);
-                
-                showToast('Lấy UDID thành công!');
+                    return {
+                        UDID: getNodeValue('UDID') || getNodeValueNS('urn:apple:deviceattributes', 'UDID'),
+                        DEVICE_NAME: getNodeValue('DEVICE_NAME') || getNodeValueNS('urn:apple:deviceattributes', 'DEVICE_NAME'),
+                        VERSION: getNodeValue('VERSION') || getNodeValueNS('urn:apple:deviceattributes', 'VERSION'),
+                        PRODUCT: getNodeValue('PRODUCT') || getNodeValueNS('urn:apple:deviceattributes', 'PRODUCT'),
+                        IMEI: getNodeValue('IMEI') || getNodeValueNS('urn:apple:deviceattributes', 'IMEI')
+                    };
+                } catch (e) {
+                    console.error('Parse error:', e);
+                    return null;
+                }
             }
-        }
 
-        // Sao chép UDID
-        function copyUDID() {
-            var udid = document.getElementById('udidValue').textContent;
-            var temp = document.createElement('textarea');
-            temp.value = udid;
-            document.body.appendChild(temp);
-            temp.select();
-            document.execCommand('copy');
-            document.body.removeChild(temp);
-            showToast('Đã sao chép: ' + udid);
-        }
+            // Kiểm tra URL parameters (từ redirect)
+            if (window.location.search) {
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                const udid = urlParams.get('UDID');
+                const deviceName = urlParams.get('DEVICE_NAME');
+                const version = urlParams.get('VERSION');
+                const product = urlParams.get('PRODUCT');
+                const imei = urlParams.get('IMEI');
+                
+                if (udid) {
+                    // Hiển thị dữ liệu từ URL params
+                    document.getElementById('udidValue').textContent = udid;
+                    document.getElementById('deviceNameValue').textContent = deviceName ? decodeURIComponent(deviceName) : 'Đang cập nhật...';
+                    document.getElementById('iosVersionValue').textContent = version || 'Đang cập nhật...';
+                    document.getElementById('productValue').textContent = product || 'Đang cập nhật...';
+                    document.getElementById('imeiValue').textContent = imei || 'Không khả dụng';
+                    document.getElementById('resultCard').classList.add('visible');
+                    
+                    // Xóa params khỏi URL
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
+            }
 
-        // Reset trang
-        function resetPage() {
-            document.getElementById('instructionSection').classList.remove('hidden');
-            document.getElementById('resultSection').classList.add('hidden');
-        }
+            // Xử lý POST data từ iOS
+            if (document.body.innerText.includes('<?xml') || document.body.innerText.includes('<plist')) {
+                document.getElementById('loading').classList.add('visible');
+                
+                // Lấy nội dung XML
+                const xmlContent = document.body.innerText;
+                
+                // Parse XML
+                const data = parseDeviceData(xmlContent);
+                
+                if (data && data.UDID) {
+                    setTimeout(() => {
+                        document.getElementById('loading').classList.remove('visible');
+                        
+                        document.getElementById('udidValue').textContent = data.UDID;
+                        document.getElementById('deviceNameValue').textContent = data.DEVICE_NAME || 'Đang cập nhật...';
+                        document.getElementById('iosVersionValue').textContent = data.VERSION || 'Đang cập nhật...';
+                        document.getElementById('productValue').textContent = data.PRODUCT || 'Đang cập nhật...';
+                        document.getElementById('imeiValue').textContent = data.IMEI || 'Không khả dụng';
+                        document.getElementById('resultCard').classList.add('visible');
+                        
+                        // Xóa XML content
+                        document.body.innerHTML = document.body.innerHTML.replace(xmlContent, '');
+                    }, 1000);
+                } else {
+                    document.getElementById('loading').classList.remove('visible');
+                    document.getElementById('errorMessage').classList.add('visible');
+                }
+            }
 
-        // Hiển thị toast
-        function showToast(msg) {
-            var toast = document.getElementById('toast');
-            toast.textContent = msg;
-            toast.classList.remove('hidden');
-            setTimeout(function() {
-                toast.classList.add('hidden');
-            }, 3000);
-        }
+            // Kiểm tra nếu là callback từ profile
+            if (window.location.pathname === '/get-udid/' && window.location.hash === '#processing') {
+                // Đợi dữ liệu từ POST
+                setTimeout(() => {
+                    if (!document.getElementById('resultCard').classList.contains('visible')) {
+                        document.getElementById('loading').classList.remove('visible');
+                        document.getElementById('errorMessage').classList.add('visible');
+                    }
+                }, 5000);
+            }
+
+            // Log để debug
+            console.log('UDID Tool loaded at:', window.location.href);
+        })();
     </script>
 </body>
 </html>
