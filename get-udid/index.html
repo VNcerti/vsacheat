@@ -284,6 +284,15 @@
             display: block;
         }
 
+        .note-box {
+            background: #e8f3ff;
+            border-left: 4px solid #0071e3;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 480px) {
             .container { padding: 1rem; }
             h1 { font-size: 2rem; }
@@ -306,6 +315,10 @@
                 </svg>
             </div>
             <a href="getudid.mobileconfig" class="cta-button" id="downloadBtn">LẤY UDID NGAY</a>
+        </div>
+
+        <div class="note-box">
+            <strong>🔔 Lưu ý:</strong> Sau khi tải profile, vào <strong>Cài đặt → Cài đặt chung → VPN & Quản lý thiết bị</strong> để cài đặt.
         </div>
 
         <div class="steps">
@@ -378,14 +391,19 @@
                 <span class="info-value" id="productValue">-</span>
             </div>
             
-            <div class="info-row">
-                <span class="info-label">IMEI (nếu có)</span>
-                <span class="info-value" id="imeiValue">-</span>
+            <div style="text-align:center; margin-top:1rem;">
+                <button onclick="copyUDID()" style="background:#f5f5f7; border:1px solid #d2d2d7; padding:0.5rem 1rem; border-radius:8px; cursor:pointer;">📋 Sao chép UDID</button>
             </div>
         </div>
 
         <div class="error-message" id="errorMessage">
-            <p>❌ Không thể đọc dữ liệu từ thiết bị. Vui lòng thử lại hoặc quay lại trang chủ.</p>
+            <p>❌ Không thể đọc dữ liệu từ thiết bị.</p>
+            <p style="font-size:0.9rem; margin-top:0.5rem;">Nguyên nhân có thể:</p>
+            <ul style="margin-left:1.5rem; font-size:0.9rem;">
+                <li>Profile chưa được cài đặt đúng cách</li>
+                <li>Thiết bị chưa quay lại trang sau khi cài</li>
+                <li>Trình duyệt không hỗ trợ</li>
+            </ul>
             <button onclick="location.href='/get-udid/'" style="background:#0071e3; color:white; border:none; padding:0.5rem 1rem; border-radius:8px; margin-top:1rem; cursor:pointer;">Quay lại trang chủ</button>
         </div>
 
@@ -396,6 +414,16 @@
 
     <script>
         (function() {
+            // Hàm copy UDID
+            window.copyUDID = function() {
+                const udidText = document.getElementById('udidValue').textContent;
+                if (udidText && udidText !== '-') {
+                    navigator.clipboard.writeText(udidText).then(() => {
+                        alert('Đã sao chép UDID!');
+                    });
+                }
+            };
+
             // Hàm parse XML data
             function parseDeviceData(xmlString) {
                 try {
@@ -414,18 +442,11 @@
                         return element ? element.textContent : null;
                     };
 
-                    // Thử với namespace
-                    const getNodeValueNS = (namespace, tagName) => {
-                        const element = xmlDoc.getElementsByTagNameNS(namespace, tagName)[0];
-                        return element ? element.textContent : null;
-                    };
-
                     return {
-                        UDID: getNodeValue('UDID') || getNodeValueNS('urn:apple:deviceattributes', 'UDID'),
-                        DEVICE_NAME: getNodeValue('DEVICE_NAME') || getNodeValueNS('urn:apple:deviceattributes', 'DEVICE_NAME'),
-                        VERSION: getNodeValue('VERSION') || getNodeValueNS('urn:apple:deviceattributes', 'VERSION'),
-                        PRODUCT: getNodeValue('PRODUCT') || getNodeValueNS('urn:apple:deviceattributes', 'PRODUCT'),
-                        IMEI: getNodeValue('IMEI') || getNodeValueNS('urn:apple:deviceattributes', 'IMEI')
+                        UDID: getNodeValue('UDID'),
+                        DEVICE_NAME: getNodeValue('DEVICE_NAME'),
+                        VERSION: getNodeValue('VERSION'),
+                        PRODUCT: getNodeValue('PRODUCT')
                     };
                 } catch (e) {
                     console.error('Parse error:', e);
@@ -441,7 +462,6 @@
                 const deviceName = urlParams.get('DEVICE_NAME');
                 const version = urlParams.get('VERSION');
                 const product = urlParams.get('PRODUCT');
-                const imei = urlParams.get('IMEI');
                 
                 if (udid) {
                     // Hiển thị dữ liệu từ URL params
@@ -449,7 +469,6 @@
                     document.getElementById('deviceNameValue').textContent = deviceName ? decodeURIComponent(deviceName) : 'Đang cập nhật...';
                     document.getElementById('iosVersionValue').textContent = version || 'Đang cập nhật...';
                     document.getElementById('productValue').textContent = product || 'Đang cập nhật...';
-                    document.getElementById('imeiValue').textContent = imei || 'Không khả dụng';
                     document.getElementById('resultCard').classList.add('visible');
                     
                     // Xóa params khỏi URL
@@ -475,7 +494,6 @@
                         document.getElementById('deviceNameValue').textContent = data.DEVICE_NAME || 'Đang cập nhật...';
                         document.getElementById('iosVersionValue').textContent = data.VERSION || 'Đang cập nhật...';
                         document.getElementById('productValue').textContent = data.PRODUCT || 'Đang cập nhật...';
-                        document.getElementById('imeiValue').textContent = data.IMEI || 'Không khả dụng';
                         document.getElementById('resultCard').classList.add('visible');
                         
                         // Xóa XML content
@@ -487,19 +505,9 @@
                 }
             }
 
-            // Kiểm tra nếu là callback từ profile
-            if (window.location.pathname === '/get-udid/' && window.location.hash === '#processing') {
-                // Đợi dữ liệu từ POST
-                setTimeout(() => {
-                    if (!document.getElementById('resultCard').classList.contains('visible')) {
-                        document.getElementById('loading').classList.remove('visible');
-                        document.getElementById('errorMessage').classList.add('visible');
-                    }
-                }, 5000);
-            }
-
             // Log để debug
             console.log('UDID Tool loaded at:', window.location.href);
+            console.log('Search params:', window.location.search);
         })();
     </script>
 </body>
