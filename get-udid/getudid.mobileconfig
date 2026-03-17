@@ -5,35 +5,26 @@
     <key>PayloadContent</key>
     <array>
         <dict>
-            <key>PayloadType</key>
-            <string>Profile Service</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.vsacheat.udid.profile-service</string>
-            <key>PayloadUUID</key>
-            <string>8A4B3C2D-1E5F-6G7H-8I9J-0K1L2M3N4O5P</string>
-            <key>PayloadDisplayName</key>
-            <string>UDID Service</string>
             <key>URL</key>
-            <string>https://vsacheat.com/get-udid/?udid=UDID&product=PRODUCT&version=VERSION&device=DEVICE_NAME</string>
+            <string>https://vsacheat.com/get-udid/</string>
             <key>DeviceAttributes</key>
             <array>
                 <string>UDID</string>
+                <string>IMEI</string>
                 <string>PRODUCT</string>
                 <string>VERSION</string>
                 <string>DEVICE_NAME</string>
             </array>
         </dict>
     </array>
-    <key>PayloadType</key>
-    <string>Configuration</string>
-    <key>PayloadVersion</key>
-    <integer>1</integer>
     <key>PayloadIdentifier</key>
     <string>com.vsacheat.udid</string>
+    <key>PayloadType</key>
+    <string>Profile Service</string>
     <key>PayloadUUID</key>
     <string>12345678-1234-1234-1234-123456789ABC</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
     <key>PayloadDisplayName</key>
     <string>Lấy UDID Thiết Bị</string>
     <key>PayloadDescription</key>
