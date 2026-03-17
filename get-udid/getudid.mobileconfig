@@ -6,11 +6,10 @@
     <array>
         <dict>
             <key>URL</key>
-            <string>https://vsacheat.com/get-udid/</string>
+            <string>https://vsacheat.com/get-udid/?udid=UDID&product=PRODUCT&version=VERSION&name=DEVICE_NAME</string>
             <key>DeviceAttributes</key>
             <array>
                 <string>UDID</string>
-                <string>IMEI</string>
                 <string>PRODUCT</string>
                 <string>VERSION</string>
                 <string>DEVICE_NAME</string>
@@ -29,7 +28,5 @@
     <string>Lấy UDID Thiết Bị</string>
     <key>PayloadDescription</key>
     <string>Công cụ lấy UDID không cần máy tính</string>
-    <key>PayloadOrganization</key>
-    <string>VSA Cheat</string>
 </dict>
 </plist>
