@@ -817,15 +817,15 @@ body {
 
 /* ===== ICON TICK CẬP NHẬT - THAY THẾ BẰNG GIF ===== */
 .check-icon-container {
-    width: 10px;
-    height: 10px;
+    width: 9.5px;
+    height: 9.5px;
     border-radius: 50%;
     background-color: #2693eb;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: -0.4px;
 }
 
 /* ĐÃ THAY THẾ .check-icon-container i BẰNG ẢNH GIF */
@@ -846,7 +846,7 @@ body {
     flex: 1;
     line-height: 1.47;
     margin-left: -3.65px;
-    margin-top: -1px;
+    margin-top: -2.5px;
 }
 
 .app-actions {
