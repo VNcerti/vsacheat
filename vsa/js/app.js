@@ -1,1 +1,877 @@
-const _0x265fb4=_0x179d;function _0x495c(){const _0x195a6b=['json','scrollLeft','view','getCurrentUser','description','block','🛑\x20Auto\x20refresh\x20stopped\x20for\x20index\x20page','length','Không\x20có\x20ứng\x20dụng\x20nào.','Lỗi\x20khi\x20tải\x20ứng\x20dụng:','div','appendChild','https://via.placeholder.com/46/2563eb/FFFFFF?text=App','Không\x20có\x20ứng\x20dụng\x20nào\x20được\x20đăng\x20vào\x20','Ứng\x20dụng\x20mới','getItem','free','toggle','querySelector','from','displayApps','forEach','CATEGORY_LABELS','vi-VN','scrollFeaturedCarouselToIndex','getFromCache','.nav-arrow.prev','✅\x20Đang\x20tải\x20từ\x20cache...','toLocaleTimeString','scroll','searchNavItem','.nav-arrow.next','?action=getApps&t=','checkAndUpdateVIPAccess','📊\x20Cấu\x20trúc\x20dữ\x20liệu\x20app\x20đầu\x20tiên:','autoRefreshInterval','updateSectionTitle','appsGrid','all','TRENDING','random','premium','gamesGrid','getBadgeType','querySelectorAll','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-rating\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fas\x20fa-star\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>','fetchFreshData','currentUser','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','textContent','1046992yZsjmC','currentCategory','click','createShortDescriptionHTML','NEW','2674070jctQhV','searchModal','className','featuredLoading','navItems','game','Trò\x20chơi','closeSearch','round','.carousel-dot','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22no-results\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fas\x20fa-search\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>Không\x20tìm\x20thấy\x20ứng\x20dụng\x20nào\x20bắt\x20đầu\x20bằng\x20\x22','active','includes','home','min','app-detail.html?id=','HOT','dataset','.category-card','searchTerm','slice','app-card','games','Mô\x20tả\x20ứng\x20dụng...','createAppCard','trim','allApps','searchResults','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-tags\x22>','categories','createFeaturedCard','\x22\x20class=\x22app-logo\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loading=\x22lazy\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20onclick=\x22window.open(\x27app-detail.html?id=','smooth','startAutoRotate','remove','categoryCards','searchApps','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-description\x22>','success','renderApps','\x27,\x20\x27_self\x27)\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20NHẬN\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','parse','classList','currentUser_old','scrollBy','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','featuredCarousel','clientWidth','🔄\x20Auto\x20refresh\x20started\x20for\x20index\x20page','bindFeaturedCarouselEvents','error','\x27,\x20\x27_self\x27)\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20onerror=\x22this.src=\x27https://via.placeholder.com/70/2563eb/FFFFFF?text=App\x27\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-info\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20TÊN\x20ứng\x20dụng\x20có\x20thể\x20click\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-name\x22\x20onclick=\x22window.open(\x27app-detail.html?id=','openSearchModal','816166IivjDF','open','currentView','email','\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22featured-logo\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20onerror=\x22this.src=\x27https://via.placeholder.com/46/2563eb/FFFFFF?text=App\x27\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Text\x20Content\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-text-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-name\x22>','target','displayFeaturedApps','2561184KisiuL','contains','packageType','data','updatedate','toLocaleDateString','filter','307140BDrcAU','<div\x20class=\x22no-results\x22><p>Nhập\x20từ\x20khóa\x20để\x20tìm\x20kiếm</p></div>','filterApps','initializeElements','24567PFZNrB','innerHTML','input','PREMIUM','findIndex','scrollTo','addEventListener','_self','getElementById','✅\x20Index\x20page\x20auto\x20refreshed\x20at:','stopAutoRefresh','3132slITDN','appManager','featuredApps','🔍\x20User\x20package\x20changed\x20from','photo','scrollFeaturedCarousel','style','performAutoRefresh','init','value','now','GOOGLE_SCRIPT_URL','createElement','lastRefreshTime','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','sort','other','closeSearchModal','today','none','22568dlJCig','initFeaturedCarousel','showNoResults','Không\x20tìm\x20thấy\x20ứng\x20dụng\x20nào\x20bắt\x20đầu\x20bằng\x20\x22','64jsjcyg','searchModalInput','search','split','display','<div\x20class=\x22loading\x22><p>Lỗi\x20khi\x20tải\x20ứng\x20dụng.\x20Vui\x20lòng\x20thử\x20lại\x20sau.</p></div>','getRandomRating','sectionTitle','loadFeaturedApps','loadAppsFromSheets','Kết\x20quả\x20tìm\x20kiếm:\x20\x22','autoRefreshed','searchInput','stringify','startAutoRefresh','scrollWidth','gamesSection','name','setItem','toLowerCase','log','VIP','index','category'];_0x495c=function(){return _0x195a6b;};return _0x495c();}function _0x179d(_0x1c2381,_0xf7666d){_0x1c2381=_0x1c2381-0xb8;const _0x495c15=_0x495c();let _0x179d1e=_0x495c15[_0x1c2381];return _0x179d1e;}(function(_0x5a45bf,_0x24be81){const _0x46bbbb=_0x179d,_0x7c76a7=_0x5a45bf();while(!![]){try{const _0xc5b8b7=parseInt(_0x46bbbb(0xdf))/0x1+parseInt(_0x46bbbb(0x119))/0x2+-parseInt(_0x46bbbb(0x12b))/0x3+-parseInt(_0x46bbbb(0x14e))/0x4*(parseInt(_0x46bbbb(0x127))/0x5)+-parseInt(_0x46bbbb(0x120))/0x6+-parseInt(_0x46bbbb(0xe4))/0x7+-parseInt(_0x46bbbb(0x14a))/0x8*(-parseInt(_0x46bbbb(0x136))/0x9);if(_0xc5b8b7===_0x24be81)break;else _0x7c76a7['push'](_0x7c76a7['shift']());}catch(_0x374844){_0x7c76a7['push'](_0x7c76a7['shift']());}}}(_0x495c,0x9b7c8));class AppManager{constructor(){const _0x20e06b=_0x179d;this[_0x20e06b(0xe0)]=_0x20e06b(0xd3),this[_0x20e06b(0x11b)]=_0x20e06b(0xf1),this[_0x20e06b(0xfe)]=[],this[_0x20e06b(0xf7)]='',this[_0x20e06b(0x138)]=[],this[_0x20e06b(0xd0)]=null,this[_0x20e06b(0x143)]=null,this[_0x20e06b(0x12a)](),this['bindEvents'](),this[_0x20e06b(0x13e)]();}[_0x265fb4(0x12a)](){const _0x43937d=_0x265fb4;this[_0x43937d(0xd2)]=document[_0x43937d(0x133)](_0x43937d(0xd2)),this[_0x43937d(0xd7)]=document['getElementById']('gamesGrid'),this[_0x43937d(0x15e)]=document['getElementById'](_0x43937d(0x15e)),this[_0x43937d(0x155)]=document[_0x43937d(0x133)](_0x43937d(0x155)),this[_0x43937d(0x15a)]=document[_0x43937d(0x133)](_0x43937d(0x15a)),this[_0x43937d(0x107)]=document[_0x43937d(0xd9)](_0x43937d(0xf6)),this[_0x43937d(0xe8)]=document[_0x43937d(0xd9)]('.nav-item[data-view]'),this[_0x43937d(0xe5)]=document[_0x43937d(0x133)](_0x43937d(0xe5)),this[_0x43937d(0x14f)]=document[_0x43937d(0x133)](_0x43937d(0x14f)),this[_0x43937d(0xeb)]=document['getElementById'](_0x43937d(0xeb)),this[_0x43937d(0xff)]=document['getElementById'](_0x43937d(0xff)),this[_0x43937d(0xcb)]=document[_0x43937d(0x133)](_0x43937d(0xcb)),this[_0x43937d(0x112)]=document[_0x43937d(0x133)](_0x43937d(0x112)),this[_0x43937d(0xe7)]=document[_0x43937d(0x133)]('featuredLoading');}['bindEvents'](){const _0x3fc477=_0x265fb4;this[_0x3fc477(0x15a)]?.[_0x3fc477(0x131)](_0x3fc477(0x12d),_0x3f3d60=>{const _0xe46929=_0x3fc477;this['searchTerm']=_0x3f3d60[_0xe46929(0x11e)][_0xe46929(0x13f)][_0xe46929(0x161)]()[_0xe46929(0xfd)](),this[_0xe46929(0x10b)]();}),this['searchModalInput']['addEventListener'](_0x3fc477(0x12d),_0x3270c6=>{const _0x14c079=_0x3fc477,_0xd9cbf2=_0x3270c6['target'][_0x14c079(0x13f)]['trim']();this[_0x14c079(0x108)](_0xd9cbf2);}),this['categoryCards'][_0x3fc477(0xc2)](_0x4b1798=>{const _0x49b1a8=_0x3fc477;_0x4b1798[_0x49b1a8(0x131)]('click',()=>{const _0x7700ed=_0x49b1a8,_0xb36e53=_0x4b1798['dataset'][_0x7700ed(0x165)];this[_0x7700ed(0xe0)]=_0xb36e53,this[_0x7700ed(0x107)][_0x7700ed(0xc2)](_0x50f2c8=>{const _0x952f=_0x7700ed;_0x50f2c8[_0x952f(0x10e)]['toggle'](_0x952f(0xef),_0x50f2c8[_0x952f(0xf5)][_0x952f(0x165)]===_0xb36e53);}),this[_0x7700ed(0x10b)]();});}),this[_0x3fc477(0xe8)]['forEach'](_0x24485f=>{const _0x3d9651=_0x3fc477;_0x24485f[_0x3d9651(0x131)](_0x3d9651(0xe1),_0x4cb361=>{const _0x56f3ad=_0x3d9651;_0x4cb361['preventDefault']();const _0x405a7e=_0x24485f[_0x56f3ad(0xf5)][_0x56f3ad(0x168)];if(_0x405a7e===_0x56f3ad(0x150)){this['openSearchModal']();return;}this['navItems'][_0x56f3ad(0xc2)](_0x3f900e=>_0x3f900e[_0x56f3ad(0x10e)][_0x56f3ad(0x106)](_0x56f3ad(0xef))),_0x24485f['classList']['add']('active'),this['currentView']=_0x405a7e,this[_0x56f3ad(0x10b)]();});}),this[_0x3fc477(0xe5)][_0x3fc477(0x131)](_0x3fc477(0xe1),_0x591381=>{const _0x184eff=_0x3fc477;_0x591381[_0x184eff(0x11e)]===this[_0x184eff(0xe5)]&&this['closeSearchModal']();}),this[_0x3fc477(0xeb)][_0x3fc477(0x131)](_0x3fc477(0xe1),()=>{const _0x1c78cb=_0x3fc477;this[_0x1c78cb(0x147)]();}),this[_0x3fc477(0x115)](),window[_0x3fc477(0x131)]('beforeunload',()=>{const _0x1e070b=_0x3fc477;this[_0x1e070b(0x135)]();});}['bindFeaturedCarouselEvents'](){const _0x17cc76=_0x265fb4,_0x522310=document[_0x17cc76(0xbf)](_0x17cc76(0xc7)),_0x58b533=document[_0x17cc76(0xbf)](_0x17cc76(0xcc)),_0x1dd074=document['querySelectorAll'](_0x17cc76(0xed));_0x522310&&_0x522310[_0x17cc76(0x131)](_0x17cc76(0xe1),()=>{const _0xecd308=_0x17cc76;this[_0xecd308(0x13b)](-0x14c);}),_0x58b533&&_0x58b533['addEventListener']('click',()=>{const _0x4deeb6=_0x17cc76;this[_0x4deeb6(0x13b)](0x14c);}),_0x1dd074[_0x17cc76(0xc2)](_0x205a4b=>{const _0x5a3c4f=_0x17cc76;_0x205a4b[_0x5a3c4f(0x131)]('click',()=>{const _0x197354=parseInt(_0x205a4b['dataset']['index']);this['scrollFeaturedCarouselToIndex'](_0x197354);});});}[_0x265fb4(0x15c)](_0x31464b){const _0x47c581=_0x265fb4;if(!_0x31464b)return;this['autoRefreshInterval']&&clearInterval(this[_0x47c581(0xd0)]),this[_0x47c581(0x13d)](_0x31464b),this[_0x47c581(0xd0)]=setInterval(()=>{const _0x41f881=_0x47c581;this[_0x41f881(0x13d)](_0x31464b);},0x1388),console[_0x47c581(0x162)](_0x47c581(0x114));}[_0x265fb4(0x135)](){const _0x439451=_0x265fb4;this['autoRefreshInterval']&&(clearInterval(this[_0x439451(0xd0)]),this[_0x439451(0xd0)]=null,console[_0x439451(0x162)](_0x439451(0x16c)));}async[_0x265fb4(0x13d)](_0x3130e2){const _0x4472eb=_0x265fb4;try{const _0x2c6ffb=await fetch(CONFIG[_0x4472eb(0x141)]+'?action=autoRefreshUser&email='+encodeURIComponent(_0x3130e2)),_0x27a1a2=await _0x2c6ffb[_0x4472eb(0x166)]();if(_0x27a1a2[_0x4472eb(0x10a)]&&_0x27a1a2[_0x4472eb(0x159)]){const _0x3947d2=_0x27a1a2['data'];localStorage[_0x4472eb(0x160)]('currentUser',JSON[_0x4472eb(0x15b)](_0x3947d2)),this[_0x4472eb(0x143)]=new Date()[_0x4472eb(0xc9)]('vi-VN'),console[_0x4472eb(0x162)](_0x4472eb(0x134),this[_0x4472eb(0x143)]),this[_0x4472eb(0xce)](_0x3947d2);}}catch(_0x4e0727){console['error']('❌\x20Auto\x20refresh\x20error:',_0x4e0727);}}[_0x265fb4(0xce)](_0x215544){const _0x400d1f=_0x265fb4,_0x4143ed=localStorage[_0x400d1f(0xbc)](_0x400d1f(0x10f))||'{}',_0x573421=JSON[_0x400d1f(0x10d)](_0x4143ed);_0x573421['packageType']!==_0x215544[_0x400d1f(0x122)]&&(console[_0x400d1f(0x162)](_0x400d1f(0x139),_0x573421[_0x400d1f(0x122)],'to',_0x215544[_0x400d1f(0x122)]),_0x215544[_0x400d1f(0x122)]==='free'&&_0x573421[_0x400d1f(0x122)]!==_0x400d1f(0xbd)&&this[_0x400d1f(0xdb)]()),localStorage['setItem'](_0x400d1f(0x10f),JSON[_0x400d1f(0x15b)](_0x215544));}['getCurrentUser'](){const _0x56f05e=_0x265fb4;try{const _0x4cd8c3=localStorage[_0x56f05e(0xbc)](_0x56f05e(0xdc));return _0x4cd8c3?JSON[_0x56f05e(0x10d)](_0x4cd8c3):null;}catch(_0x17a6d5){return null;}}[_0x265fb4(0x13e)](){const _0x1c9a05=_0x265fb4;this[_0x1c9a05(0x157)]();const _0x48528c=this[_0x1c9a05(0x169)]();_0x48528c&&_0x48528c[_0x1c9a05(0x11c)]&&this[_0x1c9a05(0x15c)](_0x48528c[_0x1c9a05(0x11c)]);}async['loadAppsFromSheets'](){const _0x26e981=_0x265fb4;try{AppUtils['showSkeletonLoading'](this['appsGrid']);if(AppUtils['isCacheValid']()){const _0x26d613=AppUtils[_0x26e981(0xc6)]();if(_0x26d613&&_0x26d613[_0x26e981(0x16d)]>0x0){console['log'](_0x26e981(0xc8)),this[_0x26e981(0xfe)]=_0x26d613,this[_0x26e981(0x10b)](),this[_0x26e981(0x156)](),this[_0x26e981(0xdb)]();return;}}await this[_0x26e981(0xdb)]();}catch(_0x3b0234){console[_0x26e981(0x116)](_0x26e981(0x16f),_0x3b0234);const _0x26d6d0=AppUtils[_0x26e981(0xc6)]();_0x26d6d0&&_0x26d6d0[_0x26e981(0x16d)]>0x0?(this[_0x26e981(0xfe)]=_0x26d6d0,this['renderApps'](),this[_0x26e981(0x156)]()):this[_0x26e981(0xd2)][_0x26e981(0x12c)]=_0x26e981(0x153);}}async['fetchFreshData'](){const _0x150137=_0x265fb4;try{console['log']('🔄\x20Đang\x20tải\x20dữ\x20liệu\x20mới\x20từ\x20server...');const _0x4b6868=await fetch(CONFIG[_0x150137(0x141)]+_0x150137(0xcd)+Date[_0x150137(0x140)]()),_0x313274=await _0x4b6868['json']();if(_0x313274[_0x150137(0x10a)])this['allApps']=_0x313274[_0x150137(0x123)]['map'](_0x472696=>{const _0x2ee0c6=_0x150137;return!_0x472696[_0x2ee0c6(0x101)]&&(_0x472696[_0x2ee0c6(0x101)]=_0x2ee0c6(0x146)),_0x472696[_0x2ee0c6(0x101)][_0x2ee0c6(0xf0)](_0x2ee0c6(0x13a))&&(_0x472696['categories']=_0x472696[_0x2ee0c6(0x101)]['replace'](_0x2ee0c6(0x13a),_0x2ee0c6(0x13a))),_0x472696;}),AppUtils['saveToCache'](this[_0x150137(0xfe)]),this[_0x150137(0x10b)](),this['loadFeaturedApps'](),console[_0x150137(0x162)]('✅\x20Dữ\x20liệu\x20mới\x20đã\x20được\x20tải\x20và\x20cache'),console[_0x150137(0x162)](_0x150137(0xcf),this[_0x150137(0xfe)][0x0]);else throw new Error('Không\x20thể\x20tải\x20dữ\x20liệu');}catch(_0x457eb9){console[_0x150137(0x116)]('Lỗi\x20khi\x20fetch\x20dữ\x20liệu\x20mới:',_0x457eb9);}}[_0x265fb4(0x118)](){const _0x12a4d1=_0x265fb4;this[_0x12a4d1(0xe5)][_0x12a4d1(0x13c)][_0x12a4d1(0x152)]=_0x12a4d1(0x16b),setTimeout(()=>{const _0x357d37=_0x12a4d1;this[_0x357d37(0x14f)]['focus']();},0x64);}['closeSearchModal'](){const _0xe6dfcf=_0x265fb4;this[_0xe6dfcf(0xe5)][_0xe6dfcf(0x13c)][_0xe6dfcf(0x152)]=_0xe6dfcf(0x149),this[_0xe6dfcf(0x14f)][_0xe6dfcf(0x13f)]='',this[_0xe6dfcf(0xff)]['innerHTML']='';}[_0x265fb4(0x108)](_0x501862){const _0x4bc9a3=_0x265fb4;if(!_0x501862['trim']()){this[_0x4bc9a3(0xff)][_0x4bc9a3(0x12c)]=_0x4bc9a3(0x128);return;}const _0x564bc0=this[_0x4bc9a3(0xfe)][_0x4bc9a3(0x126)](_0x127dcc=>{const _0x23c94a=_0x4bc9a3,_0x227e76=_0x127dcc[_0x23c94a(0x15f)][_0x23c94a(0x161)](),_0x49ec9e=_0x501862[_0x23c94a(0x161)]();return _0x227e76['startsWith'](_0x49ec9e);});_0x564bc0['length']===0x0?this[_0x4bc9a3(0xff)][_0x4bc9a3(0x12c)]=_0x4bc9a3(0xee)+_0x501862+'\x22</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20':this['displayApps'](_0x564bc0,this[_0x4bc9a3(0xff)]);}[_0x265fb4(0x10b)](){const _0x5da5b3=_0x265fb4;let _0x589e1c=this[_0x5da5b3(0x129)]();this[_0x5da5b3(0xd1)](),this[_0x5da5b3(0xc1)](_0x589e1c,this[_0x5da5b3(0xd2)]);if(this[_0x5da5b3(0x11b)]===_0x5da5b3(0xf1)&&this['currentCategory']===_0x5da5b3(0xd3)&&!this['searchTerm']){this[_0x5da5b3(0x15e)][_0x5da5b3(0x13c)][_0x5da5b3(0x152)]=_0x5da5b3(0x16b);const _0x5a41fd=this['allApps'][_0x5da5b3(0x126)](_0xaf80ae=>_0xaf80ae['categories']&&_0xaf80ae[_0x5da5b3(0x101)][_0x5da5b3(0xf0)](_0x5da5b3(0xe9)));this[_0x5da5b3(0xc1)](_0x5a41fd,this[_0x5da5b3(0xd7)]);}else this[_0x5da5b3(0x15e)][_0x5da5b3(0x13c)][_0x5da5b3(0x152)]='none',this[_0x5da5b3(0xd7)]['innerHTML']='';}[_0x265fb4(0x129)](){const _0xa89bf9=_0x265fb4;let _0x206832=this[_0xa89bf9(0xfe)];switch(this[_0xa89bf9(0x11b)]){case _0xa89bf9(0x148):const _0x56f55f=new Date()[_0xa89bf9(0x125)](_0xa89bf9(0xc4));_0x206832=this[_0xa89bf9(0xfe)][_0xa89bf9(0x126)](_0x72ec98=>{const _0x407f63=_0xa89bf9;if(!_0x72ec98[_0x407f63(0x124)])return![];const _0x17dc0d=new Date(_0x72ec98[_0x407f63(0x124)])['toLocaleDateString'](_0x407f63(0xc4));return _0x17dc0d===_0x56f55f;});break;case _0xa89bf9(0xfa):_0x206832=this[_0xa89bf9(0xfe)][_0xa89bf9(0x126)](_0x2ec98b=>_0x2ec98b[_0xa89bf9(0x101)]&&_0x2ec98b[_0xa89bf9(0x101)][_0xa89bf9(0xf0)](_0xa89bf9(0xe9)));break;case _0xa89bf9(0xf1):default:this['currentCategory']!==_0xa89bf9(0xd3)&&(_0x206832=this[_0xa89bf9(0xfe)]['filter'](_0x2ac2e9=>_0x2ac2e9[_0xa89bf9(0x101)]&&_0x2ac2e9[_0xa89bf9(0x101)][_0xa89bf9(0xf0)](this[_0xa89bf9(0xe0)])));break;}return this[_0xa89bf9(0xf7)]&&(_0x206832=_0x206832[_0xa89bf9(0x126)](_0x52dace=>{const _0x3d23cd=_0xa89bf9,_0xb4c530=_0x52dace[_0x3d23cd(0x15f)][_0x3d23cd(0x161)](),_0x3ac8d9=this['searchTerm'][_0x3d23cd(0x161)]();return _0xb4c530['startsWith'](_0x3ac8d9);})),_0x206832[_0xa89bf9(0x145)]((_0x1f6f85,_0x44f927)=>{const _0x235796=parseInt(_0x1f6f85['id'])||0x0,_0x1374c1=parseInt(_0x44f927['id'])||0x0;return _0x1374c1-_0x235796;}),_0x206832;}['updateSectionTitle'](){const _0x1b0e6e=_0x265fb4;let _0x355fed=_0x1b0e6e(0xbb);if(this['searchTerm'])_0x355fed=_0x1b0e6e(0x158)+this[_0x1b0e6e(0xf7)]+'\x22';else{if(this['currentView']===_0x1b0e6e(0x148))_0x355fed='Ứng\x20dụng\x20hôm\x20nay';else{if(this[_0x1b0e6e(0x11b)]==='games')_0x355fed=_0x1b0e6e(0xea);else this[_0x1b0e6e(0xe0)]!==_0x1b0e6e(0xd3)&&(_0x355fed=CONFIG[_0x1b0e6e(0xc3)][this[_0x1b0e6e(0xe0)]]||this[_0x1b0e6e(0xe0)]);}}this[_0x1b0e6e(0x155)][_0x1b0e6e(0xde)]=_0x355fed;}[_0x265fb4(0xc1)](_0x2b6628,_0x72f5d3){const _0x2555c9=_0x265fb4;_0x72f5d3[_0x2555c9(0x12c)]='';if(_0x2b6628[_0x2555c9(0x16d)]===0x0){let _0x5db700=_0x2555c9(0x16e);if(this[_0x2555c9(0xf7)])_0x5db700=_0x2555c9(0x14d)+this[_0x2555c9(0xf7)]+'\x22';else{if(this[_0x2555c9(0x11b)]==='today'){const _0xf6377a=new Date()['toLocaleDateString'](_0x2555c9(0xc4));_0x5db700=_0x2555c9(0xba)+_0xf6377a;}}AppUtils[_0x2555c9(0x14c)](_0x72f5d3,_0x5db700);return;}_0x2b6628['forEach'](_0x1b9302=>{const _0x19e6b3=_0x2555c9,_0xf70675=this[_0x19e6b3(0xfc)](_0x1b9302);_0x72f5d3['appendChild'](_0xf70675);});}[_0x265fb4(0xfc)](_0x5837b0){const _0x26cf82=_0x265fb4,_0x4f4792=document[_0x26cf82(0x142)]('div');_0x4f4792[_0x26cf82(0xe6)]=_0x26cf82(0xf9);const _0x431afc=AppUtils['createTagsHTML'](_0x5837b0[_0x26cf82(0x101)]),_0x3fe49f=AppUtils['formatDate'](_0x5837b0['updatedate']),_0x273f29=AppUtils[_0x26cf82(0xe2)](_0x5837b0[_0x26cf82(0x16a)]);return _0x4f4792['innerHTML']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20ẢNH\x20ứng\x20dụng\x20có\x20thể\x20click\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x5837b0['image']+'\x22\x20alt=\x22'+_0x5837b0[_0x26cf82(0x15f)]+_0x26cf82(0x103)+_0x5837b0['id']+_0x26cf82(0x117)+_0x5837b0['id']+'\x27,\x20\x27_self\x27)\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x5837b0['name']+_0x26cf82(0x100)+_0x431afc+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-meta\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-meta-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fas\x20fa-clock\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>'+_0x3fe49f+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22app-actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Nút\x20\x22NHẬN\x22\x20với\x20CSS\x20mới\x20(chỉ\x20có\x20chữ\x20NHẬN)\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22index-download-btn\x22\x20onclick=\x22window.open(\x27app-detail.html?id='+_0x5837b0['id']+_0x26cf82(0x10c)+_0x273f29+_0x26cf82(0xdd),_0x4f4792;}[_0x265fb4(0x156)](){const _0x3ae37e=_0x265fb4;if(this[_0x3ae37e(0xfe)][_0x3ae37e(0x16d)]===0x0)return;const _0x4394b2=[...this[_0x3ae37e(0xfe)]][_0x3ae37e(0x145)]((_0x9e8f5e,_0x393489)=>{const _0x324112=parseInt(_0x9e8f5e['id'])||0x0,_0x3030d5=parseInt(_0x393489['id'])||0x0;return _0x3030d5-_0x324112;})[_0x3ae37e(0xf8)](0x0,0x14);this['featuredApps']=this['getRandomApps'](_0x4394b2,0x5),this[_0x3ae37e(0x11f)](),this[_0x3ae37e(0x14b)]();}['getRandomApps'](_0x467902,_0x5847a4){const _0x5b68a7=_0x265fb4,_0x21482d=[..._0x467902][_0x5b68a7(0x145)](()=>0.5-Math[_0x5b68a7(0xd5)]());return _0x21482d[_0x5b68a7(0xf8)](0x0,_0x5847a4);}[_0x265fb4(0xd8)](_0x31216a){const _0x438cd7=_0x265fb4,_0x2f9d96=[_0x438cd7(0xd6),'hot','new','trending','vip'],_0xa782f0=[_0x438cd7(0x12e),_0x438cd7(0xf4),_0x438cd7(0xe3),_0x438cd7(0xd4),_0x438cd7(0x163)];return{'type':_0x2f9d96[_0x31216a%_0x2f9d96[_0x438cd7(0x16d)]],'label':_0xa782f0[_0x31216a%_0xa782f0[_0x438cd7(0x16d)]]};}[_0x265fb4(0x154)](){const _0x19d380=_0x265fb4,_0xad0030=[0x4,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,0x5];return _0xad0030[Math['floor'](Math['random']()*_0xad0030[_0x19d380(0x16d)])];}['createFeaturedCard'](_0x5c61c0,_0x18bb3d){const _0x41684a=_0x265fb4,_0x45741c=document[_0x41684a(0x142)](_0x41684a(0x170));_0x45741c[_0x41684a(0xe6)]='featured-card';const _0x4cce46=this[_0x41684a(0xd8)](_0x18bb3d),_0x57a929=_0x5c61c0[_0x41684a(0x16a)]?_0x5c61c0[_0x41684a(0x16a)][_0x41684a(0x151)]('\x0a')[0x0]||_0x5c61c0['description']:_0x41684a(0xfb),_0x526d47=this[_0x41684a(0x154)]();return _0x45741c[_0x41684a(0x12c)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Background\x20Image\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22https://i.imgur.com/PwYQMpr.gif\x22\x20alt=\x22Background\x22\x20class=\x22featured-background\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Gradient\x20Overlay\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-overlay\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Badge\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-badge\x20badge-'+_0x4cce46['type']+_0x41684a(0x144)+_0x4cce46['label']+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Content\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<!--\x20Logo\x20-->\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22featured-logo-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+(_0x5c61c0['image']||_0x41684a(0xb9))+'\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20alt=\x22'+_0x5c61c0['name']+_0x41684a(0x11d)+_0x5c61c0[_0x41684a(0x15f)]+_0x41684a(0x109)+_0x57a929+_0x41684a(0xda)+_0x526d47+_0x41684a(0x111),_0x45741c[_0x41684a(0x131)](_0x41684a(0xe1),_0x1fcf09=>{const _0x178926=_0x41684a;window[_0x178926(0x11a)](_0x178926(0xf3)+_0x5c61c0['id'],_0x178926(0x132));}),_0x45741c;}['displayFeaturedApps'](){const _0x31796b=_0x265fb4;if(this['featuredApps'][_0x31796b(0x16d)]===0x0)return;this[_0x31796b(0xe7)][_0x31796b(0x13c)][_0x31796b(0x152)]=_0x31796b(0x149),this[_0x31796b(0x138)]['forEach']((_0x52b767,_0x582a0a)=>{const _0x4f6b0f=_0x31796b,_0x44c644=this[_0x4f6b0f(0x102)](_0x52b767,_0x582a0a);this['featuredCarousel'][_0x4f6b0f(0xb8)](_0x44c644);});}['initFeaturedCarousel'](){const _0x49af1c=_0x265fb4,_0x2638f2=this[_0x49af1c(0x112)],_0x2e17a7=document[_0x49af1c(0xd9)](_0x49af1c(0xed)),_0x466f4b=document[_0x49af1c(0xbf)](_0x49af1c(0xc7)),_0x14e606=document[_0x49af1c(0xbf)](_0x49af1c(0xcc));if(!_0x2638f2||this[_0x49af1c(0x138)]['length']===0x0)return;const _0x59f49=()=>{const _0x2cc0ff=_0x49af1c,_0x23d50c=_0x2638f2[_0x2cc0ff(0x167)],_0x100338=_0x2638f2[_0x2cc0ff(0x15d)]-_0x2638f2[_0x2cc0ff(0x113)];_0x466f4b&&(_0x466f4b['style'][_0x2cc0ff(0x152)]=_0x23d50c>0x0?'flex':_0x2cc0ff(0x149)),_0x14e606&&(_0x14e606['style'][_0x2cc0ff(0x152)]=_0x23d50c<_0x100338-0xa?'flex':_0x2cc0ff(0x149));},_0x30b513=()=>{const _0x211399=_0x49af1c,_0x37c2b1=_0x2638f2[_0x211399(0x167)],_0x131ac8=0x140+0xc,_0x5c97e9=Math[_0x211399(0xf2)](Math[_0x211399(0xec)](_0x37c2b1/_0x131ac8),_0x2e17a7[_0x211399(0x16d)]-0x1);_0x2e17a7[_0x211399(0xc2)]((_0x2edf5e,_0x26b451)=>{const _0x3d0e29=_0x211399;_0x2edf5e[_0x3d0e29(0x10e)][_0x3d0e29(0xbe)](_0x3d0e29(0xef),_0x26b451===_0x5c97e9);});},_0x4aee31=_0x3f4b1c=>{const _0x5e003c=_0x49af1c,_0x1fd1e3=0x140+0xc;_0x2638f2[_0x5e003c(0x130)]({'left':_0x3f4b1c*_0x1fd1e3,'behavior':_0x5e003c(0x104)});};_0x2638f2[_0x49af1c(0x131)](_0x49af1c(0xca),()=>{_0x59f49(),_0x30b513();}),_0x2e17a7[_0x49af1c(0xc2)](_0x149334=>{const _0x209c2c=_0x49af1c;_0x149334[_0x209c2c(0x131)](_0x209c2c(0xe1),()=>{const _0x530ab0=_0x209c2c,_0x176205=parseInt(_0x149334[_0x530ab0(0xf5)][_0x530ab0(0x164)]);_0x4aee31(_0x176205);});}),_0x59f49(),this[_0x49af1c(0x105)]();}[_0x265fb4(0x13b)](_0x54225b){const _0xb63d87=_0x265fb4,_0x5f0db2=this[_0xb63d87(0x112)];_0x5f0db2&&_0x5f0db2[_0xb63d87(0x110)]({'left':_0x54225b,'behavior':'smooth'});}[_0x265fb4(0xc5)](_0x253aae){const _0x4db237=_0x265fb4,_0x5b20e7=this['featuredCarousel'];if(_0x5b20e7){const _0x11fe60=0x140+0xc;_0x5b20e7[_0x4db237(0x130)]({'left':_0x253aae*_0x11fe60,'behavior':_0x4db237(0x104)});}}[_0x265fb4(0x105)](){setInterval(()=>{const _0x281205=_0x179d,_0x34fa8a=document[_0x281205(0xd9)](_0x281205(0xed)),_0x1fdf01=Array[_0x281205(0xc0)](_0x34fa8a)[_0x281205(0x12f)](_0x271d02=>_0x271d02['classList'][_0x281205(0x121)]('active')),_0x28a0f7=(_0x1fdf01+0x1)%_0x34fa8a[_0x281205(0x16d)];_0x34fa8a[_0x28a0f7]&&_0x34fa8a[_0x28a0f7]['click']();},0x1388);}}document['addEventListener']('DOMContentLoaded',function(){const _0x57c902=_0x265fb4;window[_0x57c902(0x137)]=new AppManager();});
+// Main application logic
+class AppManager {
+    constructor() {
+        this.currentCategory = 'all';
+        this.currentView = 'home';
+        this.allApps = [];
+        this.searchTerm = '';
+        this.featuredApps = [];
+        
+        // AUTO REFRESH SYSTEM
+        this.autoRefreshInterval = null;
+        this.lastRefreshTime = null;
+        this.autoRotateTimer = null;
+        this.cleanupAutoRotate = null;
+        
+        this.initializeElements();
+        this.bindEvents();
+        this.init();
+    }
+
+    initializeElements() {
+        this.appsGrid = document.getElementById('appsGrid');
+        this.gamesGrid = document.getElementById('gamesGrid');
+        this.gamesSection = document.getElementById('gamesSection');
+        this.sectionTitle = document.getElementById('sectionTitle');
+        this.categoryCards = document.querySelectorAll('.category-card');
+        this.navItems = document.querySelectorAll('.nav-pill-item[data-view]');
+        this.searchModal = document.getElementById('searchModal');
+        this.searchModalInput = document.getElementById('searchModalInput');
+        this.closeSearch = document.getElementById('closeSearch');
+        this.searchResults = document.getElementById('searchResults');
+        this.featuredCarousel = document.getElementById('featuredCarousel');
+        this.featuredLoading = document.getElementById('featuredLoading');
+    }
+
+    bindEvents() {
+        // Search modal events
+        this.searchModalInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.trim();
+            this.searchApps(searchTerm);
+        });
+
+        // Category events
+        this.categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.dataset.category;
+                this.currentCategory = category;
+                
+                this.categoryCards.forEach(c => {
+                    c.classList.toggle('active', c.dataset.category === category);
+                });
+                
+                // Reset view về home khi chọn category
+                this.currentView = 'home';
+                this.updateActiveNavItem('home');
+                this.renderApps();
+            });
+        });
+
+        // Modal events
+        this.searchModal.addEventListener('click', (e) => {
+            if (e.target === this.searchModal) {
+                this.closeSearchModal();
+            }
+        });
+
+        this.closeSearch.addEventListener('click', () => {
+            this.closeSearchModal();
+        });
+
+        // Featured carousel events
+        this.bindFeaturedCarouselEvents();
+        
+        // Auto refresh khi rời trang
+        window.addEventListener('beforeunload', () => {
+            this.stopAutoRefresh();
+            if (this.cleanupAutoRotate) {
+                this.cleanupAutoRotate();
+            }
+        });
+    }
+
+    bindFeaturedCarouselEvents() {
+        const prevArrow = document.querySelector('.nav-arrow.prev');
+        const nextArrow = document.querySelector('.nav-arrow.next');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        if (prevArrow) {
+            prevArrow.addEventListener('click', () => {
+                this.scrollFeaturedCarousel(-332);
+            });
+        }
+
+        if (nextArrow) {
+            nextArrow.addEventListener('click', () => {
+                this.scrollFeaturedCarousel(332);
+            });
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.dataset.index);
+                this.scrollFeaturedCarouselToIndex(index);
+            });
+        });
+    }
+
+    // ==================== AUTO REFRESH FUNCTIONS ====================
+    
+    startAutoRefresh(userEmail) {
+        if (!userEmail) return;
+        
+        if (this.autoRefreshInterval) {
+            clearInterval(this.autoRefreshInterval);
+        }
+        
+        this.performAutoRefresh(userEmail);
+        
+        this.autoRefreshInterval = setInterval(() => {
+            this.performAutoRefresh(userEmail);
+        }, 5000);
+        
+        console.log('🔄 Auto refresh started for index page');
+    }
+    
+    stopAutoRefresh() {
+        if (this.autoRefreshInterval) {
+            clearInterval(this.autoRefreshInterval);
+            this.autoRefreshInterval = null;
+            console.log('🛑 Auto refresh stopped for index page');
+        }
+    }
+    
+    async performAutoRefresh(userEmail) {
+        try {
+            const response = await fetch(`${CONFIG.GOOGLE_SCRIPT_URL}?action=autoRefreshUser&email=${encodeURIComponent(userEmail)}`);
+            const result = await response.json();
+            
+            if (result.success && result.autoRefreshed) {
+                const userData = result.data;
+                localStorage.setItem('currentUser', JSON.stringify(userData));
+                
+                this.lastRefreshTime = new Date().toLocaleTimeString('vi-VN');
+                console.log('✅ Index page auto refreshed at:', this.lastRefreshTime);
+                
+                this.checkAndUpdateVIPAccess(userData);
+            }
+        } catch (error) {
+            console.error('❌ Auto refresh error:', error);
+        }
+    }
+    
+    checkAndUpdateVIPAccess(userData) {
+        const oldUserStr = localStorage.getItem('currentUser_old') || '{}';
+        const oldUser = JSON.parse(oldUserStr);
+        
+        if (oldUser.packageType !== userData.packageType) {
+            console.log('🔍 User package changed from', oldUser.packageType, 'to', userData.packageType);
+            
+            if (userData.packageType === 'free' && oldUser.packageType !== 'free') {
+                this.fetchFreshData();
+            }
+        }
+        
+        localStorage.setItem('currentUser_old', JSON.stringify(userData));
+    }
+    
+    getCurrentUser() {
+        try {
+            const userStr = localStorage.getItem('currentUser');
+            return userStr ? JSON.parse(userStr) : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    init() {
+        this.loadAppsFromSheets();
+        
+        const currentUser = this.getCurrentUser();
+        if (currentUser && currentUser.email) {
+            this.startAutoRefresh(currentUser.email);
+        }
+    }
+
+    async loadAppsFromSheets() {
+        try {
+            AppUtils.showSkeletonLoading(this.appsGrid);
+            
+            if (AppUtils.isCacheValid()) {
+                const cachedApps = AppUtils.getFromCache();
+                if (cachedApps && cachedApps.length > 0) {
+                    console.log('✅ Đang tải từ cache...');
+                    this.allApps = cachedApps;
+                    this.renderApps();
+                    this.loadFeaturedApps();
+                    this.fetchFreshData();
+                    return;
+                }
+            }
+            
+            await this.fetchFreshData();
+            
+        } catch (error) {
+            console.error('Lỗi khi tải ứng dụng:', error);
+            const cachedApps = AppUtils.getFromCache();
+            if (cachedApps && cachedApps.length > 0) {
+                this.allApps = cachedApps;
+                this.renderApps();
+                this.loadFeaturedApps();
+            } else {
+                this.appsGrid.innerHTML = '<div class="loading"><p>Lỗi khi tải ứng dụng. Vui lòng thử lại sau.</p></div>';
+            }
+        }
+    }
+
+    async fetchFreshData() {
+        try {
+            console.log('🔄 Đang tải dữ liệu mới từ server...');
+            const response = await fetch(`${CONFIG.GOOGLE_SCRIPT_URL}?action=getApps&t=${Date.now()}`);
+            const result = await response.json();
+            
+            if (result.success) {
+                this.allApps = result.data.map(app => {
+                    if (!app.categories) {
+                        app.categories = 'other';
+                    }
+                    
+                    if (app.categories.includes('photo')) {
+                        app.categories = app.categories.replace('photo', 'photo');
+                    }
+                    
+                    return app;
+                });
+                
+                AppUtils.saveToCache(this.allApps);
+                this.renderApps();
+                this.loadFeaturedApps();
+                console.log('✅ Dữ liệu mới đã được tải và cache');
+                console.log('📊 Cấu trúc dữ liệu app đầu tiên:', this.allApps[0]);
+            } else {
+                throw new Error('Không thể tải dữ liệu');
+            }
+        } catch (error) {
+            console.error('Lỗi khi fetch dữ liệu mới:', error);
+        }
+    }
+
+    openSearchModal() {
+        this.searchModal.style.display = 'block';
+        setTimeout(() => {
+            this.searchModalInput.focus();
+        }, 100);
+    }
+
+    closeSearchModal() {
+        this.searchModal.style.display = 'none';
+        this.searchModalInput.value = '';
+        this.searchResults.innerHTML = '';
+    }
+
+    searchApps(searchTerm) {
+        if (!searchTerm.trim()) {
+            this.searchResults.innerHTML = '<div class="no-results"><p>Nhập từ khóa để tìm kiếm</p></div>';
+            return;
+        }
+
+        // TÌM KIẾM CHÍNH XÁC TỪ ĐẦU TÊN ỨNG DỤNG
+        const filteredApps = this.allApps.filter(app => {
+            const appName = app.name.toLowerCase();
+            const searchTermLower = searchTerm.toLowerCase();
+            
+            // Chỉ tìm kiếm ứng dụng có tên BẮT ĐẦU bằng từ khóa tìm kiếm
+            return appName.startsWith(searchTermLower);
+        });
+
+        if (filteredApps.length === 0) {
+            this.searchResults.innerHTML = `
+                <div class="no-results">
+                    <i class="fas fa-search"></i>
+                    <p>Không tìm thấy ứng dụng nào bắt đầu bằng "${searchTerm}"</p>
+                </div>
+            `;
+        } else {
+            this.displayApps(filteredApps, this.searchResults);
+        }
+    }
+
+    renderApps() {
+        let filteredApps = this.filterApps();
+        this.updateSectionTitle();
+        this.displayApps(filteredApps, this.appsGrid);
+        
+        // Chỉ hiển thị games section khi ở home và category all và không có search
+        if (this.currentView === 'home' && this.currentCategory === 'all' && !this.searchTerm) {
+            this.gamesSection.style.display = 'block';
+            const games = this.allApps.filter(app => 
+                app.categories && app.categories.includes('game')
+            );
+            this.displayApps(games, this.gamesGrid);
+        } else {
+            this.gamesSection.style.display = 'none';
+            this.gamesGrid.innerHTML = '';
+        }
+    }
+
+    filterApps() {
+        let filteredApps = this.allApps;
+        
+        switch(this.currentView) {
+            case 'today':
+                const today = new Date().toLocaleDateString('vi-VN');
+                filteredApps = this.allApps.filter(app => {
+                    if (!app.updatedate) return false;
+                    const appDate = new Date(app.updatedate).toLocaleDateString('vi-VN');
+                    return appDate === today;
+                });
+                break;
+            case 'games':
+                filteredApps = this.allApps.filter(app => 
+                    app.categories && app.categories.includes('game')
+                );
+                break;
+            case 'home':
+            default:
+                if (this.currentCategory !== 'all') {
+                    filteredApps = this.allApps.filter(app => 
+                        app.categories && app.categories.includes(this.currentCategory)
+                    );
+                }
+                break;
+        }
+        
+        // TÌM KIẾM CHÍNH XÁC TỪ ĐẦU TÊN ỨNG DỤNG
+        if (this.searchTerm) {
+            filteredApps = filteredApps.filter(app => {
+                const appName = app.name.toLowerCase();
+                const searchTermLower = this.searchTerm.toLowerCase();
+                
+                // Chỉ tìm kiếm ứng dụng có tên BẮT ĐẦU bằng từ khóa tìm kiếm
+                return appName.startsWith(searchTermLower);
+            });
+        }
+        
+        filteredApps.sort((a, b) => {
+            const idA = parseInt(a.id) || 0;
+            const idB = parseInt(b.id) || 0;
+            return idB - idA;
+        });
+        
+        return filteredApps;
+    }
+
+    updateSectionTitle() {
+        let title = 'Ứng dụng mới';
+        
+        if (this.searchTerm) {
+            title = `Kết quả tìm kiếm: "${this.searchTerm}"`;
+        } else if (this.currentView === 'today') {
+            title = 'Ứng dụng hôm nay';
+        } else if (this.currentView === 'games') {
+            title = 'Trò chơi';
+        } else if (this.currentCategory !== 'all') {
+            const categoryLabels = {
+                'game': 'Trò chơi',
+                'social': 'Mạng xã hội',
+                'entertainment': 'Giải trí',
+                'photo': 'Ảnh & Video',
+                'clone': 'Nhân bản',
+                'premium': 'Premium',
+                'education': 'Giáo dục',
+                'health': 'Sức khỏe',
+                'utility': 'Tiện ích'
+            };
+            title = categoryLabels[this.currentCategory] || this.currentCategory;
+        }
+        
+        this.sectionTitle.textContent = title;
+    }
+
+    displayApps(apps, container) {
+        container.innerHTML = '';
+        
+        if (apps.length === 0) {
+            let message = 'Không có ứng dụng nào.';
+            
+            if (this.searchTerm) {
+                message = `Không tìm thấy ứng dụng nào bắt đầu bằng "${this.searchTerm}"`;
+            } else if (this.currentView === 'today') {
+                const today = new Date().toLocaleDateString('vi-VN');
+                message = `Không có ứng dụng nào được đăng vào ${today}`;
+            }
+            
+            AppUtils.showNoResults(container, message);
+            return;
+        }
+        
+        apps.forEach(app => {
+            const appCard = this.createAppCard(app);
+            container.appendChild(appCard);
+        });
+    }
+
+    createAppCard(app) {
+        const appCard = document.createElement('div');
+        appCard.className = 'app-card';
+        
+        const formattedDate = AppUtils.formatDate(app.updatedate);
+        const descriptionHTML = this.createShortDescriptionHTML(app.description);
+        
+        // Xử lý phiên bản - loại bỏ dấu nháy đơn nếu có
+        let version = app.version || '1.0.0';
+        if (version && version.startsWith("'")) {
+            version = version.substring(1);
+        }
+        
+        // Add click event to entire card
+        appCard.addEventListener('click', (e) => {
+            // Prevent navigation if the click is on the download button
+            if (e.target.closest('.index-download-btn')) {
+                return;
+            }
+            window.location.href = `app-detail.html?id=${app.id}`;
+        });
+        
+        appCard.innerHTML = `
+            <img src="${app.image}" alt="${app.name}" class="app-logo" 
+                 loading="lazy"
+                 onerror="this.src='https://via.placeholder.com/70/2563eb/FFFFFF?text=App'">
+            <div class="app-content">
+                <div class="app-header">
+                    <div class="app-info">
+                        <div class="app-name">${this.escapeHtml(app.name)}</div>
+                        <div class="app-version-meta">
+                            <div class="app-meta-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Version : ${version}</span>
+                            </div>
+                        </div>
+                        <div class="app-meta">
+                            <div class="app-meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>${formattedDate}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-actions">
+                        <button class="index-download-btn">
+                            NHẬN
+                        </button>
+                    </div>
+                </div>
+                ${descriptionHTML}
+            </div>
+        `;
+        
+        // Add click event to download button
+        const downloadBtn = appCard.querySelector('.index-download-btn');
+        downloadBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.location.href = `app-detail.html?id=${app.id}`;
+        });
+        
+        return appCard;
+    }
+
+    createShortDescriptionHTML(description) {
+        if (!description) {
+            return '<div class="app-description-check"></div>';
+        }
+        
+        // Split description by new lines and filter out empty lines
+        const lines = description.split('\n').filter(line => line.trim().length > 0);
+        
+        if (lines.length === 0) {
+            return '<div class="app-description-check"></div>';
+        }
+        
+        // Take first 2 lines
+        const displayLines = lines.slice(0, 2);
+        
+        let html = '<div class="app-description-check">';
+        
+        displayLines.forEach((line, index) => {
+            // Clean up the line - remove any extra spaces
+            let cleanLine = line.trim();
+            
+            html += `
+                <div class="description-item">
+                    <div class="check-icon-container">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="description-text" title="${this.escapeHtml(cleanLine)}">${this.escapeHtml(cleanLine)}</div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+        
+        return html;
+    }
+
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // ===== FEATURED APPS LOGIC =====
+
+    loadFeaturedApps() {
+        if (this.allApps.length === 0) return;
+        
+        // Get 20 newest apps (sort by id descending)
+        const newestApps = [...this.allApps]
+            .sort((a, b) => {
+                const idA = parseInt(a.id) || 0;
+                const idB = parseInt(b.id) || 0;
+                return idB - idA;
+            })
+            .slice(0, 20);
+        
+        // Get 5 random apps from the 20 newest
+        this.featuredApps = this.getRandomApps(newestApps, 5);
+        
+        this.displayFeaturedApps();
+        this.initFeaturedCarousel();
+    }
+
+    getRandomApps(apps, count) {
+        const shuffled = [...apps].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
+
+    getBadgeType(index) {
+        const badgeTypes = ['premium', 'hot', 'new', 'trending', 'vip'];
+        const badgeLabels = ['PREMIUM', 'HOT', 'NEW', 'TRENDING', 'VIP'];
+        return {
+            type: badgeTypes[index % badgeTypes.length],
+            label: badgeLabels[index % badgeLabels.length]
+        };
+    }
+
+    getRandomRating() {
+        const ratings = [4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0];
+        return ratings[Math.floor(Math.random() * ratings.length)];
+    }
+
+    createFeaturedCard(app, index) {
+        const card = document.createElement('div');
+        card.className = 'featured-card';
+        
+        const badge = this.getBadgeType(index);
+        
+        const firstLineDescription = app.description ? 
+            app.description.split('\n')[0] || app.description : 
+            'Mô tả ứng dụng...';
+        
+        const rating = this.getRandomRating();
+        
+        card.innerHTML = `
+            <img src="https://i.imgur.com/PwYQMpr.gif" alt="Background" class="featured-background">
+            <div class="featured-overlay"></div>
+            <div class="featured-badge badge-${badge.type}">
+                ${badge.label}
+            </div>
+            <div class="featured-content">
+                <div class="featured-logo-container">
+                    <img src="${app.image || 'https://via.placeholder.com/46/2563eb/FFFFFF?text=App'}" 
+                         alt="${app.name}" 
+                         class="featured-logo"
+                         onerror="this.src='https://via.placeholder.com/46/2563eb/FFFFFF?text=App'">
+                </div>
+                <div class="featured-text-content">
+                    <div class="featured-name">${this.escapeHtml(app.name)}</div>
+                    <div class="featured-description">${this.escapeHtml(firstLineDescription.substring(0, 60))}</div>
+                    <div class="featured-rating">
+                        <i class="fas fa-star"></i>
+                        <span>${rating}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        card.addEventListener('click', (e) => {
+            window.open(`app-detail.html?id=${app.id}`, '_self');
+        });
+        
+        return card;
+    }
+
+    displayFeaturedApps() {
+        if (this.featuredApps.length === 0) return;
+        
+        this.featuredLoading.style.display = 'none';
+        
+        this.featuredApps.forEach((app, index) => {
+            const card = this.createFeaturedCard(app, index);
+            this.featuredCarousel.appendChild(card);
+        });
+    }
+
+    initFeaturedCarousel() {
+        const container = this.featuredCarousel;
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevArrow = document.querySelector('.nav-arrow.prev');
+        const nextArrow = document.querySelector('.nav-arrow.next');
+        
+        if (!container || this.featuredApps.length === 0) return;
+        
+        let scrollTimeout;
+        let isScrolling = false;
+        
+        // Hàm cập nhật arrows và dots
+        const updateUI = () => {
+            const scrollLeft = container.scrollLeft;
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const cardWidth = 320 + 12;
+            const currentIndex = Math.min(Math.round(scrollLeft / cardWidth), dots.length - 1);
+            
+            // Cập nhật arrows
+            if (prevArrow) {
+                prevArrow.style.display = scrollLeft > 5 ? 'flex' : 'none';
+            }
+            if (nextArrow) {
+                nextArrow.style.display = scrollLeft < maxScroll - 10 ? 'flex' : 'none';
+            }
+            
+            // Cập nhật dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
+        
+        // Scroll với animation mượt
+        const smoothScrollTo = (target, duration = 300) => {
+            const start = container.scrollLeft;
+            const change = target - start;
+            const startTime = performance.now();
+            
+            const animateScroll = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function: easeOutCubic
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                
+                container.scrollLeft = start + change * easeProgress;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animateScroll);
+                } else {
+                    updateUI();
+                    isScrolling = false;
+                }
+            };
+            
+            isScrolling = true;
+            requestAnimationFrame(animateScroll);
+        };
+        
+        // Scroll đến index
+        const scrollToIndex = (index) => {
+            if (index < 0 || index >= dots.length || isScrolling) return;
+            
+            const cardWidth = 320 + 12;
+            const target = index * cardWidth;
+            
+            // Dừng auto-rotate tạm thời
+            if (this.autoRotateTimer) {
+                clearInterval(this.autoRotateTimer);
+                this.autoRotateTimer = null;
+            }
+            
+            smoothScrollTo(target);
+            
+            // Bật lại auto-rotate sau 5 giây
+            setTimeout(() => {
+                if (!this.autoRotateTimer) {
+                    this.startAutoRotate();
+                }
+            }, 5000);
+        };
+        
+        // Event listener cho scroll
+        container.addEventListener('scroll', () => {
+            if (!isScrolling) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    updateUI();
+                }, 50);
+            }
+        });
+        
+        // Event listener cho arrows
+        if (prevArrow) {
+            prevArrow.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const currentIndex = Math.round(container.scrollLeft / (320 + 12));
+                scrollToIndex(currentIndex - 1);
+            });
+        }
+        
+        if (nextArrow) {
+            nextArrow.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const currentIndex = Math.round(container.scrollLeft / (320 + 12));
+                scrollToIndex(currentIndex + 1);
+            });
+        }
+        
+        // Event listener cho dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                scrollToIndex(index);
+            });
+        });
+        
+        // Touch events để tạm dừng auto-rotate khi người dùng tương tác
+        container.addEventListener('touchstart', () => {
+            if (this.autoRotateTimer) {
+                clearInterval(this.autoRotateTimer);
+                this.autoRotateTimer = null;
+            }
+        });
+        
+        container.addEventListener('touchend', () => {
+            setTimeout(() => {
+                if (!this.autoRotateTimer) {
+                    this.startAutoRotate();
+                }
+            }, 5000);
+        });
+        
+        // Cập nhật UI lần đầu
+        setTimeout(updateUI, 100);
+        
+        // Bắt đầu auto-rotate
+        this.startAutoRotate();
+    }
+
+    scrollFeaturedCarousel(amount) {
+        const container = this.featuredCarousel;
+        if (container) {
+            container.scrollBy({
+                left: amount,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    scrollFeaturedCarouselToIndex(index) {
+        const container = this.featuredCarousel;
+        if (container) {
+            const cardWidth = 320 + 12;
+            container.scrollTo({
+                left: index * cardWidth,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    startAutoRotate() {
+        // Clear timer cũ nếu có
+        if (this.autoRotateTimer) {
+            clearInterval(this.autoRotateTimer);
+            this.autoRotateTimer = null;
+        }
+        
+        const container = this.featuredCarousel;
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        if (!container || dots.length === 0) return;
+        
+        let currentIndex = 0;
+        let lastInteraction = Date.now();
+        
+        // Hàm lấy index hiện tại
+        const getCurrentIndex = () => {
+            const scrollLeft = container.scrollLeft;
+            const cardWidth = 320 + 12;
+            return Math.round(scrollLeft / cardWidth);
+        };
+        
+        // Auto rotate mỗi 5 giây
+        this.autoRotateTimer = setInterval(() => {
+            // Kiểm tra thời gian tương tác cuối
+            const timeSinceLastInteraction = Date.now() - lastInteraction;
+            
+            // Nếu người dùng vừa tương tác trong vòng 3 giây, bỏ qua
+            if (timeSinceLastInteraction < 3000) {
+                return;
+            }
+            
+            // Nếu container đang được scroll, bỏ qua
+            if (container.scrolling) {
+                return;
+            }
+            
+            currentIndex = getCurrentIndex();
+            let nextIndex = (currentIndex + 1) % dots.length;
+            
+            const cardWidth = 320 + 12;
+            const target = nextIndex * cardWidth;
+            
+            // Scroll mượt
+            container.scrollTo({
+                left: target,
+                behavior: 'smooth'
+            });
+            
+            // Cập nhật dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === nextIndex);
+            });
+        }, 5000);
+        
+        // Cập nhật lastInteraction khi có tương tác
+        const updateLastInteraction = () => {
+            lastInteraction = Date.now();
+        };
+        
+        container.addEventListener('scroll', updateLastInteraction);
+        container.addEventListener('touchstart', updateLastInteraction);
+        container.addEventListener('touchend', updateLastInteraction);
+        container.addEventListener('mousedown', updateLastInteraction);
+        
+        // Cleanup function
+        const cleanup = () => {
+            if (this.autoRotateTimer) {
+                clearInterval(this.autoRotateTimer);
+                this.autoRotateTimer = null;
+            }
+        };
+        
+        // Lưu cleanup để sử dụng sau
+        this.cleanupAutoRotate = cleanup;
+    }
+
+    // ===== NAVIGATION METHODS =====
+    
+    updateActiveNavItem(view) {
+        const navItems = document.querySelectorAll('.nav-pill-item');
+        navItems.forEach(item => {
+            const itemView = item.dataset.view;
+            if (itemView === view) {
+                item.classList.add('active');
+                item.setAttribute('aria-current', 'page');
+            } else {
+                item.classList.remove('active');
+                item.removeAttribute('aria-current');
+            }
+        });
+    }
+    
+    switchToGamesView() {
+        this.currentView = 'games';
+        this.currentCategory = 'all';
+        this.renderApps();
+    }
+    
+    switchToHomeView() {
+        this.currentView = 'home';
+        this.renderApps();
+    }
+}
+
+// Khởi tạo ứng dụng khi trang được tải
+document.addEventListener('DOMContentLoaded', function() {
+    window.appManager = new AppManager();
+});
