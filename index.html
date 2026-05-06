@@ -37,7 +37,7 @@
         #1a0f0a;
     }
 
-    /* ===== Tiêu đề LỜI CHÀO - LỜI CẢM ƠN (đơn giản, không hiệu ứng) ===== */
+    /* ===== Tiêu đề LỜI CHÀO - LỜI CẢM ƠN (đơn giản) ===== */
     .greeting-title {
       font-family: "Poppins", sans-serif;
       font-size: 1.6em;
@@ -119,20 +119,29 @@
       margin-bottom: 0.8rem;
     }
 
-    /* Phần liên hệ Telegram */
+    /* Phần liên hệ Telegram - nội dung mới */
     .contact-section {
       margin-top: 1.5rem;
       padding-top: 1rem;
       text-align: center;
     }
 
+    .contact-note {
+      font-size: 0.85rem;
+      color: rgba(245, 200, 150, 0.7);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
     .contact-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       background: rgba(210, 140, 80, 0.2);
       backdrop-filter: blur(4px);
-      padding: 0.7rem 1.5rem;
+      padding: 0.7rem 1.8rem;
       border-radius: 60px;
       text-decoration: none;
       font-family: "Poppins", sans-serif;
@@ -162,13 +171,6 @@
       stroke-linejoin: round;
     }
 
-    .contact-text {
-      font-size: 0.85rem;
-      color: rgba(245, 200, 150, 0.7);
-      margin-bottom: 0.65rem;
-      letter-spacing: 0.3px;
-    }
-
     .footer-note {
       margin-top: 1.8rem;
       font-size: 0.75rem;
@@ -190,7 +192,10 @@
     @media (max-width: 580px) {
       .greeting-title {
         font-size: 1.2em;
-        margin-bottom: 4rem;
+        margin-bottom: 0.5rem;
+      }
+      .contact-note {
+        font-size: 0.78rem;
       }
     }
 
@@ -207,14 +212,16 @@
       }
       .greeting-title {
         font-size: 1.1em;
-        margin-bottom: 4rem;
+      }
+      .contact-note {
+        font-size: 0.75rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Tiêu đề LỜI CHÀO - LỜI CẢM ƠN (đơn giản, không hiệu ứng) -->
+  <!-- Tiêu đề LỜI CHÀO - LỜI CẢM ƠN -->
   <div class="greeting-title">
     LỜI CHÀO - LỜI CẢM ƠN
   </div>
@@ -223,7 +230,7 @@
     <div class="brand">TRÂN TRỌNG GỬI ĐẾN QUÝ KHÁCH</div>
     
     <h1>
-      Đã ngừng hoạt động từ <span class="date">06/05/2026</span>
+      TẠM NGỪNG HOẠT ĐỘNG THƯ VIÊN<span class="date">PHIÊN BẢN WEBSITE</span>
     </h1>
 
     <div class="notice-box">
@@ -237,15 +244,17 @@
         <p style="font-style: italic; margin-bottom: 0;">Xin gửi lời cảm ơn sâu sắc đến bạn. Hy vọng sẽ có cơ hội được đồng hành cùng bạn trong những dự án mới trong tương lai.</p>
       </div>
 
-      <!-- Phần liên hệ Telegram -->
+      <!-- Phần liên hệ Telegram - nội dung mới -->
       <div class="contact-section">
-        <div class="contact-text">📬 Mọi thắc mắc vui lòng liên hệ</div>
+        <div class="contact-note">
+          📌 Nếu có vấn đề gì về việc sử dụng thư viện, ứng dụng, hoặc cần hỗ trợ giải đáp các vấn đề khác, vui lòng liên hệ với chúng tôi để được hỗ trợ kịp thời.
+        </div>
         <a href="https://t.me/talmv" target="_blank" rel="noopener noreferrer" class="contact-link">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" fill="none"/>
             <path d="M22 2L11 13" stroke="currentColor" stroke-width="1.8"/>
           </svg>
-          <span>LIÊN HỆ NHANH</span>
+          <span>📱 LIÊN HỆ HỖ TRỢ</span>
         </a>
       </div>
     </div>
