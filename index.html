@@ -29,47 +29,48 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1.5rem;
-      /* Màu nền: tông nâu đỏ trầm ấm, sang trọng, vibe ấm cúng */
+      padding: 1rem;
+      /* Màu nền: tông nâu đỏ trầm ấm */
       background: 
         radial-gradient(ellipse at 30% 40%, rgba(139, 69, 19, 0.25), transparent 60%),
         radial-gradient(ellipse at 70% 80%, rgba(205, 133, 63, 0.2), transparent 55%),
         #1a0f0a;
     }
 
-    /* ===== Tiêu đề LỜI CHÀO - LỜI CẢM ƠN (đơn giản) ===== */
+    /* ===== Tiêu đề LỜI CHÀO - LỜI CẢM ƠN (nhỏ lại) ===== */
     .greeting-title {
       font-family: "Poppins", sans-serif;
-      font-size: 1.6em;
+      font-size: 1.1rem;
       font-weight: 500;
       color: rgba(255, 245, 235, 0.92);
       letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       text-align: center;
     }
 
-    /* ===== Content ===== */
+    /* ===== Content - Popup nhỏ gọn hơn ===== */
     .content {
-      max-width: 680px;
-      animation: fade-up 0.8s ease-out 0.3s both;
+      max-width: 480px;
+      width: 100%;
+      animation: fade-up 0.6s ease-out 0.2s both;
     }
 
     .brand {
       font-family: "Poppins", sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       font-weight: 400;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: rgba(245, 210, 170, 0.6);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
     h1 {
       font-family: "Poppins", sans-serif;
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-size: 1.3rem;
       font-weight: 600;
       line-height: 1.3;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       background: linear-gradient(135deg, #fcead3 0%, #e6b17e 50%, #d4925a 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -83,54 +84,54 @@
     .notice-box {
       background: rgba(30, 18, 12, 0.55);
       backdrop-filter: blur(8px);
-      border-radius: 28px;
-      padding: 2rem 1.8rem;
-      margin: 1.5rem 0;
+      border-radius: 20px;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
       border: 1px solid rgba(210, 140, 80, 0.35);
       text-align: left;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     p {
-      font-size: clamp(0.95rem, 2vw, 1.05rem);
-      line-height: 1.7;
+      font-size: 0.85rem;
+      line-height: 1.5;
       color: rgba(255, 240, 225, 0.85);
       font-weight: 300;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .signature-message {
-      margin-top: 1.5rem;
-      padding-top: 1.2rem;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
       border-top: 1px solid rgba(210, 140, 80, 0.4);
     }
 
     .signature-name {
       font-family: "Poppins", sans-serif;
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: #e6b17e;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .signature-role {
-      font-size: 0.85rem;
+      font-size: 0.7rem;
       color: rgba(245, 200, 150, 0.65);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
-    /* Phần liên hệ Telegram - nội dung mới */
+    /* Phần liên hệ - nhỏ gọn */
     .contact-section {
-      margin-top: 1.5rem;
-      padding-top: 1rem;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
       text-align: center;
     }
 
     .contact-note {
-      font-size: 0.85rem;
+      font-size: 0.7rem;
       color: rgba(245, 200, 150, 0.7);
-      margin-bottom: 1rem;
-      line-height: 1.6;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
       text-align: center;
     }
 
@@ -138,14 +139,14 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       background: rgba(210, 140, 80, 0.2);
       backdrop-filter: blur(4px);
-      padding: 0.7rem 1.8rem;
-      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
       text-decoration: none;
       font-family: "Poppins", sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-weight: 500;
       color: #f5d5aa;
       border: 1px solid rgba(210, 140, 80, 0.5);
@@ -162,8 +163,8 @@
     }
 
     .contact-link svg {
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       fill: none;
       stroke: currentColor;
       stroke-width: 2;
@@ -172,8 +173,8 @@
     }
 
     .footer-note {
-      margin-top: 1.8rem;
-      font-size: 0.75rem;
+      margin-top: 1rem;
+      font-size: 0.6rem;
       color: rgba(210, 150, 100, 0.45);
       letter-spacing: 0.05em;
     }
@@ -181,7 +182,7 @@
     @keyframes fade-up {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
       }
       to {
         opacity: 1;
@@ -189,32 +190,73 @@
       }
     }
 
-    @media (max-width: 580px) {
+    /* Responsive điện thoại - nhỏ hơn nữa */
+    @media (max-width: 560px) {
+      body {
+        padding: 0.75rem;
+      }
+      .content {
+        max-width: 380px;
+      }
       .greeting-title {
-        font-size: 1.2em;
+        font-size: 0.95rem;
         margin-bottom: 0.5rem;
       }
-      .contact-note {
+      .brand {
+        font-size: 0.55rem;
+      }
+      h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+      }
+      .notice-box {
+        padding: 1rem 1.2rem;
+        border-radius: 18px;
+      }
+      p {
         font-size: 0.78rem;
+        margin-bottom: 0.6rem;
+      }
+      .signature-name {
+        font-size: 0.78rem;
+      }
+      .signature-role {
+        font-size: 0.65rem;
+      }
+      .contact-note {
+        font-size: 0.65rem;
+      }
+      .contact-link {
+        padding: 0.4rem 1rem;
+        font-size: 0.68rem;
+        gap: 6px;
+      }
+      .contact-link svg {
+        width: 12px;
+        height: 12px;
+      }
+      .footer-note {
+        font-size: 0.55rem;
+        margin-top: 0.75rem;
       }
     }
 
-    @media (max-width: 480px) {
-      body {
-        padding: 1rem;
+    /* Màn hình rất nhỏ (dưới 400px) */
+    @media (max-width: 400px) {
+      .content {
+        max-width: 340px;
       }
       .notice-box {
-        padding: 1.5rem;
+        padding: 0.9rem 1rem;
       }
-      .contact-link {
-        padding: 0.5rem 1.2rem;
-        font-size: 0.8rem;
+      p {
+        font-size: 0.72rem;
       }
       .greeting-title {
-        font-size: 1.1em;
+        font-size: 0.85rem;
       }
       .contact-note {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
       }
     }
   </style>
@@ -230,7 +272,7 @@
     <div class="brand">TRÂN TRỌNG GỬI ĐẾN QUÝ KHÁCH</div>
     
     <h1>
-      TẠM NGỪNG HOẠT ĐỘNG THƯ VIÊN<span class="date">PHIÊN BẢN WEBSITE</span>
+      THƯ VIỆN VSA PHIÊN BẢN WEBSITE SẼ TẠM ĐÓNG TỪ NGÀY <span class="date">06/05/2026</span>
     </h1>
 
     <div class="notice-box">
@@ -244,17 +286,17 @@
         <p style="font-style: italic; margin-bottom: 0;">Xin gửi lời cảm ơn sâu sắc đến bạn. Hy vọng sẽ có cơ hội được đồng hành cùng bạn trong những dự án mới trong tương lai.</p>
       </div>
 
-      <!-- Phần liên hệ Telegram - nội dung mới -->
+      <!-- Phần liên hệ -->
       <div class="contact-section">
         <div class="contact-note">
-          📌 Nếu có vấn đề gì về việc sử dụng thư viện, ứng dụng, hoặc cần hỗ trợ giải đáp các vấn đề khác, vui lòng liên hệ với chúng tôi để được hỗ trợ kịp thời.
+          📌 Nếu có vấn đề về sử dụng thư viện, ứng dụng hoặc cần hỗ trợ giải đáp, vui lòng liên hệ để được hỗ trợ kịp thời.
         </div>
         <a href="https://t.me/talmv" target="_blank" rel="noopener noreferrer" class="contact-link">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" fill="none"/>
-            <path d="M22 2L11 13" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2"/>
           </svg>
-          <span>📱 LIÊN HỆ HỖ TRỢ</span>
+          <span>LIÊN HỆ HỖ TRỢ</span>
         </a>
       </div>
     </div>
