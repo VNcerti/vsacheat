@@ -7,421 +7,323 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    html,
-    body{
-      min-height:100svh;
+    html, body {
+      min-height: 100svh;
     }
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:#000;
-      min-height:100svh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:0.9rem;
-      overflow:hidden;
-      position:relative;
-      color:#fff;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
     }
 
-    /* ===== BACKGROUND ===== */
-
-    .bg-layer{
-      position:fixed;
-      inset:0;
-      z-index:0;
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
       background:
         radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
         radial-gradient(circle at 80% 80%, rgba(255,255,255,0.06), transparent 35%),
-        linear-gradient(135deg,#000000 0%,#0c0c0f 40%,#18181c 100%);
+        linear-gradient(135deg, #000000 0%, #0c0c0f 40%, #18181c 100%);
     }
 
-    .animated-grid{
-      position:fixed;
-      inset:0;
-      z-index:1;
-      opacity:0.28;
-      pointer-events:none;
-
+    .animated-grid {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.28;
+      pointer-events: none;
       background-image:
         linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
-
-      background-size:44px 44px;
-
-      mix-blend-mode:soft-light;
-
-      animation:slowGridMove 38s infinite alternate ease-in-out;
+      background-size: 44px 44px;
+      mix-blend-mode: soft-light;
+      animation: slowGridMove 38s infinite alternate ease-in-out;
     }
 
-    @keyframes slowGridMove{
-      0%{
-        transform:translate(0,0);
-        background-position:0 0;
+    @keyframes slowGridMove {
+      0% {
+        transform: translate(0, 0);
+        background-position: 0 0;
       }
-      100%{
-        transform:translate(-8px,-12px);
-        background-position:24px 30px;
+      100% {
+        transform: translate(-8px, -12px);
+        background-position: 24px 30px;
       }
     }
 
-    /* ===== CONTAINER ===== */
-
-    .main-container{
-      position:relative;
-      z-index:10;
-      width:100%;
-      max-width:470px;
-
-      animation:fadeUp .7s cubic-bezier(.16,1,.3,1) forwards;
-
-      opacity:0;
-      transform:translateY(14px);
+    .main-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 470px;
+      animation: fadeUp .7s cubic-bezier(.16,1,.3,1) forwards;
+      opacity: 0;
+      transform: translateY(14px);
     }
 
-    @keyframes fadeUp{
-      to{
-        opacity:1;
-        transform:translateY(0);
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    /* ===== CARD ===== */
-
-    .glass-card{
-      background:rgba(255,255,255,0.055);
-
-      backdrop-filter:blur(24px);
-      -webkit-backdrop-filter:blur(24px);
-
-      border-radius:28px;
-
-      border:1px solid rgba(255,255,255,0.12);
-
+    .glass-card {
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.12);
       box-shadow:
         0 20px 40px rgba(0,0,0,0.65),
         inset 0 1px 0 rgba(255,255,255,0.08);
-
-      padding:1.45rem 1.25rem;
+      padding: 1.15rem 1rem;
     }
 
-    /* ===== HERO ===== */
-
-    .hero{
-      text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
+    .hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .app-icon{
-      width:62px;
-      height:62px;
-      border-radius:18px;
-
-      overflow:hidden;
-
-      margin-bottom:0.8rem;
-
-      background:rgba(255,255,255,0.08);
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
+    .app-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 0.62rem;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow:
         0 10px 22px rgba(0,0,0,0.65),
         0 0 0 1px rgba(255,255,255,0.08);
+      animation: floatSoft 4s ease-in-out infinite;
     }
 
-    .app-icon img{
-      width:130%;
-      height:130%;
-      object-fit:cover;
+    .app-icon img {
+      width: 130%;
+      height: 130%;
+      object-fit: cover;
     }
 
-    .app-icon{
-      animation:floatSoft 4s ease-in-out infinite;
-    }
-
-    @keyframes floatSoft{
-      0%,100%{
-        transform:translateY(0);
+    @keyframes floatSoft {
+      0%, 100% {
+        transform: translateY(0);
       }
-      50%{
-        transform:translateY(-4px);
+      50% {
+        transform: translateY(-4px);
       }
     }
 
-    /* ===== TITLE ===== */
-
-    h1{
-      font-size:1.45rem;
-      line-height:1.2;
-      font-weight:800;
-
-      letter-spacing:-0.5px;
-
-      margin-bottom:0.35rem;
-
-      background:linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #d9d9dc 45%,
-        #ffffff 100%
-      );
-
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+    h1 {
+      font-size: 1.32rem;
+      line-height: 1.14;
+      font-weight: 800;
+      letter-spacing: -0.45px;
+      margin-bottom: 0.22rem;
+      background: linear-gradient(135deg, #ffffff 0%, #d9d9dc 45%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
     }
 
-    .highlight{
-      color:#fff;
-      font-weight:700;
+    .highlight {
+      color: #fff;
+      font-weight: 800;
     }
 
-    .subtitle{
-      font-size:0.84rem;
-      color:#c5c5ca;
-
-      line-height:1.55;
-
-      max-width:340px;
-
-      margin-bottom:1rem;
+    .subtitle {
+      font-size: 0.76rem;
+      color: #c5c5ca;
+      line-height: 1.45;
+      max-width: 325px;
+      margin-bottom: 0.78rem;
     }
 
-    /* ===== BUTTON ===== */
-
-    .download-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:0.45rem;
-
-      text-decoration:none;
-
-      background:linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #ececee 100%
-      );
-
-      color:#050505;
-
-      padding:0.6rem 1.35rem;
-
-      border-radius:999px;
-
-      font-size:0.82rem;
-      font-weight:800;
-
-      border:1px solid rgba(255,255,255,0.35);
-
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      background: linear-gradient(180deg, #ffffff 0%, #ececee 100%);
+      color: #050505;
+      padding: 0.52rem 1.18rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,0.35);
       box-shadow:
         0 10px 22px rgba(255,255,255,0.14),
         inset 0 1px 0 rgba(255,255,255,0.85);
-
-      transition:.25s ease;
+      transition: .25s ease;
     }
 
-    .download-btn:hover{
-      transform:scale(1.04);
-
+    .download-btn:hover {
+      transform: scale(1.04);
       box-shadow:
         0 0 24px rgba(255,255,255,0.24),
         inset 0 1px 0 rgba(255,255,255,0.95);
     }
 
-    .download-btn svg{
-      width:15px;
-      height:15px;
+    .download-btn svg {
+      width: 14px;
+      height: 14px;
     }
 
-    /* ===== SECTIONS ===== */
-
-    .section{
-      margin-top:1.15rem;
-
-      padding-top:1rem;
-
-      border-top:1px solid rgba(255,255,255,0.08);
+    .section {
+      margin-top: 0.88rem;
+      padding-top: 0.72rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .section-title{
-      font-size:0.96rem;
-      font-weight:800;
-
-      margin-bottom:0.45rem;
-
-      color:#fff;
-
-      display:flex;
-      align-items:center;
-      gap:0.45rem;
+    .section-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 0.32rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    .section-title span{
-      background:linear-gradient(
-        135deg,
-        #ffffff,
-        #d7d7db
-      );
-
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+    .section-title span {
+      background: linear-gradient(135deg, #ffffff, #d7d7db);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .desc-text{
-      color:#c4c4c9;
-
-      font-size:0.78rem;
-
-      line-height:1.65;
-
-      margin-bottom:0.55rem;
+    .desc-text {
+      color: #c4c4c9;
+      font-size: 0.72rem;
+      line-height: 1.52;
+      margin-bottom: 0.38rem;
     }
 
-    .desc-highlight{
-      color:#ffffff;
-      font-weight:700;
+    .desc-highlight {
+      color: #ffffff;
+      font-weight: 700;
     }
-
-    /* ===== BOX ===== */
 
     .guide-text,
-    .safe-note{
-      background:rgba(255,255,255,0.05);
-
-      border:1px solid rgba(255,255,255,0.08);
-
-      border-radius:16px;
-
-      padding:0.72rem 0.82rem;
-
-      margin-top:0.7rem;
-
-      font-size:0.74rem;
-
-      line-height:1.6;
-
-      color:#c8c8ce;
-
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.04);
+    .safe-note {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 0.6rem 0.72rem;
+      margin-top: 0.55rem;
+      font-size: 0.69rem;
+      line-height: 1.48;
+      color: #c8c8ce;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
     }
 
     .guide-text strong,
-    .safe-note strong{
-      color:#ffffff;
-      font-weight:800;
+    .safe-note strong {
+      color: #ffffff;
+      font-weight: 800;
     }
 
-    .safe-note{
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,0.05),
-          rgba(255,255,255,0.03)
-        );
+    .safe-note {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
     }
 
-    /* ===== DISCLAIMER ===== */
-
-    .disclaimer{
-      margin-top:1rem;
-
-      padding-top:0.9rem;
-
-      border-top:1px solid rgba(255,255,255,0.05);
-
-      text-align:center;
-
-      font-size:0.66rem;
-
-      line-height:1.55;
-
-      color:#8c8c92;
+    .disclaimer {
+      margin-top: 0.78rem;
+      padding-top: 0.68rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      font-size: 0.6rem;
+      line-height: 1.45;
+      color: #8c8c92;
     }
 
-    /* ===== MOBILE ===== */
-
-    @media (max-width:400px){
-
-      body{
-        padding:0.65rem;
+    @media (max-width: 400px) {
+      body {
+        padding: 0.55rem;
       }
 
-      .glass-card{
-        padding:1.25rem 1rem;
-        border-radius:24px;
+      .glass-card {
+        padding: 1rem 0.88rem;
+        border-radius: 22px;
       }
 
-      .app-icon{
-        width:56px;
-        height:56px;
+      .app-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.52rem;
       }
 
-      h1{
-        font-size:1.28rem;
+      h1 {
+        font-size: 1.18rem;
       }
 
-      .subtitle{
-        font-size:0.77rem;
+      .subtitle {
+        font-size: 0.7rem;
+        margin-bottom: 0.7rem;
       }
 
-      .section-title{
-        font-size:0.88rem;
+      .section {
+        margin-top: 0.72rem;
+        padding-top: 0.62rem;
       }
 
-      .desc-text{
-        font-size:0.73rem;
+      .section-title {
+        font-size: 0.82rem;
+      }
+
+      .desc-text {
+        font-size: 0.67rem;
+        line-height: 1.45;
       }
 
       .guide-text,
-      .safe-note{
-        font-size:0.7rem;
+      .safe-note {
+        font-size: 0.65rem;
+        padding: 0.52rem 0.62rem;
+        margin-top: 0.48rem;
       }
 
-      .disclaimer{
-        font-size:0.6rem;
+      .disclaimer {
+        font-size: 0.56rem;
+        margin-top: 0.65rem;
+        padding-top: 0.58rem;
       }
     }
-
   </style>
 </head>
 
 <body>
-
   <div class="bg-layer"></div>
   <div class="animated-grid"></div>
 
   <main class="main-container">
-
     <div class="glass-card">
 
-      <!-- HERO -->
-
       <div class="hero">
-
         <div class="app-icon">
-          <img
-            src="https://vsacheat.com/img/vsacheat-logo-website.webp"
-            alt="VSA"
-          >
+          <img src="https://vsacheat.com/img/vsacheat-logo-website.webp" alt="VSA">
         </div>
 
         <h1>
@@ -433,80 +335,49 @@
           Không gian tổng hợp tiện ích iOS được chọn lọc, hỗ trợ người dùng khám phá công cụ hữu ích, tối ưu thao tác và nâng cao trải nghiệm sử dụng hằng ngày.
         </p>
 
-        <a
-          href="https://vsacheat.com/download/"
-          class="download-btn"
-        >
-
+        <a href="https://vsacheat.com/download/" class="download-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
             <line x1="12" y1="15" x2="12" y2="3"/>
           </svg>
-
           Trải nghiệm ngay
-
         </a>
-
       </div>
 
-      <!-- SECTION -->
-
       <div class="section">
-
         <div class="section-title">
           ✦ <span>Kho tiện ích được chọn lọc</span>
         </div>
 
         <p class="desc-text">
           Thư viện tập trung giới thiệu các công cụ, tiện ích và nội dung hỗ trợ trải nghiệm iOS theo hướng
-          <span class="desc-highlight">
-            gọn gàng, dễ truy cập và thân thiện
-          </span>
+          <span class="desc-highlight">gọn gàng, dễ truy cập và thân thiện</span>
           với người dùng.
         </p>
 
         <p class="desc-text">
           Hệ thống được tối ưu để mang lại
-          <span class="desc-highlight">
-            tốc độ tải nhanh, giao diện hiện đại
-          </span>
+          <span class="desc-highlight">tốc độ tải nhanh, giao diện hiện đại</span>
           và khả năng truy cập ổn định trên iPhone/iPad.
         </p>
-
       </div>
-
-      <!-- GUIDE -->
 
       <div class="guide-text">
-
-        <strong>📱 Hướng dẫn sử dụng:</strong><br>
-
+        <strong>📱 Hướng dẫn sử dụng:</strong>
         Truy cập thư viện, lựa chọn tiện ích phù hợp với nhu cầu và làm theo hướng dẫn hiển thị trực tiếp trên màn hình để bắt đầu trải nghiệm.
-
       </div>
-
-      <!-- SAFE -->
 
       <div class="safe-note">
-
-        <strong>🛡️ Cam kết sử dụng:</strong><br>
-
+        <strong>🛡️ Cam kết sử dụng:</strong>
         Chúng tôi khuyến khích người dùng lựa chọn nội dung rõ nguồn gốc, tôn trọng quyền sở hữu trí tuệ và tuân thủ các quy định hiện hành trong quá trình sử dụng.
-
       </div>
 
-      <!-- DISCLAIMER -->
-
       <div class="disclaimer">
-
         Nội dung trên website được cung cấp nhằm mục đích giới thiệu, tham khảo và hỗ trợ trải nghiệm cá nhân. Người dùng cần tự đảm bảo việc sử dụng phù hợp với quy định pháp luật và điều khoản của từng nền tảng/dịch vụ liên quan.
-
       </div>
 
     </div>
-
   </main>
-
 </body>
 </html>
