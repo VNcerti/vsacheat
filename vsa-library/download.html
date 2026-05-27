@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho Ứng Dụng Chính Thức - MODOS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section - Full Viewport Height */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+            overflow: hidden;
+        }
+
+        /* Background Image - Giống hệt code gốc */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: url('https://sf-static.upanhlaylink.com/img/image_202601214ce2839b439d84e2c77913a629572576.jpg') center right / cover no-repeat;
+        }
+
+        /* Dark Overlay & Gradients - Giống hệt code gốc */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.9) 100%);
+        }
+
+        /* Vignette Effect - Giống hệt code gốc */
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 150px rgba(0,0,0,0.8);
+            pointer-events: none;
+        }
+
+        /* Text Content - Căn giữa hoàn toàn */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            text-align: center;
+            width: 90%;
+        }
+
+        /* Main Headline */
+        .headline {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.5px;
+        }
+
+        /* Subheading - Giống như code gốc */
+        .subheading {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 0 5px;
+        }
+
+        /* Container để căn giữa nội dung */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Phần giới thiệu ứng dụng */
+        .app-intro {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .section-subtitle.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Grid cho các tính năng - Animation khi cuộn */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: rgba(30, 30, 40, 0.8);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: left;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(138, 138, 255, 0.1);
+            opacity: 0;
+            transform: translateX(-50px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card:nth-child(even) {
+            transform: translateX(50px);
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(138, 138, 255, 0.15);
+            border-color: rgba(138, 138, 255, 0.3);
+        }
+
+        /* Container icon và tiêu đề trên cùng một dòng */
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #8a8aff;
+            flex-shrink: 0;
+            width: 50px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            line-height: 1.6;
+            padding-left: 65px;
+            transition: all 0.3s ease;
+        }
+
+        /* Installation Section - Đơn giản hóa với animation */
+        .installation {
+            padding: 80px 0;
+            background: rgba(15, 15, 20, 0.9);
+            position: relative;
+            z-index: 3;
+        }
+
+        .download-title {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            background: linear-gradient(to right, #fff, #8a8aff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .download-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Individual Card - Animation khi cuộn */
+        .card {
+            background: rgba(40, 40, 50, 0.9);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(138, 138, 255, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #8a8aff;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .card-desc {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(to right, #4a4aff, #8a8aff);
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(74, 74, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 74, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, #333, #555);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 5%;
+            background: #000;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .footer.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer a {
+            color: rgba(138, 138, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #8a8aff;
+            text-decoration: underline;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #111, #1a1a1a);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(138, 138, 255, 0.1);
+            animation: modalFadeIn 0.4s ease-out;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .modal-text {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .close-modal {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: #444;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Particle background effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(138, 138, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        /* Responsive Design - Tối ưu cho mobile */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            /* Fix responsive cho ảnh */
+            .hero-bg {
+                background-position: center center;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                height: 90vh;
+            }
+            
+            .features-grid,
+            .cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            
+            .feature-card,
+            .card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 85vh;
+                padding: 0 20px;
+            }
+            
+            .hero-content {
+                width: 100%;
+                padding: 0 15px;
+            }
+            
+            .headline {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .subheading {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .app-intro,
+            .installation {
+                padding: 60px 0 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+            
+            /* Căn giữa feature cards trên mobile */
+            .features-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .feature-card {
+                transform: translateY(50px);
+            }
+            
+            .feature-card:nth-child(even) {
+                transform: translateY(50px);
+            }
+            
+            .feature-card.visible {
+                transform: translateY(0);
+            }
+            
+            .feature-header {
+                gap: 12px;
+            }
+            
+            .feature-icon {
+                font-size: 1.8rem;
+                width: 45px;
+            }
+            
+            .feature-title {
+                font-size: 1.2rem;
+            }
+            
+            .feature-desc {
+                padding-left: 57px;
+                font-size: 0.95rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 80vh;
+            }
+            
+            .headline {
+                font-size: 1.8rem;
+            }
+            
+            .subheading {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .feature-card,
+            .card {
+                padding: 18px 15px;
+            }
+            
+            .feature-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                margin-bottom: 12px;
+            }
+            
+            .feature-icon {
+                font-size: 1.6rem;
+                width: 40px;
+            }
+            
+            .feature-title {
+                font-size: 1.1rem;
+            }
+            
+            .feature-desc {
+                padding-left: 0;
+                font-size: 0.9rem;
+            }
+            
+            .btn {
+                padding: 14px 24px;
+                font-size: 1rem;
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero {
+                height: 75vh;
+            }
+            
+            .headline {
+                font-size: 1.6rem;
+            }
+            
+            .features-grid,
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .card-title {
+                font-size: 1.3rem;
+            }
+            
+            .card-desc {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        
+        <!-- Nội dung căn giữa -->
+        <div class="hero-content">
+            <h1 class="headline">Một thế giới ứng dụng</h1>
+            <p class="subheading">
+                Khám phá và tải xuống các ứng dụng đã được chỉnh sửa tốt nhất
+                một cách an toàn và dễ dàng.
+            </p>
+        </div>
+    </header>
+
+    <!-- Phần giới thiệu ứng dụng -->
+    <section class="app-intro">
+        <div class="container">
+            <h2 class="section-title" id="intro-title">Kho Ứng Dụng Chính Thức</h2>
+            <p class="section-subtitle" id="intro-subtitle">
+                Kho ứng dụng cài đặt trực tiếp lên thiết bị của bạn, tối ưu hiệu năng, cập nhật nhanh chóng và an toàn hơn so với bản web. Trải nghiệm ứng dụng mod/premium cao cấp với giao diện mượt mà và tính năng vượt trội.
+            </p>
+            
+            <div class="features-grid">
+                <!-- Tối ưu hiệu năng -->
+                <div class="feature-card" id="feature-1">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Tối ưu hiệu năng</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Ứng dụng chạy trực tiếp trên thiết bị, tận dụng tối đa phần cứng cho hiệu suất cao nhất.
+                    </p>
+                </div>
+                
+                <!-- Nhân bản ứng dụng không giới hạn -->
+                <div class="feature-card" id="feature-2">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-copy"></i>
+                        </div>
+                        <h3 class="feature-title">Nhân bản ứng dụng không giới hạn</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Hỗ trợ nhân bản nhiều phiên bản ứng dụng trên 1 thiết bị để không lo bị quét tài khoản.
+                    </p>
+                </div>
+                
+                <!-- Bảo mật cao -->
+                <div class="feature-card" id="feature-3">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Bảo mật cao</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Ứng dụng chính thức, kiểm duyệt nghiêm ngặt, đảm bảo an toàn tuyệt đối cho thiết bị.
+                    </p>
+                </div>
+                
+                <!-- Cập nhật nhanh -->
+                <div class="feature-card" id="feature-4">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Cập nhật nhanh</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Nhận bản cập nhật mới nhất ngay khi có, luôn trải nghiệm những tính năng hiện đại.
+                    </p>
+                </div>
+                
+                <!-- Premium/MOD -->
+                <div class="feature-card" id="feature-5">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="feature-title">Premium/MOD</h3>
+                    </div>
+                    <p class="feature-desc">
+                        Truy cập vào các ứng dụng premium và bản mod với đầy đủ tính năng cao cấp.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="installation">
+        <h2 class="download-title" id="download-title">Tải Xuống MODOS</h2>
+        
+        <div class="cards-container">
+            <!-- IPA Version Card -->
+            <div class="card" id="card-1">
+                <div class="card-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="card-title">Phiên bản IPA</h3>
+                <p class="card-desc">
+                    Cài đặt kho ứng dụng thông qua file IPA. Phiên bản đầy đủ tính năng, tương thích với nhiều thiết bị iOS.
+                </p>
+                <a href="https://github.com/VNcerti/modos/releases/download/1.0/X-Package_V1.0.ipa" class="btn">
+                    <i class="fas fa-download"></i> Tải Xuống IPA
+                </a>
+            </div>
+            
+            <!-- Direct Installation Card -->
+            <div class="card" id="card-2">
+                <div class="card-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="card-title">Cài đặt trực tiếp</h3>
+                <p class="card-desc">
+                    Cài đặt nhanh trực tiếp trên thiết bị. Quá trình đơn giản, không cần máy tính.
+                </p>
+                <button class="btn btn-secondary" id="direct-install-btn">
+                    <i class="fas fa-cloud-download-alt"></i> Cài Đặt Trực Tiếp
+                </button>
+            </div>
+            
+            <!-- Web Version Card -->
+            <div class="card" id="card-3">
+                <div class="card-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="card-title">Phiên bản Web</h3>
+                <p class="card-desc">
+                    Trải nghiệm MODOS trên nền web. Không cần cài đặt, truy cập ngay từ trình duyệt.
+                </p>
+                <a href="https://modos.site" target="_blank" class="btn">
+                    <i class="fas fa-external-link-alt"></i> Truy Cập Website
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <p>© 2023 Kho Ứng Dụng Chính Thức - MODOS. Tất cả các quyền được bảo lưu.</p>
+            <p>MODOS là kho ứng dụng cao cấp cung cấp các ứng dụng Premium/Mod chất lượng cao.</p>
+        </div>
+    </footer>
+    
+    <!-- Modal for Direct Installation -->
+    <div class="modal" id="install-modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Đang bổ sung …</h3>
+            <p class="modal-text">
+                Tính năng cài đặt trực tiếp đang được hoàn thiện và sẽ sớm có mặt.
+                Vui lòng sử dụng phiên bản IPA hoặc truy cập website để trải nghiệm MODOS ngay bây giờ.
+            </p>
+            <button class="close-modal" id="close-modal">Đóng</button>
+        </div>
+    </div>
+    
+    <script>
+        // Tạo hiệu ứng particle background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 30 : 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Kích thước ngẫu nhiên
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Vị trí ngẫu nhiên
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Độ trong suốt ngẫu nhiên
+                particle.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                // Animation di chuyển
+                particle.style.animation = `moveParticle ${Math.random() * 20 + 10}s linear infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Thêm CSS animation cho particle
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes moveParticle {
+                0% {
+                    transform: translateY(0) translateX(0);
+                }
+                25% {
+                    transform: translateY(-20px) translateX(10px);
+                }
+                50% {
+                    transform: translateY(0) translateX(20px);
+                }
+                75% {
+                    transform: translateY(20px) translateX(10px);
+                }
+                100% {
+                    transform: translateY(0) translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Direct Installation Button Handler
+        document.getElementById('direct-install-btn').addEventListener('click', function() {
+            document.getElementById('install-modal').style.display = 'flex';
+        });
+        
+        // Close Modal Handler
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('install-modal').style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('install-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+
+        // Animation khi cuộn trang
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight * 0.85) &&
+                rect.bottom >= (window.innerHeight * 0.15)
+            );
+        }
+
+        function handleScrollAnimations() {
+            // Elements cần animation
+            const elements = [
+                { id: 'intro-title', class: 'section-title' },
+                { id: 'intro-subtitle', class: 'section-subtitle' },
+                { id: 'download-title', class: 'download-title' },
+                { id: 'footer', class: 'footer' }
+            ];
+
+            // Animation cho feature cards
+            for (let i = 1; i <= 5; i++) {
+                const feature = document.getElementById(`feature-${i}`);
+                if (feature && isElementInViewport(feature)) {
+                    feature.classList.add('visible');
+                }
+            }
+
+            // Animation cho download cards
+            for (let i = 1; i <= 3; i++) {
+                const card = document.getElementById(`card-${i}`);
+                if (card && isElementInViewport(card)) {
+                    card.classList.add('visible');
+                }
+            }
+
+            // Animation cho các elements khác
+            elements.forEach(item => {
+                const element = document.getElementById(item.id);
+                if (element && isElementInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Thêm hiệu ứng cho tiêu đề
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Hiệu ứng cho tiêu đề chính
+            const headline = document.querySelector('.headline');
+            const subheading = document.querySelector('.subheading');
+            
+            setTimeout(() => {
+                headline.style.transition = 'text-shadow 1.5s ease';
+                headline.style.textShadow = '0 5px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(138, 138, 255, 0.3)';
+                
+                subheading.style.transition = 'color 1.5s ease';
+                subheading.style.color = 'rgba(255, 255, 255, 0.9)';
+            }, 1000);
+            
+            // Thêm sự kiện scroll
+            window.addEventListener('scroll', handleScrollAnimations);
+            window.addEventListener('resize', handleScrollAnimations);
+            
+            // Gọi lần đầu khi tải trang
+            setTimeout(handleScrollAnimations, 500);
+            
+            // Auto trigger animation cho các elements đang trong viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('feature-card') || 
+                            entry.target.classList.contains('card') ||
+                            entry.target.classList.contains('section-title') ||
+                            entry.target.classList.contains('section-subtitle') ||
+                            entry.target.classList.contains('download-title') ||
+                            entry.target.classList.contains('footer')) {
+                            entry.target.classList.add('visible');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            // Quan sát tất cả các elements cần animation
+            document.querySelectorAll('.feature-card, .card, .section-title, .section-subtitle, .download-title, .footer').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Hiệu ứng hover cho các card
+        document.querySelectorAll('.feature-card, .card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>
