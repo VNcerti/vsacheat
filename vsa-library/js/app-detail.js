@@ -1,4 +1,4 @@
-// app-detail.js - bản gọn đã tích hợp auto đổi link GitHub sang domain riêng
+
 
 class AppDetailManager {
     constructor() {
