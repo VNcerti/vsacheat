@@ -1,5 +1,3 @@
-// app-detail.js - Đã fix: sau 3 bước alert sẽ mở link bằng window.open (chuyển sang Safari)
-
 class AppDetailManager {
     constructor() {
         this.GOOGLE_SCRIPT_URL = CONFIG.GOOGLE_SCRIPT_URL;
@@ -1003,7 +1001,7 @@ class AppDetailManager {
             });
     }
 
-    // QUAN TRỌNG: Hàm downloadApp đã được fix - sau 3 bước alert sẽ mở link bằng window.open
+    // QUAN TRỌNG: Hàm downloadApp - vẫn giữ alert 3 bước
     downloadApp(url, appName, isVIP = false) {
         url = this.convertDownloadLink(url);
 
@@ -1021,7 +1019,6 @@ class AppDetailManager {
         const displayName = isVIP ? `${appName} (VIP)` : appName;
         const highlightedName = `<strong class="alert-app-name">${this.escapeHtml(displayName)}</strong>`;
 
-        // Lưu lại URL để sử dụng sau khi alert hoàn thành
         this.pendingDownloadUrl = url;
         this.pendingDownloadType = type;
 
@@ -1035,7 +1032,6 @@ class AppDetailManager {
                     type: 'secondary',
                     icon: 'fas fa-times',
                     onClick: () => {
-                        // Xóa URL đang chờ khi hủy
                         this.pendingDownloadUrl = null;
                         this.pendingDownloadType = null;
                     }
@@ -1053,7 +1049,7 @@ class AppDetailManager {
         );
     }
 
-    // Hàm hiển thị alert 3 bước và sau đó mở link bằng window.open (chuyển sang Safari)
+    // Hàm hiển thị alert 3 bước - SAU BƯỚC 3 dùng thẻ <a> để mở link, không bị chặn popup
     showDownloadPreparingAlert() {
         const alertIcon = document.getElementById('alertIcon');
         const alertTitle = document.getElementById('alertTitle');
@@ -1062,9 +1058,8 @@ class AppDetailManager {
         const alertBox = document.getElementById('customAlert');
 
         if (!this.alertOverlay || !alertIcon || !alertTitle || !alertMessage || !alertButtons) {
-            // Fallback: mở link trực tiếp nếu không có alert
             if (this.pendingDownloadUrl) {
-                window.open(this.pendingDownloadUrl, '_blank');
+                this.openLinkInSafari(this.pendingDownloadUrl);
                 this.pendingDownloadUrl = null;
             }
             return;
@@ -1096,18 +1091,33 @@ class AppDetailManager {
             alertTitle.textContent = 'Hoàn thành';
         }, 1900);
 
-        // Bước 3: Đóng alert và MỞ LINK BẰNG window.open (chuyển sang Safari)
+        // Bước 3: Đóng alert và MỞ LINK TRONG SAFARI (dùng thẻ <a> để tránh bị chặn popup)
         setTimeout(() => {
             this.alertOverlay.style.display = 'none';
             
-            // QUAN TRỌNG: Sử dụng window.open thay vì window.location.href
-            // window.open sẽ mở link trong Safari (trình duyệt ngoài) thay vì trong WebView
             if (this.pendingDownloadUrl) {
-                window.open(this.pendingDownloadUrl, '_blank');
+                this.openLinkInSafari(this.pendingDownloadUrl);
                 this.pendingDownloadUrl = null;
                 this.pendingDownloadType = null;
             }
         }, 2500);
+    }
+
+    // QUAN TRỌNG: Hàm mở link trong Safari - dùng thẻ <a> thay vì window.open
+    openLinkInSafari(url) {
+        // Tạo thẻ <a> ẩn và trigger click - cách này qua mặt popup blocker
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        
+        // Xóa thẻ sau khi click
+        setTimeout(() => {
+            document.body.removeChild(link);
+        }, 100);
     }
 
     getKey(url, appName) {
@@ -1139,9 +1149,9 @@ class AppDetailManager {
                     type: 'primary',
                     icon: 'fas fa-key',
                     onClick: () => {
-                        // Dùng window.open để mở key link trong Safari
-                        window.open(url, '_blank');
-
+                        // Dùng thẻ <a> để mở key link
+                        this.openLinkInSafari(url);
+                        
                         setTimeout(() => {
                             this.showCustomAlert(
                                 'success',
@@ -1255,7 +1265,7 @@ class AppDetailManager {
     }
 
     contactSupport() {
-        window.open('https://t.me/m/inBUSKQ1N2E1', '_blank');
+        this.openLinkInSafari('https://t.me/m/inBUSKQ1N2E1');
     }
 
     toggleDebug() {
