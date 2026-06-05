@@ -1,4 +1,4 @@
-
+// app-detail.js - Đã fix: sau 3 bước alert sẽ mở link bằng window.open (chuyển sang Safari)
 
 class AppDetailManager {
     constructor() {
@@ -10,8 +10,11 @@ class AppDetailManager {
         this.MAX_RETRIES = 3;
         this.currentAppData = null;
         this.autoRefreshInterval = null;
+        this.pendingDownloadUrl = null;
+        this.pendingDownloadType = null;
 
         this.initializeElements();
+        this.injectFinalAlertStyles();
         this.bindEvents();
         this.init();
     }
@@ -23,6 +26,94 @@ class AppDetailManager {
         this.debugInfo = document.getElementById('debugInfo');
         this.debugContent = document.getElementById('debugContent');
         this.alertOverlay = document.getElementById('customAlertOverlay');
+    }
+
+    injectFinalAlertStyles() {
+        if (document.getElementById('vsa-final-alert-style')) return;
+
+        const style = document.createElement('style');
+        style.id = 'vsa-final-alert-style';
+        style.textContent = `
+            .vip-denied-alert .alert-message {
+                font-size: 13px !important;
+                line-height: 1.55 !important;
+                color: var(--text-secondary) !important;
+            }
+
+            .vip-denied-alert .vip-required-inline {
+                color: #ed9500 !important;
+                font-weight: 750 !important;
+            }
+
+            .vip-denied-alert .vip-soft-highlight {
+                color: var(--text-primary) !important;
+                font-weight: 600 !important;
+            }
+
+            .vip-denied-alert .alert-icon.error {
+                background: rgba(239, 68, 68, 0.14) !important;
+                color: #ef4444 !important;
+            }
+
+            .download-progress-alert {
+                width: auto !important;
+                max-width: 260px !important;
+                padding: 22px 20px 20px !important;
+                text-align: center !important;
+            }
+
+            .download-progress-alert .custom-alert-header {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 12px !important;
+                margin-bottom: 0 !important;
+            }
+
+            .download-progress-alert .alert-icon {
+                width: 46px !important;
+                height: 46px !important;
+                margin: 0 auto !important;
+                font-size: 21px !important;
+            }
+
+            .download-progress-alert .alert-title {
+                display: block !important;
+                width: 100% !important;
+                margin: 0 !important;
+                font-size: 13.5px !important;
+                font-weight: 700 !important;
+                line-height: 1.45 !important;
+                text-align: center !important;
+                color: var(--text-primary) !important;
+            }
+
+            .download-progress-alert .alert-message,
+            .download-progress-alert .alert-buttons {
+                display: none !important;
+            }
+
+            .download-progress-alert .alert-app-name {
+                color: #ed9500 !important;
+                font-weight: 800 !important;
+            }
+
+            .alert-btn.warning,
+            .alert-btn.upgrade-now-btn {
+                background: #ed9500 !important;
+                color: #fff !important;
+                border: none !important;
+            }
+
+            .alert-btn.warning:hover,
+            .alert-btn.upgrade-now-btn:hover {
+                background: #d98600 !important;
+                transform: translateY(-1px) !important;
+                box-shadow: 0 8px 18px rgba(237, 149, 0, 0.24) !important;
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     bindEvents() {
@@ -180,6 +271,15 @@ class AppDetailManager {
         const alertTitle = document.getElementById('alertTitle');
         const alertMessage = document.getElementById('alertMessage');
         const alertButtons = document.getElementById('alertButtons');
+        const alertBox = document.getElementById('customAlert');
+
+        const normalizedTitle = String(title || '').toLowerCase();
+        const normalizedMessage = String(message || '').toLowerCase();
+        const isVipDeniedAlert =
+            normalizedTitle.includes('không đủ điều kiện') ||
+            normalizedMessage.includes('vip đã hết hạn') ||
+            normalizedMessage.includes('không đúng gói') ||
+            normalizedMessage.includes('không đủ điều kiện tải ứng dụng');
 
         const iconMap = {
             success: 'fas fa-check-circle',
@@ -188,8 +288,22 @@ class AppDetailManager {
             info: 'fas fa-info-circle'
         };
 
-        alertIcon.className = 'alert-icon ' + type;
-        alertIcon.innerHTML = `<i class="${iconMap[type] || iconMap.info}"></i>`;
+        const finalType = isVipDeniedAlert ? 'error' : type;
+
+        if (alertBox) {
+            alertBox.classList.remove('vip-denied-alert', 'download-confirm-alert', 'download-progress-alert');
+
+            if (isVipDeniedAlert) {
+                alertBox.classList.add('vip-denied-alert');
+            }
+
+            if (normalizedTitle.includes('xác nhận tải')) {
+                alertBox.classList.add('download-confirm-alert');
+            }
+        }
+
+        alertIcon.className = 'alert-icon ' + finalType;
+        alertIcon.innerHTML = `<i class="${iconMap[finalType] || iconMap.info}"></i>`;
         alertTitle.textContent = title;
         alertMessage.innerHTML = message;
         alertButtons.innerHTML = '';
@@ -197,12 +311,20 @@ class AppDetailManager {
         if (buttons && buttons.length > 0) {
             buttons.forEach(button => {
                 const btn = document.createElement('button');
-                btn.className = `alert-btn ${button.type || 'primary'}`;
+                const isUpgradeButton = String(button.text || '').toLowerCase().includes('nâng cấp');
+                btn.className = `alert-btn ${button.type || 'primary'}${isUpgradeButton ? ' upgrade-now-btn' : ''}`;
                 btn.innerHTML = button.icon ? `<i class="${button.icon}"></i> ${button.text}` : button.text;
 
                 btn.onclick = () => {
-                    if (button.onClick) button.onClick();
-                    this.alertOverlay.style.display = 'none';
+                    const shouldCloseAlert = button.closeOnClick !== false;
+
+                    if (shouldCloseAlert && this.alertOverlay) {
+                        this.alertOverlay.style.display = 'none';
+                    }
+
+                    if (button.onClick) {
+                        button.onClick();
+                    }
                 };
 
                 alertButtons.appendChild(btn);
@@ -413,6 +535,15 @@ class AppDetailManager {
         const div = document.createElement('div');
         div.textContent = text || '';
         return div.innerHTML;
+    }
+
+    escapeJsString(text) {
+        return String(text || '')
+            .replace(/\\/g, '\\\\')
+            .replace(/'/g, "\\'")
+            .replace(/"/g, '&quot;')
+            .replace(/\n/g, ' ')
+            .replace(/\r/g, ' ');
     }
 
     createScreenshotsHTML(app) {
@@ -627,16 +758,11 @@ class AppDetailManager {
                             <span class="meta-value">${formattedDate}</span>
                         </div>
                     </div>
-                    <div class="app-tags">${tagsHTML}</div>
                 </div>
             </div>
 
             ${downloadButtons.length > 0 ? `
                 <div class="download-section">
-                    <h2 class="download-title">
-                        <i class="fas fa-download"></i>
-                        Tải ứng dụng
-                    </h2>
                     <div class="${downloadOptionsClass}">
                         ${downloadButtons.join('')}
                     </div>
@@ -707,7 +833,7 @@ class AppDetailManager {
                     <i class="fas fa-key"></i>
                     Mã đăng nhập
                 </h2>
-                <button class="key-btn" onclick="appDetail.getKey('${link}', '${app.name}')">
+                <button class="key-btn" onclick="appDetail.getKey('${link}', '${this.escapeJsString(app.name)}')">
                     <i class="fas fa-key"></i>
                     Key đăng nhập
                 </button>
@@ -757,7 +883,7 @@ class AppDetailManager {
             }
 
             return `
-                <button class="download-btn download-btn-premium" onclick="appDetail.downloadApp('${link}', '${app.name}', true)">
+                <button class="download-btn download-btn-premium" onclick="appDetail.downloadApp('${link}', '${this.escapeJsString(app.name)}', true)">
                     <i class="fas fa-crown"></i>
                     Tải VIP #1
                 </button>
@@ -778,7 +904,7 @@ class AppDetailManager {
         }
 
         return `
-            <button class="download-btn" onclick="appDetail.downloadApp('${link}', '${app.name}', false)">
+            <button class="download-btn" onclick="appDetail.downloadApp('${link}', '${this.escapeJsString(app.name)}', false)">
                 <i class="fas fa-download"></i>
                 Tải miễn phí
             </button>
@@ -877,6 +1003,7 @@ class AppDetailManager {
             });
     }
 
+    // QUAN TRỌNG: Hàm downloadApp đã được fix - sau 3 bước alert sẽ mở link bằng window.open
     downloadApp(url, appName, isVIP = false) {
         url = this.convertDownloadLink(url);
 
@@ -891,37 +1018,96 @@ class AppDetailManager {
         }
 
         const type = isVIP ? 'VIP' : 'miễn phí';
+        const displayName = isVIP ? `${appName} (VIP)` : appName;
+        const highlightedName = `<strong class="alert-app-name">${this.escapeHtml(displayName)}</strong>`;
+
+        // Lưu lại URL để sử dụng sau khi alert hoàn thành
+        this.pendingDownloadUrl = url;
+        this.pendingDownloadType = type;
 
         this.showCustomAlert(
             'info',
             'Xác nhận tải',
-            `Bạn muốn tải xuống ứng dụng <strong>${appName}</strong> (${type})?<br><br>Chọn "Tải xuống" để tiếp tục.`,
+            `Bạn muốn tải xuống ứng dụng ${highlightedName}?<br><br>Chọn "Tải xuống" để tiếp tục.`,
             [
                 {
                     text: 'Hủy',
                     type: 'secondary',
                     icon: 'fas fa-times',
-                    onClick: () => {}
+                    onClick: () => {
+                        // Xóa URL đang chờ khi hủy
+                        this.pendingDownloadUrl = null;
+                        this.pendingDownloadType = null;
+                    }
                 },
                 {
                     text: 'Tải xuống',
                     type: 'primary',
                     icon: 'fas fa-download',
+                    closeOnClick: false,
                     onClick: () => {
-                        window.open(url, '_blank');
-
-                        setTimeout(() => {
-                            this.showCustomAlert(
-                                'success',
-                                'Thành công!',
-                                `✅ Đã bắt đầu tải xuống ${type}!`,
-                                [{ text: 'OK', type: 'primary', icon: 'fas fa-check' }]
-                            );
-                        }, 500);
+                        this.showDownloadPreparingAlert();
                     }
                 }
             ]
         );
+    }
+
+    // Hàm hiển thị alert 3 bước và sau đó mở link bằng window.open (chuyển sang Safari)
+    showDownloadPreparingAlert() {
+        const alertIcon = document.getElementById('alertIcon');
+        const alertTitle = document.getElementById('alertTitle');
+        const alertMessage = document.getElementById('alertMessage');
+        const alertButtons = document.getElementById('alertButtons');
+        const alertBox = document.getElementById('customAlert');
+
+        if (!this.alertOverlay || !alertIcon || !alertTitle || !alertMessage || !alertButtons) {
+            // Fallback: mở link trực tiếp nếu không có alert
+            if (this.pendingDownloadUrl) {
+                window.open(this.pendingDownloadUrl, '_blank');
+                this.pendingDownloadUrl = null;
+            }
+            return;
+        }
+
+        if (alertBox) {
+            alertBox.classList.remove('vip-denied-alert', 'download-confirm-alert');
+            alertBox.classList.add('download-progress-alert');
+        }
+
+        alertIcon.className = 'alert-icon info download-loading-icon';
+        alertIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        alertTitle.textContent = 'Đang chuẩn bị file';
+        alertMessage.innerHTML = '';
+        alertButtons.innerHTML = '';
+        this.alertOverlay.style.display = 'flex';
+
+        // Bước 1: Đang chuẩn bị file
+        setTimeout(() => {
+            alertIcon.className = 'alert-icon info download-loading-icon';
+            alertIcon.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>';
+            alertTitle.innerHTML = `File <strong class="alert-app-name">${this.escapeHtml(this.pendingDownloadType === 'VIP' ? 'VIP' : '')}</strong> đã sẵn sàng`;
+        }, 950);
+
+        // Bước 2: Hoàn thành
+        setTimeout(() => {
+            alertIcon.className = 'alert-icon success';
+            alertIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
+            alertTitle.textContent = 'Hoàn thành';
+        }, 1900);
+
+        // Bước 3: Đóng alert và MỞ LINK BẰNG window.open (chuyển sang Safari)
+        setTimeout(() => {
+            this.alertOverlay.style.display = 'none';
+            
+            // QUAN TRỌNG: Sử dụng window.open thay vì window.location.href
+            // window.open sẽ mở link trong Safari (trình duyệt ngoài) thay vì trong WebView
+            if (this.pendingDownloadUrl) {
+                window.open(this.pendingDownloadUrl, '_blank');
+                this.pendingDownloadUrl = null;
+                this.pendingDownloadType = null;
+            }
+        }, 2500);
     }
 
     getKey(url, appName) {
@@ -953,6 +1139,7 @@ class AppDetailManager {
                     type: 'primary',
                     icon: 'fas fa-key',
                     onClick: () => {
+                        // Dùng window.open để mở key link trong Safari
                         window.open(url, '_blank');
 
                         setTimeout(() => {
@@ -1045,11 +1232,9 @@ class AppDetailManager {
 
     showUpgradeRequiredAlert(requiredPackages) {
         this.showCustomAlert(
-            'warning',
+            'error',
             'Không đủ điều kiện',
-            `Tài khoản của bạn hiện không đủ điều kiện tải ứng dụng này (VIP đã hết hạn hoặc không đúng gói).<br><br>
-            <strong>Yêu cầu gói:</strong> ${requiredPackages}<br><br>
-            Vui lòng nâng cấp gói cao hơn để tiếp tục.`,
+            `Tài khoản của bạn hiện không đủ điều kiện tải ứng dụng này (<span class="vip-soft-highlight">VIP đã hết hạn hoặc không đúng gói</span>).<br><br>Yêu cầu gói: <span class="vip-required-inline">${this.escapeHtml(requiredPackages)}</span><br><br>Vui lòng nâng cấp gói cao hơn để tiếp tục.`,
             [
                 {
                     text: 'Hủy',
