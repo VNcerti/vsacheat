@@ -885,15 +885,16 @@ dotlottie-wc {
 }
 
 .check-icon-container {
-    width: 9px;
-    height: 9px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    background-image: url('https://doithe1s.vn/storage/userfiles/files/Fcupuom.gif');
+    background-image: url('https://vsacheat.com/img/verify.webp');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 0.5px;
+    margin-left: -1px;
 }
 
 .check-icon-container i {
