@@ -1,0 +1,4694 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cocoon 20/10 – Queen Chất | Chất từ trong ra ngoài</title>
+
+<meta
+  name="description"
+  content="Cocoon 20/10 – Queen Chất. Tôn vinh vẻ đẹp riêng, sự tự tin và cá tính của phụ nữ hiện đại."
+>
+
+<meta
+  name="keywords"
+  content="Cocoon, 20/10, Queen Chất, mỹ phẩm Cocoon, quà 20/10"
+>
+
+<meta name="theme-color" content="#F8F3EF">
+
+<meta
+  property="og:title"
+  content="Cocoon 20/10 – Queen Chất | Chất từ trong ra ngoài"
+>
+
+<meta
+  property="og:description"
+  content="Cocoon 20/10 – Queen Chất. Tôn vinh vẻ đẹp riêng, sự tự tin và cá tính của phụ nữ hiện đại."
+>
+
+<meta
+  property="og:image"
+  content="https://i.imgur.com/4jZKmld.png"
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+  --cream: #F8F3EF;
+  --cream-2: #F3EAE6;
+
+  --beige: #E8D8D1;
+  --rose-light: #D8B8AE;
+  --rose: #C99B91;
+
+  --brown: #8C4F4A;
+  --brown-light: #A9625B;
+
+  --ink: #292321;
+  --muted: #756966;
+
+  --white: #FFFFFF;
+
+  --border: rgba(41,35,33,.10);
+
+  --serif:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  --sans:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  --container: 1240px;
+
+  --radius: 24px;
+
+  --shadow:
+    0 20px 60px rgba(72,45,40,.08);
+
+  --transition:
+    300ms cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+
+  margin: 0;
+
+  color: var(--ink);
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(216,184,174,.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #F8F3EF 0%,
+      #F6EEEA 55%,
+      #EAD9D3 100%
+    );
+
+  font-family: var(--sans);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+
+  border: 0;
+}
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--brown);
+
+  color: white;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+
+  width:
+    min(
+      calc(100% - 48px),
+      var(--container)
+    );
+
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+
+  padding: 120px 0;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.eyebrow {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: var(--brown);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .18em;
+
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+
+  content: "";
+
+  width: 30px;
+
+  height: 1px;
+
+  background: currentColor;
+}
+
+.section-heading {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(
+      50px,
+      6vw,
+      88px
+    );
+
+  font-weight: 500;
+
+  line-height: .92;
+
+  letter-spacing: -.04em;
+}
+
+.section-heading.small {
+
+  font-size:
+    clamp(
+      48px,
+      5vw,
+      70px
+    );
+}
+
+.section-subtitle {
+
+  max-width: 650px;
+
+  margin: 22px 0 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 52px;
+
+  padding:
+    0 26px;
+
+  border-radius: 999px;
+
+  border: 1px solid transparent;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+}
+
+.btn::after {
+  content: "→";
+
+  transition:
+    transform var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:hover::after {
+  transform: translateX(4px);
+}
+
+.btn-primary {
+
+  background: var(--brown);
+
+  color: white;
+
+  box-shadow:
+    0 12px 30px rgba(140,79,74,.18);
+}
+
+.btn-primary:hover {
+  background: var(--brown-light);
+}
+
+.btn-outline {
+
+  border-color:
+    rgba(140,79,74,.35);
+
+  background:
+    rgba(255,255,255,.22);
+
+  color: var(--brown);
+}
+
+.btn-outline:hover {
+  border-color: var(--brown);
+
+  background:
+    rgba(255,255,255,.55);
+}
+
+.btn-white {
+
+  background: white;
+
+  color: var(--brown);
+}
+
+.btn-white-outline {
+
+  border-color:
+    rgba(255,255,255,.65);
+
+  color: white;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  background:
+    rgba(248,243,239,.86);
+
+  border-bottom:
+    1px solid rgba(41,35,33,.06);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  transition:
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.site-header.scrolled {
+
+  background:
+    rgba(248,243,239,.96);
+
+  box-shadow:
+    0 8px 30px rgba(41,35,33,.06);
+}
+
+.header-inner {
+
+  min-height: 76px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  font-family: var(--serif);
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  letter-spacing: .12em;
+}
+
+.logo-mark {
+
+  position: relative;
+
+  width: 28px;
+
+  height: 30px;
+
+  margin-right: 9px;
+}
+
+.logo-mark::before,
+.logo-mark::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 12px;
+
+  height: 23px;
+
+  border:
+    1.5px solid var(--brown);
+
+  border-radius:
+    100% 0 100% 0;
+
+  transform: rotate(-25deg);
+}
+
+.logo-mark::before {
+
+  left: 2px;
+
+  top: 2px;
+}
+
+.logo-mark::after {
+
+  right: 1px;
+
+  bottom: 0;
+
+  transform: rotate(155deg);
+}
+
+
+/* NAV */
+
+.desktop-nav {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 30px;
+}
+
+.desktop-nav a {
+
+  position: relative;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  padding: 7px 0;
+}
+
+.desktop-nav a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 1px;
+
+  width: 0;
+
+  height: 1px;
+
+  background:
+    var(--brown);
+
+  transition:
+    width var(--transition);
+}
+
+.desktop-nav a:hover {
+
+  color: var(--brown);
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* HEADER BUTTON */
+
+.header-action {
+
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+.header-action .btn {
+
+  min-height: 46px;
+
+  padding-inline: 28px;
+}
+
+
+/* MOBILE */
+
+.mobile-toggle {
+
+  display: none;
+
+  width: 44px;
+
+  height: 44px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.7);
+
+  cursor: pointer;
+}
+
+.hamburger {
+
+  position: relative;
+
+  display: block;
+
+  width: 20px;
+
+  height: 14px;
+
+  margin: auto;
+}
+
+.hamburger span {
+
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 1.5px;
+
+  background: var(--ink);
+
+  transition:
+    top var(--transition),
+    transform var(--transition);
+}
+
+.hamburger span:first-child {
+  top: 2px;
+}
+
+.hamburger span:last-child {
+  top: 10px;
+}
+
+.mobile-toggle.active
+.hamburger span:first-child {
+
+  top: 6px;
+
+  transform: rotate(45deg);
+}
+
+.mobile-toggle.active
+.hamburger span:last-child {
+
+  top: 6px;
+
+  transform: rotate(-45deg);
+}
+
+.mobile-menu {
+
+  position: fixed;
+
+  top: 76px;
+
+  left: 0;
+
+  z-index: 999;
+
+  width: 100%;
+
+  padding: 20px 0 28px;
+
+  background:
+    rgba(248,243,239,.98);
+
+  border-bottom:
+    1px solid var(--border);
+
+  transform:
+    translateY(-110%);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    transform var(--transition),
+    opacity var(--transition),
+    visibility var(--transition);
+}
+
+.mobile-menu.open {
+
+  transform:
+    translateY(0);
+
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.mobile-menu-inner {
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.mobile-menu a {
+
+  padding:
+    15px 0;
+
+  border-bottom:
+    1px solid var(--border);
+
+  font-family:
+    var(--serif);
+
+  font-size: 29px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+  position: relative;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding:
+    135px 0 90px;
+
+  overflow: hidden;
+}
+
+.hero::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 620px;
+
+  height: 620px;
+
+  top: -280px;
+
+  right: -170px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(216,184,174,.16);
+}
+
+.hero-grid {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    .84fr
+    1.16fr;
+
+  align-items: center;
+
+  gap: 85px;
+}
+
+.hero-copy {
+
+  position: relative;
+
+  z-index: 3;
+}
+
+.hero-title {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(
+      82px,
+      10vw,
+      155px
+    );
+
+  font-weight: 500;
+
+  line-height: .72;
+
+  letter-spacing: -.065em;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-title span:last-child {
+
+  margin-left: .52em;
+
+  color: var(--brown);
+}
+
+.hero-tagline {
+
+  margin:
+    38px 0 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(
+      28px,
+      3vw,
+      43px
+    );
+
+  font-style: italic;
+
+  line-height: 1;
+
+  color: var(--brown);
+}
+
+.hero-description {
+
+  max-width: 520px;
+
+  margin:
+    22px 0 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+.hero-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 35px;
+}
+
+
+/* =========================================================
+   IMAGE SYSTEM
+========================================================= */
+
+.image-wrap {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #E8D8D1,
+      #D8B8AE
+    );
+}
+
+.image-wrap img {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  opacity: 1;
+
+  transition:
+    opacity .3s ease,
+    transform 1s cubic-bezier(.22,1,.36,1);
+}
+
+.image-wrap img.is-loading {
+
+  opacity: 0;
+}
+
+.image-wrap.loaded img {
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-visual {
+
+  position: relative;
+}
+
+.hero-image-frame {
+
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: .84;
+
+  max-height: 760px;
+
+  overflow: hidden;
+
+  border-radius: 34px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #E8D8D1,
+      #D1B7AE
+    );
+
+  box-shadow:
+    0 24px 70px rgba(72,45,40,.09);
+}
+
+
+/*
+  HERO IMAGE:
+  dùng contain trước để không cắt mất campaign.
+*/
+
+.hero-image-frame img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  transform: scale(1);
+
+  transition:
+    opacity .35s ease,
+    transform 1s ease;
+}
+
+.hero-image-frame:hover img {
+
+  transform:
+    scale(1.015);
+}
+
+.hero-organic {
+
+  position: absolute;
+
+  width: 330px;
+
+  height: 330px;
+
+  right: -125px;
+
+  bottom: -120px;
+
+  border:
+    1px solid rgba(140,79,74,.20);
+
+  border-radius: 50%;
+
+  z-index: -1;
+}
+
+.hero-number {
+
+  position: absolute;
+
+  right: -5px;
+
+  top: 25px;
+
+  color:
+    rgba(140,79,74,.36);
+
+  font-family: var(--serif);
+
+  font-style: italic;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story {
+
+  background:
+    rgba(255,255,255,.30);
+}
+
+.story-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    .95fr
+    1.05fr;
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+.story-visual {
+
+  position: relative;
+
+  padding: 25px;
+}
+
+.story-image {
+
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: .84;
+
+  overflow: hidden;
+
+  border-radius: 27px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #E8D8D1,
+      #D8B8AE
+    );
+}
+
+.story-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  transition:
+    transform 1s ease;
+}
+
+.story-image:hover img {
+
+  transform:
+    scale(1.015);
+}
+
+.story-visual::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 150px;
+
+  height: 150px;
+
+  border:
+    1px solid rgba(140,79,74,.20);
+
+  border-radius: 50%;
+}
+
+.story-visual::after {
+
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: 0;
+
+  width: 110px;
+
+  height: 110px;
+
+  border:
+    1px solid rgba(140,79,74,.18);
+
+  border-radius: 50%;
+}
+
+.story-copy {
+
+  max-width: 630px;
+
+  margin-top: 35px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.9;
+}
+
+.story-copy p {
+  margin:
+    0 0 20px;
+}
+
+.story-quote {
+
+  position: relative;
+
+  margin:
+    45px 0 0;
+
+  padding-left: 28px;
+
+  color: var(--ink);
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(
+      34px,
+      4vw,
+      52px
+    );
+
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+.story-quote::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 5px;
+
+  width: 2px;
+
+  height: calc(100% - 10px);
+
+  background: var(--brown);
+}
+
+
+/* =========================================================
+   CAMPAIGN
+========================================================= */
+
+.campaign {
+
+  overflow: hidden;
+}
+
+.campaign-header {
+
+  margin-bottom: 55px;
+}
+
+.campaign-collage {
+
+  display: grid;
+
+  grid-template-columns:
+    1.15fr
+    .65fr;
+
+  grid-template-rows:
+    310px
+    310px;
+
+  gap: 18px;
+}
+
+.campaign-image {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background:
+    #E8D8D1;
+}
+
+.campaign-image.large {
+
+  grid-row:
+    1 / 3;
+}
+
+.campaign-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform .9s
+    cubic-bezier(.22,1,.36,1);
+}
+
+.campaign-image:hover img {
+
+  transform:
+    scale(1.035);
+}
+
+.campaign-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(41,35,33,.35)
+    );
+}
+
+.campaign-overlay span {
+
+  color: white;
+
+  font-family: var(--serif);
+
+  font-size: 26px;
+
+  font-style: italic;
+}
+
+.campaign-description {
+
+  max-width: 760px;
+
+  margin:
+    45px 0 0 auto;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.20),
+      rgba(232,216,209,.30)
+    );
+}
+
+.products-header {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 55px;
+}
+
+.text-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--brown);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+}
+
+.product-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 18px;
+}
+
+.product-card {
+
+  padding:
+    12px 12px 25px;
+
+  border:
+    1px solid rgba(41,35,33,.06);
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow:
+    0 12px 35px rgba(72,45,40,.04);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.product-card:hover {
+
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    var(--shadow);
+}
+
+.product-image {
+
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4/5;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #F3E6E1,
+      #E3CDC6
+    );
+}
+
+.product-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform .7s
+    cubic-bezier(.22,1,.36,1);
+}
+
+.product-card:hover
+.product-image img {
+
+  transform:
+    scale(1.03);
+}
+
+.product-content {
+
+  padding:
+    22px 10px 0;
+}
+
+.product-index {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--brown);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+.product-name {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  line-height: 1.05;
+}
+
+.product-description {
+
+  min-height: 52px;
+
+  margin:
+    12px 0 20px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.product-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--brown);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+}
+
+.product-link::after {
+  content: "→";
+}
+
+
+/* =========================================================
+   WOMAN
+========================================================= */
+
+.woman-section {
+
+  padding:
+    150px 0;
+}
+
+.woman-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    .9fr
+    1.1fr;
+
+  align-items: center;
+
+  gap: 100px;
+}
+
+.woman-copy {
+
+  position: relative;
+
+  padding-left: 30px;
+}
+
+.woman-copy::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 4px;
+
+  width: 1px;
+
+  height: 100%;
+
+  background:
+    var(--brown);
+}
+
+.woman-heading {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(
+      58px,
+      7vw,
+      100px
+    );
+
+  font-weight: 500;
+
+  line-height: .88;
+
+  letter-spacing: -.04em;
+}
+
+.woman-text {
+
+  max-width: 520px;
+
+  margin-top: 32px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.9;
+}
+
+.woman-handwritten {
+
+  display: block;
+
+  margin-top: 40px;
+
+  color: var(--brown);
+
+  font-family: var(--serif);
+
+  font-size: 34px;
+
+  font-style: italic;
+}
+
+.woman-visual {
+
+  position: relative;
+
+  padding-right: 30px;
+}
+
+.woman-image {
+
+  position: relative;
+
+  aspect-ratio: .88;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  background:
+    #E8D8D1;
+
+  box-shadow:
+    var(--shadow);
+}
+
+.woman-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.woman-frame {
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: -25px;
+
+  width: 160px;
+
+  height: 160px;
+
+  border:
+    1px solid rgba(140,79,74,.20);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   20/10
+========================================================= */
+
+.october-message {
+
+  position: relative;
+
+  padding:
+    125px 0;
+
+  overflow: hidden;
+
+  background:
+    var(--beige);
+}
+
+.october-inner {
+
+  position: relative;
+
+  max-width: 950px;
+
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.october-inner .eyebrow {
+
+  justify-content: center;
+}
+
+.october-heading {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(
+      56px,
+      8vw,
+      108px
+    );
+
+  font-weight: 500;
+
+  line-height: .88;
+
+  letter-spacing: -.045em;
+}
+
+.october-text {
+
+  max-width: 600px;
+
+  margin:
+    35px auto 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.85;
+}
+
+.october-actions {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 35px;
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.values {
+
+  background:
+    var(--cream);
+}
+
+.values-header {
+
+  margin-bottom: 65px;
+}
+
+.values-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  border-top:
+    1px solid var(--border);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.value-card {
+
+  padding:
+    38px 30px 45px;
+
+  border-right:
+    1px solid var(--border);
+}
+
+.value-card:last-child {
+  border-right: 0;
+}
+
+.value-number {
+
+  display: block;
+
+  margin-bottom: 42px;
+
+  color: var(--brown);
+
+  font-family: var(--serif);
+
+  font-size: 18px;
+
+  font-style: italic;
+}
+
+.value-icon {
+
+  width: 40px;
+
+  height: 40px;
+
+  margin-bottom: 22px;
+}
+
+.value-icon svg {
+
+  width: 100%;
+
+  height: 100%;
+
+  fill: none;
+
+  stroke: var(--brown);
+
+  stroke-width: 1.2;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.value-title {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: 30px;
+
+  line-height: 1.05;
+}
+
+.value-text {
+
+  margin:
+    15px 0 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery {
+
+  padding-bottom:
+    130px;
+}
+
+.gallery-header {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 55px;
+}
+
+.gallery-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr
+    .72fr
+    .72fr;
+
+  grid-template-rows:
+    300px
+    260px
+    300px;
+
+  gap: 15px;
+}
+
+.gallery-item {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    var(--beige);
+
+  cursor: zoom-in;
+}
+
+.gallery-item:nth-child(1) {
+
+  grid-row:
+    1 / 3;
+}
+
+.gallery-item:nth-child(4) {
+
+  grid-column: 3;
+
+  grid-row:
+    2 / 4;
+}
+
+.gallery-item:nth-child(5) {
+
+  grid-column:
+    1 / 3;
+}
+
+.gallery-item img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform .8s ease;
+}
+
+.gallery-item:hover img {
+
+  transform:
+    scale(1.035);
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    rgba(41,35,33,.90);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
+}
+
+.lightbox.open {
+
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.lightbox-image {
+
+  max-width:
+    94vw;
+
+  max-height:
+    88vh;
+
+  width: auto;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+}
+
+.lightbox-close {
+
+  position: absolute;
+
+  top: 22px;
+
+  right: 24px;
+
+  width: 46px;
+
+  height: 46px;
+
+  border:
+    1px solid rgba(255,255,255,.35);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.08);
+
+  color: white;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta {
+
+  position: relative;
+
+  padding:
+    145px 0;
+
+  overflow: hidden;
+
+  background:
+    var(--brown);
+
+  color: white;
+}
+
+.final-cta::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+
+  height: 500px;
+
+  left: -250px;
+
+  top: -250px;
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  border-radius: 50%;
+}
+
+.final-cta::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 370px;
+
+  height: 370px;
+
+  right: -180px;
+
+  bottom: -180px;
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  border-radius: 50%;
+}
+
+.final-cta-inner {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 900px;
+
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.final-cta .eyebrow {
+
+  justify-content: center;
+
+  color:
+    rgba(255,255,255,.75);
+}
+
+.final-heading {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(
+      62px,
+      9vw,
+      122px
+    );
+
+  font-weight: 500;
+
+  line-height: .83;
+
+  letter-spacing: -.05em;
+}
+
+.final-text {
+
+  max-width: 620px;
+
+  margin:
+    32px auto 0;
+
+  color:
+    rgba(255,255,255,.78);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+.final-actions {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 38px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+  padding:
+    75px 0 35px;
+
+  background:
+    #322927;
+
+  color: white;
+}
+
+.footer-top {
+
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    1fr;
+
+  gap: 80px;
+
+  padding-bottom: 60px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.12);
+}
+
+.footer-logo {
+
+  font-family: var(--serif);
+
+  font-size: 35px;
+
+  font-weight: 700;
+
+  letter-spacing: .10em;
+}
+
+.footer-tagline {
+
+  max-width: 400px;
+
+  margin-top: 18px;
+
+  color:
+    rgba(255,255,255,.60);
+
+  font-family: var(--serif);
+
+  font-size: 25px;
+
+  font-style: italic;
+
+  line-height: 1.25;
+}
+
+.footer-links {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 8px 35px;
+
+  align-content: start;
+}
+
+.footer-links a {
+
+  padding: 7px 0;
+
+  color:
+    rgba(255,255,255,.68);
+
+  font-size: 12px;
+
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.footer-links a:hover {
+
+  color: white;
+
+  transform:
+    translateX(3px);
+}
+
+.footer-bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 28px;
+
+  color:
+    rgba(255,255,255,.42);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+  opacity: 0;
+
+  transform:
+    translateY(30px);
+
+  transition:
+    opacity .8s
+      cubic-bezier(.22,1,.36,1),
+
+    transform .8s
+      cubic-bezier(.22,1,.36,1);
+}
+
+.reveal.visible {
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 100ms;
+}
+
+.reveal-delay-2 {
+  transition-delay: 180ms;
+}
+
+.reveal-delay-3 {
+  transition-delay: 260ms;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .product-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .values-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .value-card:nth-child(2) {
+
+    border-right: 0;
+  }
+
+  .value-card:nth-child(-n+2) {
+
+    border-bottom:
+      1px solid var(--border);
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .header-inner {
+
+    grid-template-columns:
+      1fr auto;
+  }
+
+  .desktop-nav,
+  .header-action {
+
+    display: none;
+  }
+
+  .mobile-toggle {
+
+    display: block;
+  }
+
+  .hero {
+
+    padding-top: 120px;
+  }
+
+  .hero-grid {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 55px;
+  }
+
+  .hero-visual {
+
+    width:
+      min(
+        100%,
+        680px
+      );
+
+    margin-inline: auto;
+  }
+
+  .story-grid,
+  .woman-grid {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 60px;
+  }
+
+  .story-visual {
+
+    width:
+      min(
+        100%,
+        600px
+      );
+
+    margin-inline: auto;
+  }
+
+  .woman-visual {
+
+    width:
+      min(
+        100%,
+        650px
+      );
+
+    margin-inline: auto;
+  }
+
+  .campaign-collage {
+
+    grid-template-rows:
+      400px
+      250px;
+  }
+
+  .gallery-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+    grid-template-rows:
+      360px
+      260px
+      260px
+      300px;
+  }
+
+  .gallery-item:nth-child(1) {
+
+    grid-column:
+      1 / 3;
+
+    grid-row:
+      1;
+  }
+
+  .gallery-item:nth-child(4) {
+
+    grid-column:
+      2;
+
+    grid-row:
+      3 / 5;
+  }
+
+  .gallery-item:nth-child(5) {
+
+    grid-column:
+      1;
+
+    grid-row:
+      3;
+  }
+
+  .footer-top {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 45px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .container {
+
+    width:
+      calc(100% - 32px);
+  }
+
+  .section {
+
+    padding:
+      75px 0;
+  }
+
+  .hero {
+
+    padding:
+      115px 0 75px;
+  }
+
+  .hero-title {
+
+    font-size:
+      clamp(
+        72px,
+        23vw,
+        105px
+      );
+  }
+
+  .hero-tagline {
+
+    font-size: 30px;
+  }
+
+  .hero-description {
+
+    font-size: 14px;
+  }
+
+  .hero-actions {
+
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+
+    width: 100%;
+  }
+
+  .hero-image-frame {
+
+    aspect-ratio:
+      .82;
+
+    border-radius:
+      22px;
+  }
+
+  .story-visual {
+
+    padding: 12px;
+  }
+
+  .story-image {
+
+    border-radius:
+      20px;
+  }
+
+  .story-copy {
+
+    font-size: 14px;
+  }
+
+  .story-quote {
+
+    font-size: 35px;
+  }
+
+  .campaign-collage {
+
+    grid-template-columns:
+      1fr 1fr;
+
+    grid-template-rows:
+      330px
+      190px;
+
+    gap: 10px;
+  }
+
+  .campaign-image.large {
+
+    grid-column:
+      1 / 3;
+
+    grid-row:
+      1;
+  }
+
+  .campaign-image.small-top {
+
+    grid-column:
+      1;
+
+    grid-row:
+      2;
+  }
+
+  .campaign-image.small-bottom {
+
+    grid-column:
+      2;
+
+    grid-row:
+      2;
+  }
+
+  .product-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .product-card {
+
+    padding:
+      7px 7px 18px;
+
+    border-radius:
+      15px;
+  }
+
+  .product-content {
+
+    padding:
+      15px 6px 0;
+  }
+
+  .product-name {
+
+    font-size: 22px;
+  }
+
+  .product-description {
+
+    min-height: auto;
+
+    font-size: 10px;
+  }
+
+  .woman-section {
+
+    padding:
+      95px 0;
+  }
+
+  .woman-copy {
+
+    padding-left:
+      20px;
+  }
+
+  .woman-heading {
+
+    font-size:
+      clamp(
+        58px,
+        18vw,
+        82px
+      );
+  }
+
+  .woman-text {
+
+    font-size: 14px;
+  }
+
+  .woman-handwritten {
+
+    font-size: 29px;
+  }
+
+  .woman-visual {
+
+    padding-right:
+      12px;
+  }
+
+  .october-message {
+
+    padding:
+      90px 0;
+  }
+
+  .october-heading {
+
+    font-size:
+      clamp(
+        52px,
+        15vw,
+        74px
+      );
+  }
+
+  .october-text {
+
+    font-size: 14px;
+  }
+
+  .october-actions .btn {
+
+    width: 100%;
+  }
+
+  .values-grid {
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .value-card {
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid var(--border);
+  }
+
+  .value-card:last-child {
+
+    border-bottom: 0;
+  }
+
+  .gallery {
+
+    padding-bottom:
+      80px;
+  }
+
+  .gallery-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+    grid-template-rows:
+      270px
+      190px
+      190px
+      240px;
+
+    gap: 8px;
+  }
+
+  .gallery-item {
+
+    border-radius:
+      13px;
+  }
+
+  .gallery-item:nth-child(1) {
+
+    grid-column:
+      1 / 3;
+
+    grid-row:
+      1;
+  }
+
+  .gallery-item:nth-child(2) {
+
+    grid-column:
+      1;
+
+    grid-row:
+      2;
+  }
+
+  .gallery-item:nth-child(3) {
+
+    grid-column:
+      2;
+
+    grid-row:
+      2;
+  }
+
+  .gallery-item:nth-child(4) {
+
+    grid-column:
+      1;
+
+    grid-row:
+      3 / 5;
+  }
+
+  .gallery-item:nth-child(5) {
+
+    grid-column:
+      2;
+
+    grid-row:
+      3;
+  }
+
+  .gallery-item:nth-child(6) {
+
+    grid-column:
+      2;
+
+    grid-row:
+      4;
+  }
+
+  .final-cta {
+
+    padding:
+      95px 0;
+  }
+
+  .final-heading {
+
+    font-size:
+      clamp(
+        58px,
+        17vw,
+        80px
+      );
+  }
+
+  .final-actions {
+
+    flex-direction:
+      column;
+  }
+
+  .final-actions .btn {
+
+    width: 100%;
+  }
+
+  .footer {
+
+    padding-top:
+      60px;
+  }
+
+  .footer-bottom {
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+  }
+}
+
+
+@media (max-width: 390px) {
+
+  .product-grid {
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .hero-title {
+
+    font-size:
+      76px;
+  }
+
+  .campaign-collage {
+
+    grid-template-rows:
+      300px
+      170px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      .01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      .01ms !important;
+  }
+
+  .reveal {
+
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
+
+<header
+  class="site-header"
+  id="siteHeader"
+>
+
+  <div class="container header-inner">
+
+    <a
+      href="[HOME_URL]"
+      class="logo"
+      aria-label="Cocoon Việt Nam"
+    >
+
+      <span
+        class="logo-mark"
+        aria-hidden="true"
+      ></span>
+
+      COCOON
+
+    </a>
+
+
+    <nav
+      class="desktop-nav"
+      aria-label="Điều hướng chính"
+    >
+
+      <a href="#story">
+        Câu chuyện
+      </a>
+
+      <a href="#campaign">
+        Queen Chất
+      </a>
+
+      <a href="#products">
+        Sản phẩm
+      </a>
+
+      <a href="#october20">
+        20/10
+      </a>
+
+      <a href="#explore">
+        Khám phá
+      </a>
+
+    </nav>
+
+
+    <div class="header-action">
+
+      <a
+        href="[SHOP_URL]"
+        class="btn btn-primary"
+      >
+        Mua ngay
+      </a>
+
+    </div>
+
+
+    <button
+      class="mobile-toggle"
+      id="mobileToggle"
+      type="button"
+      aria-label="Mở menu"
+      aria-expanded="false"
+    >
+
+      <span
+        class="hamburger"
+        aria-hidden="true"
+      >
+
+        <span></span>
+
+        <span></span>
+
+      </span>
+
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =======================================================
+     MOBILE MENU
+======================================================= -->
+
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
+
+  <div class="container mobile-menu-inner">
+
+    <a href="#story">
+      Câu chuyện
+    </a>
+
+    <a href="#campaign">
+      Queen Chất
+    </a>
+
+    <a href="#products">
+      Sản phẩm
+    </a>
+
+    <a href="#october20">
+      20/10
+    </a>
+
+    <a href="#explore">
+      Khám phá
+    </a>
+
+    <a href="[SHOP_URL]">
+      Mua ngay →
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- =======================================================
+     MAIN
+======================================================= -->
+
+<main>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section
+  class="hero"
+  id="home"
+>
+
+  <div class="container hero-grid">
+
+
+    <div class="hero-copy">
+
+      <div class="eyebrow reveal">
+        20/10 • COCOON VIỆT NAM
+      </div>
+
+
+      <h1 class="hero-title reveal">
+
+        <span>
+          QUEEN
+        </span>
+
+        <span>
+          CHẤT
+        </span>
+
+      </h1>
+
+
+      <p class="hero-tagline reveal reveal-delay-1">
+        Chất từ trong ra ngoài
+      </p>
+
+
+      <p class="hero-description reveal reveal-delay-2">
+
+        Mỗi người phụ nữ đều có một chất riêng.
+        Không cần giống bất kỳ ai, chỉ cần tự tin là chính mình.
+
+      </p>
+
+
+      <div class="hero-actions reveal reveal-delay-3">
+
+        <a
+          href="[CAMPAIGN_URL]"
+          class="btn btn-primary"
+        >
+          Khám phá Queen Chất
+        </a>
+
+        <a
+          href="[PRODUCT_COLLECTION_URL]"
+          class="btn btn-outline"
+        >
+          Khám phá sản phẩm
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         HERO IMAGE
+    ==================================================== -->
+
+    <div class="hero-visual reveal reveal-delay-2">
+
+      <div class="hero-number">
+        20 / 10
+      </div>
+
+
+      <div class="hero-image-frame">
+
+        <img
+          id="heroImage"
+          src="https://i.imgur.com/4jZKmld.png"
+          data-fallback="https://i.imgur.com/4jZKmld.png"
+          alt="Cocoon Queen Chất 20/10"
+          loading="eager"
+          fetchpriority="high"
+        >
+
+      </div>
+
+
+      <div
+        class="hero-organic"
+        aria-hidden="true"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     STORY
+======================================================= -->
+
+<section
+  class="section story"
+  id="story"
+>
+
+  <div class="container story-grid">
+
+
+    <div class="story-visual reveal">
+
+      <div class="story-image">
+
+        <img
+          id="storyImage"
+          src="https://i.imgur.com/mP1tpmk.png"
+          data-fallback="https://wsrv.nl/?url=https%3A%2F%2Fi.imgur.com%2FmP1tpmk.png"
+          alt="Câu chuyện Queen Chất Cocoon 20/10"
+          loading="lazy"
+        >
+
+      </div>
+
+    </div>
+
+
+    <div class="reveal reveal-delay-1">
+
+      <div class="eyebrow">
+        Câu chuyện Queen Chất
+      </div>
+
+
+      <h2 class="section-heading">
+
+        CHẤT TỪ
+        <br>
+        TRONG RA NGOÀI
+
+      </h2>
+
+
+      <div class="story-copy">
+
+        <p>
+          20/10 không chỉ là dịp để trao một món quà.
+          Đó còn là dịp để dành một lời yêu thương cho
+          những người phụ nữ luôn sống theo cách riêng của mình.
+        </p>
+
+        <p>
+          Với Queen Chất, Cocoon tôn vinh vẻ đẹp của sự
+          tự tin, cá tính và bản sắc riêng – bởi mỗi người
+          phụ nữ đều có một “chất” không thể thay thế.
+        </p>
+
+      </div>
+
+
+      <blockquote class="story-quote">
+
+        “Không cần giống bất kỳ ai.
+        Hãy là phiên bản chất nhất
+        của chính mình.”
+
+      </blockquote>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     CAMPAIGN
+======================================================= -->
+
+<section
+  class="section campaign"
+  id="campaign"
+>
+
+  <div class="container">
+
+
+    <div class="campaign-header reveal">
+
+      <div class="eyebrow">
+        Campaign highlight
+      </div>
+
+      <h2 class="section-heading small">
+
+        COCOON ×
+        <br>
+        QUEEN CHẤT
+
+      </h2>
+
+      <p class="section-subtitle">
+
+        Vẻ đẹp có cá tính.
+        Sự tự tin có dấu ấn riêng.
+
+      </p>
+
+    </div>
+
+
+    <div class="campaign-collage">
+
+
+      <a
+        class="campaign-image large reveal"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd1DV0G1mpY_2FMezie5P_Ps2YvpAQuN3lq7vxjFi5Mzy_es5tLENG7P2u&s=10"
+        data-lightbox
+      >
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd1DV0G1mpY_2FMezie5P_Ps2YvpAQuN3lq7vxjFi5Mzy_es5tLENG7P2u&s=10"
+          alt="Cocoon x Suboi Queen Chất"
+          loading="lazy"
+        >
+
+        <span class="campaign-overlay">
+          <span>Queen Chất</span>
+        </span>
+
+      </a>
+
+
+      <a
+        class="campaign-image reveal reveal-delay-1"
+        href="https://image.cocoonvietnam.com/uploads/CFEE_9_C9_F_1548_489_B_9039_7_FBDD_1296_B6_F_72dd1b61dd.jpg"
+        data-lightbox
+      >
+
+        <img
+          src="https://image.cocoonvietnam.com/uploads/CFEE_9_C9_F_1548_489_B_9039_7_FBDD_1296_B6_F_72dd1b61dd.jpg"
+          alt="Cocoon Queen Chất campaign"
+          loading="lazy"
+        >
+
+      </a>
+
+
+      <a
+        class="campaign-image reveal reveal-delay-2"
+        href="https://cdn.brvn.vn/editor_news/2021/10/Cocoon-Suboi-1_1635238636.jpg"
+        data-lightbox
+      >
+
+        <img
+          src="https://cdn.brvn.vn/editor_news/2021/10/Cocoon-Suboi-1_1635238636.jpg"
+          alt="Cocoon Suboi campaign"
+          loading="lazy"
+        >
+
+      </a>
+
+
+    </div>
+
+
+    <p class="campaign-description reveal">
+
+      Queen Chất là lời tôn vinh Cocoon dành cho phụ nữ hiện đại –
+      những người không ngại thể hiện cá tính và lựa chọn
+      con đường của riêng mình.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     PRODUCTS
+======================================================= -->
+
+<section
+  class="section products"
+  id="products"
+>
+
+  <div class="container">
+
+
+    <div class="products-header reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          Beauty selection
+        </div>
+
+        <h2 class="section-heading small">
+
+          QUEEN CHẤT
+          <br>
+          COLLECTION
+
+        </h2>
+
+        <p class="section-subtitle">
+
+          Những lựa chọn dành cho một ngày thật đặc biệt.
+
+        </p>
+
+      </div>
+
+
+      <a
+        href="[PRODUCT_COLLECTION_URL]"
+        class="text-link"
+      >
+        Xem toàn bộ bộ sưu tập →
+      </a>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- PRODUCT 01 -->
+
+      <article class="product-card reveal">
+
+        <a href="[PRODUCT_1_URL]">
+
+          <div class="product-image">
+
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6v-v6W8SkdMN-bBrcVydyF0UhHxxFMmcdShongjg7BRYmodU72AzUMxf9&s=10"
+              alt="[PRODUCT_1_NAME] - Cocoon"
+              loading="lazy"
+            >
+
+          </div>
+
+        </a>
+
+        <div class="product-content">
+
+          <span class="product-index">
+            PRODUCT 01
+          </span>
+
+          <h3 class="product-name">
+            [PRODUCT_1_NAME]
+          </h3>
+
+          <p class="product-description">
+            [PRODUCT_1_DESCRIPTION]
+          </p>
+
+          <a
+            href="[PRODUCT_1_URL]"
+            class="product-link"
+          >
+            Xem sản phẩm
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 02 -->
+
+      <article class="product-card reveal reveal-delay-1">
+
+        <a href="[PRODUCT_2_URL]">
+
+          <div class="product-image">
+
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXxbIxF942iXIouRGByRpE1RphgHAB5jwbtvtlx-jqoUX5V4qFiwjx9UA&s=10"
+              alt="[PRODUCT_2_NAME] - Cocoon"
+              loading="lazy"
+            >
+
+          </div>
+
+        </a>
+
+        <div class="product-content">
+
+          <span class="product-index">
+            PRODUCT 02
+          </span>
+
+          <h3 class="product-name">
+            [PRODUCT_2_NAME]
+          </h3>
+
+          <p class="product-description">
+            [PRODUCT_2_DESCRIPTION]
+          </p>
+
+          <a
+            href="[PRODUCT_2_URL]"
+            class="product-link"
+          >
+            Xem sản phẩm
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 03 -->
+
+      <article class="product-card reveal reveal-delay-2">
+
+        <a href="[PRODUCT_3_URL]">
+
+          <div class="product-image">
+
+            <img
+              src="https://image.cocoonvietnam.com/uploads/Avatar_Giftbox_Qua_Buoi_240627_49c787774e.jpg"
+              alt="[PRODUCT_3_NAME] - Cocoon"
+              loading="lazy"
+            >
+
+          </div>
+
+        </a>
+
+        <div class="product-content">
+
+          <span class="product-index">
+            PRODUCT 03
+          </span>
+
+          <h3 class="product-name">
+            [PRODUCT_3_NAME]
+          </h3>
+
+          <p class="product-description">
+            [PRODUCT_3_DESCRIPTION]
+          </p>
+
+          <a
+            href="[PRODUCT_3_URL]"
+            class="product-link"
+          >
+            Xem sản phẩm
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 04 -->
+
+      <article class="product-card reveal reveal-delay-3">
+
+        <a
+          href="https://skin365.vn/blog/bai-viet/cocoon-su-lua-chon-an-toan-va-tu-nhien-cho-lan-da-cua-ban"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div
+            class="product-image"
+            style="
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              padding:25px;
+              text-align:center;
+            "
+          >
+
+            <div>
+
+              <span
+                style="
+                  display:block;
+                  color:#8C4F4A;
+                  font-family:'Cormorant Garamond',serif;
+                  font-size:26px;
+                  line-height:1.05;
+                "
+              >
+                PRODUCT 04
+              </span>
+
+              <span
+                style="
+                  display:block;
+                  margin-top:10px;
+                  color:#756966;
+                  font-size:11px;
+                  line-height:1.6;
+                "
+              >
+                [PRODUCT_4_IMAGE_URL]
+                <br>
+                cần bổ sung URL ảnh trực tiếp
+              </span>
+
+            </div>
+
+          </div>
+
+        </a>
+
+        <div class="product-content">
+
+          <span class="product-index">
+            PRODUCT 04
+          </span>
+
+          <h3 class="product-name">
+            [PRODUCT_4_NAME]
+          </h3>
+
+          <p class="product-description">
+            [PRODUCT_4_DESCRIPTION]
+          </p>
+
+          <a
+            href="https://skin365.vn/blog/bai-viet/cocoon-su-lua-chon-an-toan-va-tu-nhien-cho-lan-da-cua-ban"
+            class="product-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Xem sản phẩm
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     WOMAN
+======================================================= -->
+
+<section
+  class="section woman-section"
+  id="explore"
+>
+
+  <div class="container woman-grid">
+
+
+    <div class="woman-copy reveal">
+
+      <div class="eyebrow">
+        A note for her
+      </div>
+
+      <h2 class="woman-heading">
+
+        DÀNH
+        <br>
+        CHO NÀNG
+
+      </h2>
+
+      <div class="woman-text">
+
+        Có thể nàng mạnh mẽ.
+        Có thể nàng dịu dàng.
+        Có thể nàng cá tính.
+        Cũng có thể hôm nay nàng chỉ muốn dành
+        một chút thời gian cho chính mình.
+
+        <br><br>
+
+        Dù là phiên bản nào,
+        nàng vẫn xứng đáng được yêu thương.
+
+      </div>
+
+      <span class="woman-handwritten">
+        Be your own Queen.
+      </span>
+
+    </div>
+
+
+    <div class="woman-visual reveal reveal-delay-1">
+
+      <div class="woman-image">
+
+        <img
+          src="https://image.cocoonvietnam.com/uploads/Hinh_3_29162f2a67.jpg"
+          alt="Người phụ nữ hiện đại - Queen Chất Cocoon"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div
+        class="woman-frame"
+        aria-hidden="true"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     20/10
+======================================================= -->
+
+<section
+  class="october-message"
+  id="october20"
+>
+
+  <div class="container">
+
+    <div class="october-inner reveal">
+
+      <div class="eyebrow">
+        20/10 • A little love
+      </div>
+
+      <h2 class="october-heading">
+
+        20/10 NÀY,
+        <br>
+        HÃY CHỌN MỘT MÓN QUÀ
+        <br>
+        MANG DẤU ẤN RIÊNG.
+
+      </h2>
+
+      <p class="october-text">
+
+        Không cần một món quà quá lớn.
+        Chỉ cần một điều đủ tinh tế để nói rằng:
+        Bạn xứng đáng được yêu thương.
+
+      </p>
+
+      <div class="october-actions">
+
+        <a
+          href="[VALENTINE_OR_20_10_PRODUCT_URL]"
+          class="btn btn-primary"
+        >
+          Khám phá quà 20/10
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     VALUES
+======================================================= -->
+
+<section class="section values">
+
+  <div class="container">
+
+
+    <div class="values-header reveal">
+
+      <div class="eyebrow">
+        The Cocoon spirit
+      </div>
+
+      <h2 class="section-heading small">
+
+        ĐẸP THEO
+        <br>
+        CÁCH CỦA MÌNH
+
+      </h2>
+
+    </div>
+
+
+    <div class="values-grid">
+
+
+      <article class="value-card reveal">
+
+        <span class="value-number">
+          01
+        </span>
+
+        <div class="value-icon">
+
+          <svg viewBox="0 0 48 48">
+
+            <path d="M24 40V13"></path>
+
+            <path
+              d="M24 22C16 22 11 18 10 10C18 10 23 14 24 22Z"
+            ></path>
+
+            <path
+              d="M24 30C32 30 37 26 38 18C30 18 25 22 24 30Z"
+            ></path>
+
+          </svg>
+
+        </div>
+
+        <h3 class="value-title">
+          THƯƠNG HIỆU VIỆT
+        </h3>
+
+        <p class="value-text">
+
+          Cocoon phát triển các sản phẩm lấy cảm hứng
+          từ những nguyên liệu quen thuộc của Việt Nam.
+
+        </p>
+
+      </article>
+
+
+      <article class="value-card reveal reveal-delay-1">
+
+        <span class="value-number">
+          02
+        </span>
+
+        <div class="value-icon">
+
+          <svg viewBox="0 0 48 48">
+
+            <path
+              d="M24 39C15 31 9 25 9 18C9 13 12.5 10 17 10C20.5 10 23 12 24 15C25 12 27.5 10 31 10C35.5 10 39 13 39 18C39 25 33 31 24 39Z"
+            ></path>
+
+          </svg>
+
+        </div>
+
+        <h3 class="value-title">
+          THUẦN CHAY
+        </h3>
+
+        <p class="value-text">
+
+          Tinh thần vegan là một phần quan trọng
+          trong định vị thương hiệu Cocoon.
+
+        </p>
+
+      </article>
+
+
+      <article class="value-card reveal reveal-delay-2">
+
+        <span class="value-number">
+          03
+        </span>
+
+        <div class="value-icon">
+
+          <svg viewBox="0 0 48 48">
+
+            <path
+              d="M24 40C24 40 11 30 11 19C11 13 15 9 20 9C22 9 23.5 10 24 12C24.5 10 26 9 28 9C33 9 37 13 37 19C37 30 24 40 24 40Z"
+            ></path>
+
+            <path d="M24 12V31"></path>
+
+          </svg>
+
+        </div>
+
+        <h3 class="value-title">
+          VẺ ĐẸP CÓ TRÁCH NHIỆM
+        </h3>
+
+        <p class="value-text">
+
+          Hướng đến vẻ đẹp gắn với lối sống nhân văn
+          và trách nhiệm.
+
+        </p>
+
+      </article>
+
+
+      <article class="value-card reveal reveal-delay-3">
+
+        <span class="value-number">
+          04
+        </span>
+
+        <div class="value-icon">
+
+          <svg viewBox="0 0 48 48">
+
+            <circle
+              cx="24"
+              cy="24"
+              r="15"
+            ></circle>
+
+            <path d="M24 9V39"></path>
+
+            <path d="M9 24H39"></path>
+
+            <path d="M13 14C19 19 29 19 35 14"></path>
+
+            <path d="M13 34C19 29 29 29 35 34"></path>
+
+          </svg>
+
+        </div>
+
+        <h3 class="value-title">
+          CHẤT RIÊNG
+        </h3>
+
+        <p class="value-text">
+
+          Mỗi người phụ nữ đều có một vẻ đẹp
+          và cá tính riêng.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     GALLERY
+======================================================= -->
+
+<section class="section gallery">
+
+  <div class="container">
+
+
+    <div class="gallery-header reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          Queen Chất moments
+        </div>
+
+        <h2 class="section-heading small">
+
+          CAMPAIGN
+          <br>
+          GALLERY
+
+        </h2>
+
+      </div>
+
+      <p class="section-subtitle">
+
+        Những khoảnh khắc mang tinh thần tự tin,
+        cá tính và chất riêng của người phụ nữ hiện đại.
+
+      </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+      <a
+        href="[GALLERY_IMAGE_1_URL]"
+        class="gallery-item reveal"
+        data-lightbox
+      >
+
+        <img
+          src="[GALLERY_IMAGE_1_URL]"
+          alt="Queen Chất gallery 1"
+          loading="lazy"
+        >
+
+      </a>
+
+
+      <a
+        href="[GALLERY_IMAGE_2_URL]"
+        class="gallery-item reveal reveal-delay-1"
+        data-lightbox
+      >
+
+        <img
+          src="[GALLERY_IMAGE_2_URL]"
+          alt="Queen Chất gallery 2"
+          loading="lazy"
+        >
+
+      </a>
+
+
+      <a
+        href="[GALLERY_IMAGE_3_URL]"
+        class="gallery-item reveal reveal-delay-2"
+        data-lightbox
+      >
+
+        <img
+          src="[GALLERY_IMAGE_3_URL]"
+          alt="Queen Chất gallery 3"
+          loading="lazy"
+        >
+
+      </a>
+
+
+      <a
+        href="[GALLERY_IMAGE_4_URL]"
+        class="gallery-item reveal"
+        data-lightbox
+      >
+
+        <img
+          src="[GALLERY_IMAGE_4_URL]"
+          alt="Queen Chất gallery 4"
+          loading="lazy"
+        >
+
+      </a>
+
+
+      <a
+        href="[GALLERY_IMAGE_5_URL]"
+        class="gallery-item reveal reveal-delay-1"
+        data-lightbox
+      >
+
+        <img
+          src="[GALLERY_IMAGE_5_URL]"
+          alt="Queen Chất gallery 5"
+          loading="lazy"
+        >
+
+      </a>
+
+
+      <a
+        href="[GALLERY_IMAGE_6_URL]"
+        class="gallery-item reveal reveal-delay-2"
+        data-lightbox
+      >
+
+        <img
+          src="[GALLERY_IMAGE_6_URL]"
+          alt="Queen Chất gallery 6"
+          loading="lazy"
+        >
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINAL CTA
+======================================================= -->
+
+<section class="final-cta">
+
+  <div class="container">
+
+    <div class="final-cta-inner reveal">
+
+      <div class="eyebrow">
+        Your own kind of beautiful
+      </div>
+
+      <h2 class="final-heading">
+
+        QUEEN CHẤT
+        <br>
+        THEO CÁCH
+        <br>
+        CỦA BẠN.
+
+      </h2>
+
+      <p class="final-text">
+
+        20/10 này, hãy dành một chút yêu thương
+        cho chính mình hoặc một người phụ nữ thật đặc biệt.
+
+      </p>
+
+      <div class="final-actions">
+
+        <a
+          href="[PRODUCT_COLLECTION_URL]"
+          class="btn btn-white"
+        >
+          Khám phá bộ sưu tập
+        </a>
+
+        <a
+          href="[SHOP_URL]"
+          class="btn btn-white-outline"
+        >
+          Mua ngay
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="footer">
+
+  <div class="container">
+
+
+    <div class="footer-top">
+
+
+      <div>
+
+        <a
+          href="[HOME_URL]"
+          class="footer-logo"
+        >
+          COCOON
+        </a>
+
+        <p class="footer-tagline">
+
+          Beauty is not just what you see.
+          <br>
+          It is what you choose to be.
+
+        </p>
+
+      </div>
+
+
+      <nav
+        class="footer-links"
+        aria-label="Footer"
+      >
+
+        <a href="[HOME_URL]">
+          Trang chủ
+        </a>
+
+        <a href="[PRODUCT_URL]">
+          Sản phẩm
+        </a>
+
+        <a href="[ABOUT_URL]">
+          Về Cocoon
+        </a>
+
+        <a href="[CONTACT_URL]">
+          Liên hệ
+        </a>
+
+        <a
+          href="[FACEBOOK_URL]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+        <a
+          href="[INSTAGRAM_URL]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="[TIKTOK_URL]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TikTok
+        </a>
+
+        <a
+          href="[YOUTUBE_URL]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          YouTube
+        </a>
+
+      </nav>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Cocoon Vietnam. All rights reserved.
+      </span>
+
+      <span>
+        20/10 • QUEEN CHẤT
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =======================================================
+     LIGHTBOX
+======================================================= -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  aria-hidden="true"
+>
+
+  <button
+    class="lightbox-close"
+    id="lightboxClose"
+    type="button"
+    aria-label="Đóng"
+  >
+    ×
+  </button>
+
+  <img
+    id="lightboxImage"
+    class="lightbox-image"
+    src=""
+    alt=""
+  >
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   IMAGE FALLBACK SYSTEM
+========================================================= */
+
+/*
+  Đây là phần quan trọng nhất đã sửa.
+
+  Nếu:
+  https://i.imgur.com/4jZKmld.png
+
+  không load được trong trình duyệt,
+  JS sẽ tự động thử:
+
+  https://wsrv.nl/?url=...
+
+  Nhờ vậy không còn ô màu trống như screenshot.
+*/
+
+function setupImageFallback(img) {
+
+  if (!img) return;
+
+  const fallback =
+    img.dataset.fallback;
+
+  let triedFallback = false;
+
+
+  img.addEventListener(
+    "error",
+    function () {
+
+      if (
+        fallback &&
+        !triedFallback
+      ) {
+
+        triedFallback = true;
+
+        img.src = fallback;
+
+        return;
+      }
+
+
+      /*
+        Nếu cả ảnh gốc và fallback
+        đều thất bại thì giữ background
+        của container thay vì làm layout vỡ.
+      */
+
+      img.style.opacity = "0";
+
+    }
+  );
+
+}
+
+
+/* HERO */
+
+setupImageFallback(
+  document.getElementById("heroImage")
+);
+
+
+/* STORY */
+
+setupImageFallback(
+  document.getElementById("storyImage")
+);
+
+
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
+
+const header =
+  document.getElementById(
+    "siteHeader"
+  );
+
+function updateHeader() {
+
+  if (
+    window.scrollY > 30
+  ) {
+
+    header.classList.add(
+      "scrolled"
+    );
+
+  } else {
+
+    header.classList.remove(
+      "scrolled"
+    );
+
+  }
+
+}
+
+updateHeader();
+
+window.addEventListener(
+  "scroll",
+  updateHeader,
+  {
+    passive: true
+  }
+);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const mobileToggle =
+  document.getElementById(
+    "mobileToggle"
+  );
+
+const mobileMenu =
+  document.getElementById(
+    "mobileMenu"
+  );
+
+
+function toggleMobileMenu() {
+
+  const open =
+    mobileMenu.classList.toggle(
+      "open"
+    );
+
+  mobileToggle.classList.toggle(
+    "active",
+    open
+  );
+
+  mobileToggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+
+  document.body.style.overflow =
+    open
+      ? "hidden"
+      : "";
+
+}
+
+
+mobileToggle.addEventListener(
+  "click",
+  toggleMobileMenu
+);
+
+
+mobileMenu
+  .querySelectorAll("a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        mobileMenu.classList.remove(
+          "open"
+        );
+
+        mobileToggle.classList.remove(
+          "active"
+        );
+
+        mobileToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        document.body.style.overflow =
+          "";
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const reveals =
+  document.querySelectorAll(
+    ".reveal"
+  );
+
+
+const reducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+
+if (
+  "IntersectionObserver" in window &&
+  !reducedMotion
+) {
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(
+          entry => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          }
+        );
+
+      },
+      {
+        threshold: .12,
+
+        rootMargin:
+          "0px 0px -40px 0px"
+      }
+    );
+
+
+  reveals.forEach(
+    element =>
+      observer.observe(element)
+  );
+
+} else {
+
+  reveals.forEach(
+    element =>
+      element.classList.add(
+        "visible"
+      )
+  );
+
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+const lightbox =
+  document.getElementById(
+    "lightbox"
+  );
+
+const lightboxImage =
+  document.getElementById(
+    "lightboxImage"
+  );
+
+const lightboxClose =
+  document.getElementById(
+    "lightboxClose"
+  );
+
+
+document
+  .querySelectorAll(
+    "[data-lightbox]"
+  )
+  .forEach(item => {
+
+    item.addEventListener(
+      "click",
+      event => {
+
+        event.preventDefault();
+
+        const image =
+          item.querySelector("img");
+
+        const source =
+          item.getAttribute("href");
+
+        if (!source) return;
+
+        lightboxImage.src =
+          source;
+
+        lightboxImage.alt =
+          image
+            ? image.alt
+            : "";
+
+        lightbox.classList.add(
+          "open"
+        );
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        document.body.style.overflow =
+          "hidden";
+
+      }
+    );
+
+  });
+
+
+function closeLightbox() {
+
+  lightbox.classList.remove(
+    "open"
+  );
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  lightboxImage.src = "";
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+lightboxClose.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+lightbox.addEventListener(
+  "click",
+  event => {
+
+    if (
+      event.target === lightbox
+    ) {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape" &&
+      lightbox.classList.contains(
+        "open"
+      )
+    ) {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   SMOOTH SCROLL
+========================================================= */
+
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      event => {
+
+        const selector =
+          link.getAttribute(
+            "href"
+          );
+
+        const target =
+          document.querySelector(
+            selector
+          );
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior:
+            reducedMotion
+              ? "auto"
+              : "smooth",
+
+          block: "start"
+        });
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   PREVENT EMPTY PLACEHOLDER LINKS
+========================================================= */
+
+document
+  .querySelectorAll(
+    "a[href]"
+  )
+  .forEach(link => {
+
+    const href =
+      link.getAttribute(
+        "href"
+      );
+
+    if (
+      /^\[[A-Z0-9_]+\]$/i.test(
+        href
+      )
+    ) {
+
+      link.addEventListener(
+        "click",
+        event => {
+
+          event.preventDefault();
+
+        }
+      );
+
+    }
+
+  });
+
+
+/* =========================================================
+   RESIZE
+========================================================= */
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    if (
+      window.innerWidth > 900
+    ) {
+
+      mobileMenu.classList.remove(
+        "open"
+      );
+
+      mobileToggle.classList.remove(
+        "active"
+      );
+
+      mobileToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>
