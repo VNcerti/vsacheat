@@ -1,290 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f8fa">
-  <title>VSA Library — Thư viện tiện ích iOS</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Thông Báo Nâng Cấp Toàn Diện - VSA Library 2.0</title>
+  <style>
+    /* Reset và khóa cuộn ngang tuyệt đối */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background-color: #f4f5f7;
+      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Khung bao ngoài căn giữa, đảm bảo không tràn viền */
+    .wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    /* Thẻ thông báo chính */
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background-color: #ffffff;
+      border: 1px solid #e5e5ea;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* Nhãn phiên bản */
+    .badge {
+      display: inline-block;
+      background-color: #eef4ff;
+      color: #0066cc;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
+      margin-bottom: 12px;
+    }
+
+    /* Tiêu đề */
+    .title {
+      font-size: 21px;
+      font-weight: 700;
+      color: #111111;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 14.5px;
+      color: #515154;
+      margin-bottom: 20px;
+    }
+
+    /* Khối yêu cầu cập nhật */
+    .update-prompt {
+      background-color: #f9fafb;
+      border-left: 3px solid #0066cc;
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      color: #2c2c2e;
+      margin-bottom: 22px;
+    }
+
+    /* Tiêu đề mục tính năng */
+    .section-heading {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6e6e73;
+      margin-bottom: 12px;
+    }
+
+    /* Danh sách nâng cấp */
+    .feature-list {
+      list-style: none;
+      margin-bottom: 22px;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 14.5px;
+      color: #1d1d1f;
+      margin-bottom: 11px;
+    }
+
+    .feature-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #0066cc;
+      font-weight: 700;
+    }
+
+    /* Khối lưu ý tài khoản */
+    .notice-box {
+      background-color: #f4f6f8;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 13.5px;
+      color: #3a3a3c;
+      margin-bottom: 24px;
+    }
+
+    .notice-box strong {
+      color: #111111;
+    }
+
+    /* Nút hành động chính */
+    .btn-update {
+      display: block;
+      width: 100%;
+      background-color: #0066cc;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 15.5px;
+      font-weight: 600;
+      padding: 14px 20px;
+      border-radius: 10px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-update:hover {
+      background-color: #0052a3;
+    }
+
+    .btn-update:active {
+      transform: scale(0.99);
+    }
+
+    /* Chân trang */
+    .footer-tagline {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #f0f0f2;
+      text-align: center;
+      font-size: 13px;
+      color: #86868b;
+    }
+  </style>
 </head>
 <body>
-  <div class="bg-glows" aria-hidden="true">
-    <div class="glow g1"></div>
-    <div class="glow g2"></div>
+  <div class="wrapper">
+    <main class="card">
+      <span class="badge">PHIÊN BẢN MỚI 2.0</span>
+
+      <h1 class="title">🚀 THÔNG BÁO NÂNG CẤP TOÀN DIỆN VSA LIBRARY 2.0</h1>
+      <p class="subtitle">
+        VSA Library 2.0 chính thức ra mắt với nhiều cải tiến đáng chú ý.
+      </p>
+
+      <div class="update-prompt">
+        Vui lòng cập nhật lên phiên bản mới ngay hôm nay để đảm bảo tính ổn định và tận hưởng trải nghiệm mượt mà, trọn vẹn nhất.
+      </div>
+
+      <div class="section-heading">✨ NHỮNG NÂNG CẤP MỚI</div>
+      <ul class="feature-list">
+        <li>Hỗ trợ cài đặt và ký trực tiếp ứng dụng ngay trong VSA Library.</li>
+        <li>Nâng cấp máy chủ, tối ưu tốc độ và trải nghiệm sử dụng mượt mà hơn.</li>
+        <li>Không cần sử dụng thêm các công cụ bên thứ ba để ký IPA.</li>
+        <li>Khắc phục những hạn chế trên phiên bản VSA Library cũ.</li>
+      </ul>
+
+      <div class="notice-box">
+        <strong>🎉 LƯU Ý:</strong> Các tài khoản đã đăng ký trên hệ thống vẫn được giữ nguyên và tiếp tục sử dụng bình thường, không cần đăng ký lại.
+      </div>
+
+      <a href="https://vsign.download/vsa-library" class="btn-update" target="_blank" rel="noopener noreferrer">
+        Update Ngay
+      </a>
+
+      <footer class="footer-tagline">
+        VSA Library 2.0 – Nâng cấp trải nghiệm, tối ưu mọi thao tác! ❤️
+      </footer>
+    </main>
   </div>
-
-  <header class="header">
-    <a class="brand" href="#home">
-      <img src="https://vsacheat.com/img/vsacheat-logo-website.webp" alt="VSA">
-      <i></i>
-      <b>Library</b>
-    </a>
-    <nav>
-      <a class="active" href="#home">Khám phá</a>
-      <a href="#categories">Danh mục</a>
-      <a href="#features">Tính năng</a>
-      <a href="#guide">Hướng dẫn</a>
-    </nav>
-    <div class="head-right">
-      <span class="online"><i></i> Hệ thống hoạt động</span>
-      <a class="dark-btn" href="#apps">Mở thư viện ↗</a>
-      <button id="menuBtn" type="button" aria-label="Menu">☰</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero wrap" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><i></i> VSA ECOSYSTEM <span></span> iOS LIBRARY</div>
-        <h1>Một thư viện.<br><em>Vô vàn tiện ích.</em></h1>
-        <p>Thư viện tiện ích với hàng loạt ứng dụng được tuyển chọn, cập nhật thường xuyên. Đa dạng danh mục Trò chơi, Giải trí, Sức khỏe, Giáo dục cùng tính năng nhân bản ứng dụng không giới hạn, mang đến trải nghiệm iOS linh hoạt và tiện lợi.</p>
-        <div class="hero-actions">
-          <a class="blue-btn" href="#signing">Cài đặt ngay <b>↗</b></a>
-          <a class="plain-link" href="#guide">Tìm hiểu cách cài đặt →</a>
-        </div>
-        <div class="stats stats-desktop">
-          <div><b>01</b><small>Kho ứng dụng<br>được tuyển chọn</small></div>
-          <i></i>
-          <div><b>∞</b><small>Trải nghiệm<br>nhân bản linh hoạt</small></div>
-          <i></i>
-          <div><b>iOS</b><small>Tối ưu cho<br>thiết bị Apple</small></div>
-        </div>
-      </div>
-
-      <div class="hero-art">
-        <div class="halo"></div>
-        <div class="orbit"></div>
-        <img src="https://vsacheat.com/img/banner-vsa-library.webp" alt="Mockup giao diện ứng dụng VSA Library" fetchpriority="high">
-        <div class="float-chip chip-a">✦ <span><b>VSA Library</b><small>Designed for iOS</small></span></div>
-        <div class="float-chip chip-b"><i></i><span><b>Trải nghiệm mượt mà</b><small>Simple. Useful. Refined.</small></span></div>
-      </div>
-
-      <div class="stats stats-mobile">
-        <div><b>01</b><small>Kho ứng dụng<br>được tuyển chọn</small></div>
-        <i></i>
-        <div><b>∞</b><small>Trải nghiệm<br>nhân bản linh hoạt</small></div>
-        <i></i>
-        <div><b>iOS</b><small>Tối ưu cho<br>thiết bị Apple</small></div>
-      </div>
-    </section>
-
-    <div class="trust wrap">
-      <span>ĐƯỢC PHÁT TRIỂN TRONG HỆ SINH THÁI VSA</span>
-      <i></i>
-      <b>VSA <em>LIBRARY</em></b>
-      <small>A more flexible iOS experience</small>
-    </div>
-
-    <section class="signing-section wrap" id="signing">
-      <div class="signing-card">
-        <div class="signing-heading">
-          <div class="signing-title-group">
-            <label>VSA SIGNING SERVICE</label>
-            <h2>Ký ứng dụng</h2>
-          </div>
-          <span class="secure-pill"><i></i> Hệ thống sẵn sàng</span>
-        </div>
-        <div class="signing-content" id="autoPanel">
-          <label class="field-title" for="udid">UDID thiết bị</label>
-          <p class="notice">Vui lòng nhập UDID thiết bị của bạn đã mua chứng chỉ tại hệ thống <strong>CHUNGCHIP12.COM</strong> để lấy thông tin và cài đặt ứng dụng!</p>
-          <div class="input-wrap">
-            <input id="udid" class="udid" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="40" placeholder="Nhập UDID thiết bị của bạn">
-          </div>
-          <button id="signButton" class="primary" type="button">Ký ứng dụng <span>→</span></button>
-          <p class="helper">Vui lòng kiểm tra chính xác UDID trước khi ký.</p>
-          <div id="errorBox" class="error-box"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap section" id="categories">
-      <div class="section-head">
-        <div>
-          <label>EXPLORE COLLECTIONS</label>
-          <h2>Khám phá theo <em>danh mục.</em></h2>
-        </div>
-        <p>Tìm nhanh những tiện ích phù hợp với nhu cầu sử dụng mỗi ngày.</p>
-      </div>
-      <div class="categories">
-        <button class="category selected" type="button" data-filter="all"><i class="c-all">✳</i><span><b>Tất cả</b><small>Toàn bộ thư viện</small></span><strong>↗</strong></button>
-        <button class="category" type="button" data-filter="game"><i class="c-game">⌘</i><span><b>Trò chơi</b><small>Game & giải trí</small></span><strong>↗</strong></button>
-        <button class="category" type="button" data-filter="entertainment"><i class="c-ent">◉</i><span><b>Giải trí</b><small>Nội dung & media</small></span><strong>↗</strong></button>
-        <button class="category" type="button" data-filter="health"><i class="c-health">♡</i><span><b>Sức khỏe</b><small>Chăm sóc bản thân</small></span><strong>↗</strong></button>
-        <button class="category" type="button" data-filter="education"><i class="c-edu">▤</i><span><b>Giáo dục</b><small>Học tập & kiến thức</small></span><strong>↗</strong></button>
-      </div>
-    </section>
-
-    <section class="apps" id="apps">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <label>THE LIBRARY</label>
-            <h2>Tiện ích nổi bật<em>.</em></h2>
-          </div>
-          <div class="tools">
-            <input id="search" type="search" placeholder="⌕  Tìm kiếm ứng dụng...">
-            <span>Được tuyển chọn⌄</span>
-          </div>
-        </div>
-        <div class="app-grid" id="appGrid">
-          <article class="app-card" data-category="game" data-name="Game Center">
-            <div class="app-top"><i class="app-icon game-icon">G</i><small>TRÒ CHƠI</small></div>
-            <h3>Game Center</h3>
-            <p>Tập hợp những trải nghiệm giải trí được chọn lọc.</p>
-            <footer><small>Ứng dụng mẫu</small><button class="install browse-signing" type="button">Tìm hiểu ↗</button></footer>
-          </article>
-          <article class="app-card" data-category="entertainment" data-name="Media Hub">
-            <div class="app-top"><i class="app-icon media-icon">M</i><small>GIẢI TRÍ</small></div>
-            <h3>Media Hub</h3>
-            <p>Không gian tiện ích dành cho nhu cầu giải trí.</p>
-            <footer><small>Ứng dụng mẫu</small><button class="install browse-signing" type="button">Tìm hiểu ↗</button></footer>
-          </article>
-          <article class="app-card" data-category="health" data-name="Health Toolkit">
-            <div class="app-top"><i class="app-icon health-icon">+</i><small>SỨC KHỎE</small></div>
-            <h3>Health Toolkit</h3>
-            <p>Các tiện ích hỗ trợ theo dõi và chăm sóc cá nhân.</p>
-            <footer><small>Ứng dụng mẫu</small><button class="install browse-signing" type="button">Tìm hiểu ↗</button></footer>
-          </article>
-          <article class="app-card" data-category="education" data-name="Study Space">
-            <div class="app-top"><i class="app-icon edu-icon">S</i><small>GIÁO DỤC</small></div>
-            <h3>Study Space</h3>
-            <p>Công cụ học tập gọn gàng, dễ tiếp cận trên iOS.</p>
-            <footer><small>Ứng dụng mẫu</small><button class="install browse-signing" type="button">Tìm hiểu ↗</button></footer>
-          </article>
-        </div>
-        <div id="empty" hidden>Không tìm thấy ứng dụng phù hợp.</div>
-        <p class="demo-note">Danh sách hiện là dữ liệu giao diện minh họa; có thể kết nối API thư viện để tải danh sách ứng dụng thực tế.</p>
-      </div>
-    </section>
-
-    <section class="wrap section" id="features">
-      <div class="section-head">
-        <div>
-          <label>WHY VSA LIBRARY</label>
-          <h2>Được tạo ra để <em>đơn giản hơn.</em></h2>
-        </div>
-        <p>Tập trung vào trải nghiệm: rõ ràng, liền mạch và dễ sử dụng.</p>
-      </div>
-      <div class="features">
-        <article class="feature featured">
-          <i>⌘</i>
-          <label>01 / FLEXIBILITY</label>
-          <h3>Nhân bản ứng dụng<br>theo cách của bạn.</h3>
-          <p>Tận hưởng khả năng nhân bản ứng dụng linh hoạt, mở rộng cách bạn sử dụng thiết bị iOS.</p>
-          <b class="infinity">∞</b>
-        </article>
-        <article class="feature">
-          <i>↻</i>
-          <label>02 / CURATED</label>
-          <h3>Kho tiện ích<br>được tuyển chọn.</h3>
-          <p>Nội dung được sắp xếp theo danh mục, giúp bạn tìm thấy ứng dụng nhanh hơn.</p>
-        </article>
-        <article class="feature">
-          <i>◌</i>
-          <label>03 / EXPERIENCE</label>
-          <h3>Mượt mà<br>trong từng thao tác.</h3>
-          <p>Giao diện tinh giản, chuyển động nhẹ nhàng và quy trình cài đặt trực quan.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="wrap guide" id="guide">
-      <div>
-        <label>GET STARTED</label>
-        <h2>Bắt đầu chỉ với<br><em>vài thao tác.</em></h2>
-        <p>Chọn tiện ích bạn cần, nhập thông tin thiết bị theo hướng dẫn và bắt đầu quy trình ký ứng dụng.</p>
-        <a class="blue-btn" href="#apps">Chọn ứng dụng ↗</a>
-      </div>
-      <div class="steps">
-        <div><b>01</b><span><strong>Chọn ứng dụng</strong><small>Khám phá thư viện và chọn tiện ích mong muốn.</small></span><i>↗</i></div>
-        <div><b>02</b><span><strong>Bắt đầu ký</strong><small>Hoàn tất thông tin thiết bị theo yêu cầu.</small></span><i>↗</i></div>
-        <div><b>03</b><span><strong>Cài đặt ứng dụng</strong><small>Làm theo hướng dẫn sau khi hệ thống xử lý xong.</small></span><i>↗</i></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="wrap site-footer">
-    <a class="brand" href="#home">
-      <img src="https://vsacheat.com/img/vsacheat-logo-website.webp" alt="VSA">
-      <i></i>
-      <b>Library</b>
-    </a>
-    <span>© 2026 VSA Library. Part of VSA ecosystem.</span>
-    <a href="#home">Về đầu trang ↑</a>
-  </footer>
-
-  <!-- Alert khi UDID chưa có đơn hàng -->
-  <div id="noOrderAlert" class="vsign-alert-overlay" aria-hidden="true" role="alertdialog" aria-modal="true" aria-labelledby="noOrderAlertTitle">
-    <div class="vsign-alert">
-      <div class="vsign-alert-icon">!</div>
-      <h2 id="noOrderAlertTitle">KÝ ỨNG DỤNG THẤT BẠI</h2>
-      <p>⚠️ <strong>UDID không tồn tại trên hệ thống.</strong><br>Vui lòng mua chứng chỉ và đăng ký UDID trước. <strong>Chỉ thiết bị có chứng chỉ hợp lệ</strong> mới được hỗ trợ ký và cài đặt ứng dụng.</p>
-      <a class="vsign-alert-button" href="https://chungchip12.com" target="_blank" rel="noopener noreferrer">MUA CHỨNG CHỈ NGAY</a>
-    </div>
-  </div>
-
-  <!-- Alert khi UDID bị tạm cấm -->
-  <div id="bannedAlert" class="vsign-alert-overlay" aria-hidden="true" role="alertdialog" aria-modal="true" aria-labelledby="bannedAlertTitle">
-    <div class="vsign-alert">
-      <div class="vsign-alert-icon">!</div>
-      <h2 id="bannedAlertTitle">CẢNH BÁO</h2>
-      <p>⚠️ <strong>UDID của bạn đã bị tạm cấm sử dụng dịch vụ tại hệ thống VSA Library</strong><br><br>Lí do: <strong id="bannedReason"></strong></p>
-      <a class="vsign-alert-button" href="https://chungchip12.com" target="_blank" rel="noopener noreferrer">LIÊN HỆ / MUA CHỨNG CHỈ</a>
-    </div>
-  </div>
-
-  <!-- Signing progress -->
-  <div id="signOverlay" class="sign-overlay" aria-hidden="true">
-    <div class="sign-modal">
-      <div class="progress-ring">
-        <svg viewBox="0 0 142 142">
-          <defs>
-            <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#48b5ff"/>
-              <stop offset="50%" stop-color="#0a84ff"/>
-              <stop offset="100%" stop-color="#006de8"/>
-            </linearGradient>
-          </defs>
-          <circle class="ring-bg" cx="71" cy="71" r="60"></circle>
-          <circle id="ringValue" class="ring-value" cx="71" cy="71" r="60"></circle>
-        </svg>
-        <div class="progress-center"><div id="percent" class="percent">0%</div></div>
-      </div>
-      <h2 id="signTitle" class="sign-title">Kiểm tra UDID</h2>
-      <p id="signSub" class="sign-sub">Đang chuẩn bị...</p>
-      <div class="steps">
-        <div id="step0" class="step active"><div class="step-dot">1</div><div class="step-text">Kiểm tra UDID</div></div>
-        <div id="step1" class="step"><div class="step-dot">2</div><div class="step-text">Kiểm tra đơn hàng</div></div>
-        <div id="step2" class="step"><div class="step-dot">3</div><div class="step-text">Chuẩn bị chứng chỉ</div></div>
-        <div id="step3" class="step"><div class="step-dot">4</div><div class="step-text">Ký ứng dụng VSA Library</div></div>
-        <div id="step4" class="step"><div class="step-dot">5</div><div class="step-text">Verify & tạo OTA</div></div>
-        <div id="step5" class="step"><div class="step-dot">✓</div><div class="step-text">Hoàn tất</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Result page -->
-  <section id="resultView" class="result-view" aria-hidden="true">
-    <div class="result-card">
-      <div class="success-circle">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m5 12 4.2 4.2L19 6.5"></path>
-        </svg>
-      </div>
-      <h2 class="result-title">VSA Library đã sẵn sàng</h2>
-      <p class="result-description">Hãy bấm nút <strong>“Cài đặt ngay”</strong> ở phía dưới để tiếp tục!</p>
-      <div class="device-box">
-        <div class="device-label">THIẾT BỊ</div>
-        <div id="resultUdid" class="device-value"></div>
-      </div>
-      <button id="installButton" class="install" type="button">Cài đặt ngay</button>
-      <div class="expiry">Thời gian hết hạn: <strong id="countdown">15:00</strong></div>
-      <a class="back" href="#" onclick="resetApp();return false;">← Ký thiết bị khác</a>
-    </div>
-  </section>
-
-  <script src="js/app.js" defer></script>
 </body>
 </html>
